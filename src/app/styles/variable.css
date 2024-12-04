@@ -1,0 +1,12 @@
+:root {
+    --Brand-Default: #007BFF;
+    --Sucess-Default: #28A745;
+    --Caution-Default: #FF8C00;
+    --Neutral-Secondary: #B0B8C1;
+    --Warning-Default: #FFD700;
+    --Danger-Default: #DC3545;
+    --Neutral-Placeholder: #8B95A1;
+    --Border-Default: #D6DBE1;
+    --Black-Default: #000;
+    --Neutral-Tertiary: #F2F4F6;
+}

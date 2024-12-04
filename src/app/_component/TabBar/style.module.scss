@@ -1,0 +1,12 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 375px;
+  padding: 9px 32px 0 32px;
+  background: var(--White-Default, #FFF);
+  border-radius: 24px 24px 0 0;
+  border: 1px solid var(--Border-Secondary, #E5E8EB);
+  position: fixed;
+  bottom: 0;
+}
