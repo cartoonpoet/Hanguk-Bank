@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import style from './style.module.scss'
 
-interface MenuProps {
-    imageSrc: string
-    name: string
+type MenuProps = {
+    imageSrc: string;
+    name: string;
 }
 
 const Menu = ({imageSrc, name}: MenuProps) => {
@@ -14,5 +14,6 @@ const Menu = ({imageSrc, name}: MenuProps) => {
         </div>
     )
 };
+
 
 export default Menu;
