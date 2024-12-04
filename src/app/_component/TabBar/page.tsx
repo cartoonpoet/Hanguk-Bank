@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 import Menu from "@/app/_component/Menu/page";
-// import Home from '@/../public/icon/icon-home.svg'
+
 const Menus = [
     {
         imageSrc: '/icon/icon-home.svg',
