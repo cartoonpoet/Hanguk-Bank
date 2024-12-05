@@ -1,19 +1,21 @@
 import Image from 'next/image'
 import style from './style.module.scss'
 
-type MenuProps = {
-    imageSrc: string;
-    name: string;
+export type MenuProps = {
+  alt: string;
+  src: string;
+  name: string;
+
 }
 
-const Menu = ({imageSrc, name}: MenuProps) => {
-    return (
-        <div className={style.wrapper}>
-            <Image src={imageSrc} alt='Home' width={24} height={24}/>
-            <div className={style.name}>{name}</div>
-        </div>
-    )
-};
+const Menu = ({ src, name, alt }: MenuProps) => {
+  return (
+    <div className={style.wrapper}>
+      <Image src={src} alt={alt} width={24} height={24} />
+      <div className={style.name}>{name}</div>
+    </div>
+  )
+}
 
 
-export default Menu;
+export default Menu
