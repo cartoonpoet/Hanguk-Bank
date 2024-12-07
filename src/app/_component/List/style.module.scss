@@ -1,0 +1,20 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex: 1;
+  border-radius: 16px;
+  background: var(--White-Default, #FFF);
+  flex-basis: 151.5px;
+  .name{
+    color: var(--Black-Default, #000);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 22.4px */
+    margin-top: 10px;
+  }
+}
