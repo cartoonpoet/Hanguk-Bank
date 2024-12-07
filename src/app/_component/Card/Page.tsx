@@ -15,7 +15,7 @@ const Card = () => {
       <div><Button name="설정" type="Outline" size="Small" status="Default" /></div>
     </header>
     <main className={styles.contents}>
-      <div className={styles.amount}>12,345,6000원</div>
+      <div className={styles.amount}>12,345,600원</div>
       <div className={styles.reload}><Image src="/icon/icon-reload.svg" alt="reload" width={20} height={20}/></div>
     </main>
     <footer className={styles.btnGroup}>
