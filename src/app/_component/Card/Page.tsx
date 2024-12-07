@@ -20,7 +20,7 @@ const Card = () => {
     </main>
     <footer className={styles.btnGroup}>
       <Button name="거래내역" type="Soft" status="Default" size="Medium"/>
-      <Button name="이체하기" type="Fill" status="Default" size="Medium"/>
+      <Button name="이체하기" type="Fill" status="Default" size="Medium" href="/home/transfer"/>
     </footer>
   </div>
 }

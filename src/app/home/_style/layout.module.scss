@@ -10,7 +10,13 @@
     flex-direction: column;
     //justify-content: center;
     //align-items: center;
-    //height: 1200px;
+    height: 100dvh;
     padding: 0 20px 85px 20px;
+  }
+  @media (max-width: 768px) {
+    .body {
+      min-height: 812px;
+      height: auto; /* 모바일에서는 제한 해제 */
+    }
   }
 }

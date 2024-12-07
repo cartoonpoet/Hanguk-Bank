@@ -1,6 +1,7 @@
 import styles from './_style/page.module.scss'
 import Card from '@/app/_component/Card/Page'
 import List from '@/app/_component/List/page'
+
 const Home = () => {
   return (
     <div className={styles.container}>
