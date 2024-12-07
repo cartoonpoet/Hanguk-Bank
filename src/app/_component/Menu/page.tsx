@@ -19,7 +19,7 @@ const Menus: menu[] = [
     name: '상품',
   },
   {
-    src: '/icon/icon-gift.png',
+    src: '/icon/icon-gift.svg',
     name: '혜택',
   },
   {
