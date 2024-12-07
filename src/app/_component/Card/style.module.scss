@@ -1,0 +1,63 @@
+.wrapper {
+  border-radius: 16px;
+  background: var(--White-Default, #FFF);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+
+    .accountName {
+      color: var(--Black-Default, #000);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 25.2px */
+    }
+
+    .accountNumber {
+      color: var(--Neutral-Default, #6B7684);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 25.2px */
+      .image {
+        margin-left: 3px;
+        cursor: pointer;
+
+      }
+    }
+  }
+  .contents{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    .amount{
+      color: var(--Black-Default, #000);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 38.4px */
+    }
+    .reload{
+      cursor: pointer;
+      display: flex;
+      width: 24px;
+      height: 24px;
+      padding: 2px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .btnGroup{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+}
