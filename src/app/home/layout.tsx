@@ -10,8 +10,8 @@ const layout = ({ children }: layoutProps) => {
   return <div className={styles.container}>
     <main className={styles.body}>
       {children}
-      <MenuTabBar />
     </main>
+    <MenuTabBar />
   </div>
 }
 

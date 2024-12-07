@@ -8,7 +8,7 @@ const Home = () => {
         김금융 님
       </header>
       <section><Card/></section>
-      <footer>3</footer>
+      {/*<footer>3</footer>*/}
     </div>
   )
 }
