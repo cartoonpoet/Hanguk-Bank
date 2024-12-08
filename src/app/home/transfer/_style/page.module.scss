@@ -1,5 +1,4 @@
 .container {
-  //padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -9,13 +8,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
-    padding: 20px 0;
     width: 100%;
-  }
-  .listContainer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 20px 16px;
+    margin-top: 16px;
   }
 }

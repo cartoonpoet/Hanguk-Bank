@@ -1,0 +1,32 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--Border-Default, #D6DBE1);
+  align-items: center;
+  .input{
+    flex: 1;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    border: none;
+    outline: none;
+    &::placeholder {
+      color: var(--Neutral-Placeholder, #8B95A1);
+    }
+  }
+  .btn{
+    background: transparent;
+    border: none;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: 2.917px 3.332px 3.75px 3.333px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
