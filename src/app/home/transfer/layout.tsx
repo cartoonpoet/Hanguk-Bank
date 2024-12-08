@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../_style/layout.module.scss'
+import styles from './_style/layout.module.scss'
 
 type layoutProps = {
   children: React.ReactNode

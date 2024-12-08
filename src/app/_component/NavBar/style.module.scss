@@ -1,0 +1,26 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: var(--White-Default, #FFF);
+  padding: 7px 0 6px 0;
+  align-items: center;
+  color: var(--Black-Default, #000);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 25.2px */
+
+  .btn{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 3px 6.751px 3px 7px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
