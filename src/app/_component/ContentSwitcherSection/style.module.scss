@@ -1,0 +1,21 @@
+.wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 16px;
+  cursor: pointer;
+  color: var(--Neutral-Label, #4E5968);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+}
+.selected {
+  border-radius: 12px;
+  background: var(--White-Default, #FFF);
+  color: var(--Neutral-Default, #6B7684);
+  /* Switch */
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.10);
+}

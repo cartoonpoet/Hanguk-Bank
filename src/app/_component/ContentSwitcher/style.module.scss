@@ -1,0 +1,13 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 16px;
+  background: var(--Neutral-Tertiary, #F2F4F6);
+  overflow: hidden;
+  padding: 4px;
+  align-self: stretch;
+  margin-top: 20px;
+}
