@@ -14,6 +14,7 @@
     line-height: 140%; /* 22.4px */
     border: none;
     outline: none;
+    color-scheme: light only;
     &::placeholder {
       color: var(--Neutral-Placeholder, #8B95A1);
     }
