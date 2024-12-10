@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+  .info{
+    flex: 1;
+    .name{
+      color: var(--Black-Default, #000);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 25.2px */
+    }
+    .account{
+      color: var(--Neutral-Default, #6B7684);
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 22.4px */
+    }
+  }
+}

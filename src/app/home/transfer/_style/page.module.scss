@@ -11,4 +11,13 @@
     width: 100%;
     margin-top: 16px;
   }
+  .subText{
+    color: var(--Neutral-Default, #6B7684);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    display: flex;
+    flex-direction: column;
+  }
 }
