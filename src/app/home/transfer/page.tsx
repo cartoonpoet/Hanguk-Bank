@@ -5,6 +5,7 @@ import ContentSwitcher from '@/app/_component/ContentSwitcher/page'
 import SearchBar from '@/app/_component/SearchBar/page'
 import AccountRow from '@/app/_component/AccountRow/page'
 
+
 const accountRows = [
   {
     accountType: '신한',
@@ -73,7 +74,6 @@ const Transfer = () => {
                                                   accountNumber={accountRow.accountNumber}
                                                   name={accountRow.name} />))}
     </div>
-
   </div>
 
 }
