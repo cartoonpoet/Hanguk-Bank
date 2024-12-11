@@ -3,11 +3,14 @@ import ShinHan from '/public/bank/shinhan.svg'
 import KbStar from '/public/bank/kbstar.svg'
 import KaKaoBank from '/public/bank/kakaobank.svg'
 import Star from '/public/icon/star.svg'
+import cx from 'classnames'
 
 type AccountRowProps = {
   accountType: string
   name: string
   accountNumber: string
+  selected?: boolean
+  onClick?: () => void
 }
 
 const getBankIcon = (accountType: string) => {
@@ -21,8 +24,8 @@ const getBankIcon = (accountType: string) => {
   }
 }
 
-const AccountRow = ({ accountType, name, accountNumber }: AccountRowProps) => {
-  return <section className={styles.wrapper}>
+const AccountRow = ({ accountType, name, accountNumber, selected, onClick }: AccountRowProps) => {
+  return <section className={cx(styles.wrapper, selected && styles.selected)} onClick={onClick}>
     {getBankIcon(accountType)}
     <div className={styles.info}>
       <div className={styles.name}>{name}</div>
