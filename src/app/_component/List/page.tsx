@@ -3,43 +3,43 @@ import Image from 'next/image'
 
 const menuList = [
   {
-    src: '/icon/menu-search.png',
+    src: '/menu/search.svg',
     name: '전체 계좌 조회',
   },
   {
-    src: '/icon/menu-paper.png',
+    src: '/menu/receipt.svg',
     name: '공과금 내기',
   },
   {
-    src: '/icon/menu-edit.png',
+    src: '/menu/memo.svg',
     name: '상품 가입',
   },
   {
-    src: '/icon/menu-atm.png',
+    src: '/menu/atm.svg',
     name: 'ATM 돈찾기',
   },
   {
-    src: '/icon/menu-money.png',
+    src: '/menu/money.svg',
     name: '자동이체 관리',
   },
   {
-    src: '/icon/menu-auth.png',
+    src: '/menu/shield.svg',
     name: '인증서',
   },
   {
-    src: '/icon/menu-lock.png',
+    src: '/menu/lock.svg',
     name: '보안서비스',
   },
   {
-    src: '/icon/menu-call.png',
+    src: '/menu/call.svg',
     name: '사고신고',
   },
   {
-    src: '/icon/menu-guide.png',
+    src: '/menu/guide.svg',
     name: '사용안내',
   },
   {
-    src: '/icon/menu-message.png',
+    src: '/menu/message.svg',
     name: '의견 말하기',
   },
 ]
