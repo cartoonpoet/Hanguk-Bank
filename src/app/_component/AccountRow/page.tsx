@@ -24,15 +24,28 @@ const getBankIcon = (accountType: string) => {
   }
 }
 
-const AccountRow = ({ accountType, name, accountNumber, selected, onClick }: AccountRowProps) => {
-  return <section className={cx(styles.wrapper, selected && styles.selected)} onClick={onClick}>
-    {getBankIcon(accountType)}
-    <div className={styles.info}>
-      <div className={styles.name}>{name}</div>
-      <div className={styles.account}>{accountType} {accountNumber}</div>
-    </div>
-    <Star />
-  </section>
+const AccountRow = ({
+  accountType,
+  name,
+  accountNumber,
+  selected,
+  onClick,
+}: AccountRowProps) => {
+  return (
+    <section
+      className={cx(styles.wrapper, selected && styles.selected)}
+      onClick={onClick}
+    >
+      {getBankIcon(accountType)}
+      <div className={styles.info}>
+        <div className={styles.name}>{name}</div>
+        <div className={styles.account}>
+          {accountType} {accountNumber}
+        </div>
+      </div>
+      <Star />
+    </section>
+  )
 }
 
 export default AccountRow
