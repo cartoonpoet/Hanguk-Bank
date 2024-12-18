@@ -2,7 +2,7 @@ import Image from 'next/image'
 import style from './style.module.scss'
 
 type menu = {
-  src: string,
+  src: string
   name: string
 }
 const Menus: menu[] = [
@@ -29,13 +29,14 @@ const Menus: menu[] = [
 ]
 
 const Menu = () => {
-  return Menus.map(menu => {
-    return <div className={style.wrapper} key={menu.src}><Image src={menu.src} alt={'12'} width={24} height={24} />
-      <div className={style.name}>{menu.name}</div>
-    </div>
+  return Menus.map((menu) => {
+    return (
+      <div className={style.wrapper} key={menu.src}>
+        <Image src={menu.src} alt={'12'} width={24} height={24} />
+        <div className={style.name}>{menu.name}</div>
+      </div>
+    )
   })
-
 }
-
 
 export default Menu

@@ -9,12 +9,21 @@ type ButtonProps = {
   size: 'Small' | 'Medium' | 'Large'
   href: string
 }
+
 const Button = ({ name, type, status, size, href = '' }: ButtonProps) => {
-  return <Link
-    href={href}
-    className={cx(styles.common, styles[type.toLowerCase()], styles[status.toLowerCase()], styles[size.toLowerCase()])}>
-    {name}
-  </Link>
+  return (
+    <Link
+      href={href}
+      className={cx(
+        styles.common,
+        styles[type.toLowerCase()],
+        styles[status.toLowerCase()],
+        styles[size.toLowerCase()]
+      )}
+    >
+      {name}
+    </Link>
+  )
 }
 
 export default Button

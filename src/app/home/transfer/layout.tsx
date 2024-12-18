@@ -7,12 +7,11 @@ type layoutProps = {
 }
 
 const layout = ({ children }: layoutProps) => {
-  return <div className={styles.container}>
-    <main className={styles.body}>
-      {children}
-    </main>
-
-  </div>
+  return (
+    <div className={styles.container}>
+      <main className={styles.body}>{children}</main>
+    </div>
+  )
 }
 
 export default layout
