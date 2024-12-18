@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 import styled from 'styled-components'
 
-const FloatingBtn = ({ children }: PropsWithChildren) => {
+const FloatingButton = ({ children }: PropsWithChildren) => {
   return <SFloatingBtn>{children}</SFloatingBtn>
 }
 
@@ -14,4 +14,4 @@ const SFloatingBtn = styled.button`
   border: none;
 `
 
-export default FloatingBtn
+export default FloatingButton
