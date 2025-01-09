@@ -10,6 +10,7 @@
     "build": "next build"
   },
   "dependencies": {
+    "@soulmachines/smwebsdk": "^15.8.1",
     "classnames": "^2.5.1",
     "gh-pages": "^6.2.0",
     "next": "15.0.3",
