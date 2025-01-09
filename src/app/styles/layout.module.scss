@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .wrapper{
+    max-width: 480px;
+    width: 100%;
+  }
+}
