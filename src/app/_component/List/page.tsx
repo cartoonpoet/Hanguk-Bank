@@ -44,10 +44,12 @@ const menuList = [
   },
 ]
 const List = () => {
-  return menuList.map(menu => (<div className={styles.wrapper} key={menu.src}>
-    <Image src={menu.src} alt={menu.name} width={48} height={48}/>
-    <div className={styles.name}>{menu.name}</div>
-  </div>))
+  return menuList.map((menu) => (
+    <div className={styles.wrapper} key={menu.src}>
+      <Image src={menu.src} alt={menu.name} width={48} height={48} />
+      <div className={styles.name}>{menu.name}</div>
+    </div>
+  ))
 }
 
 export default List
