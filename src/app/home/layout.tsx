@@ -1,4 +1,3 @@
-import MenuTabBar from '@/app/_component/MenuTabBar/page'
 import React from 'react'
 import styles from './_style/layout.module.scss'
 
@@ -14,7 +13,6 @@ const layout = ({ children, menu, }: layoutProps) => {
     <main className={styles.body}>
       {children}
     </main>
-    {/*<MenuTabBar />*/}
     {menu}
   </div>
 
