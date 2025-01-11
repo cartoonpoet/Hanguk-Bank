@@ -9,6 +9,7 @@ import { useAiStore } from '@/app/ai/_hooks/useAiStore'
 const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
 const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
 
+const useKey = process.env.MODE === 'prod' ? prodKey : devKey
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const router = useRouter()
@@ -19,7 +20,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
       const videoElement = videoRef.current
 
       const options: SceneOptions = {
-        apiKey: process.env.MODE === 'prod' ? prodKey : devKey, // 발급받은 API 키
+        apiKey: useKey, // 발급받은 API 키
         // apiKey: prodKey,
         videoElement: videoElement || undefined,
         requestedMediaDevices: { microphone: true, camera: false },
