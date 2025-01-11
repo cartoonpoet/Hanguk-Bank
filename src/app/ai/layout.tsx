@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout = ({ children, modal }: LayoutProps) => {
   return <div className={styles.container}>
-    <AIAvatar/>
+    <AIAvatar />
     {children}
     {modal}
   </div>

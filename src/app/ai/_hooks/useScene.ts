@@ -1,5 +1,5 @@
-import { useEffect, useState, MutableRefObject } from 'react'
-import { Persona, Scene, SceneOptions } from '@soulmachines/smwebsdk'
+import { useEffect,  MutableRefObject } from 'react'
+import { ConnectionStateData, Persona, Scene, SceneOptions } from '@soulmachines/smwebsdk'
 import {
   StateResponseBody,
 } from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
@@ -12,8 +12,7 @@ const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const router = useRouter()
-  const [text, setText] = useState('') // 텍스트 입력 상태
-  const { scene, setScene } = useAiStore()
+  const { scene, setScene, setConnectionState } = useAiStore()
 
   useEffect(() => {
     const initScene = async () => {
@@ -28,6 +27,12 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
       // Soul Machines Scene 초기화
       const smScene = new Scene(options)
+      smScene.connectionState.onConnectionStateUpdated.addListener(
+        (connectionStateData: ConnectionStateData) => {
+          // display connectionState updates to the user
+          setConnectionState(connectionStateData.name)
+        },
+      )
       try {
         // 연결 및 비디오 시작
         const sessionId = await smScene.connect()
@@ -40,10 +45,9 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
           if (personaState?.speechState === 'speaking') {
             const personaSpeech = personaState?.currentSpeech
-            if (personaSpeech === '네. 어느 계좌에서 이체할까요?') {
-              router.push('/ai/transfer')
-            }
-            console.log('[personaSpeech]', personaSpeech)
+            if (personaSpeech === '네. 어느 계좌에서 이체할까요?') router.push('/ai/transfer')
+            else if(personaSpeech === '네. 어느 계좌로 이체할까요?') router.push('/ai/transfer/to')
+
           }
         })
 
@@ -58,7 +62,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
     }
   }, [scene])
 
-  return { text, setText, scene }
+  return { scene }
 }
 
 export const handleSpeak = async (scene: Scene, text: string) => {
