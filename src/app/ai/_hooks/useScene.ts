@@ -20,6 +20,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
       const options: SceneOptions = {
         apiKey: process.env.MODE === 'prod' ? prodKey : devKey, // 발급받은 API 키
+        // apiKey: prodKey,
         videoElement: videoElement || undefined,
         requestedMediaDevices: { microphone: true, camera: false },
         requiredMediaDevices: { microphone: false, camera: false },
