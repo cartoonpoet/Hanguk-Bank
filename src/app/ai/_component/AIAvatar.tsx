@@ -12,6 +12,7 @@ const AIAvatar = () => {
 
   return (
     <div className={styles.container}>
+      {process.env.MODE}
       {connectionState}
       <video ref={videoRef} id="sm-video" width="100%" height="100%" playsInline />
     </div>
