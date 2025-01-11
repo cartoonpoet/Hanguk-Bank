@@ -24,7 +24,7 @@ const Card = () => {
             name='설정'
             type='Outline'
             size='Small'
-            status='Default'
+            status='Page'
             href=''
           />
         </div>
@@ -44,14 +44,14 @@ const Card = () => {
         <Button
           name='거래내역'
           type='Soft'
-          status='Default'
+          status='Page'
           size='Medium'
           href=''
         />
         <Button
           name='이체하기'
           type='Fill'
-          status='Default'
+          status='Page'
           size='Medium'
           href='/home/transfer'
         />

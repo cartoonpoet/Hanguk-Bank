@@ -3,9 +3,10 @@ import { Scene, SceneOptions } from '@soulmachines/smwebsdk'
 import {
   StateResponseBody,
 } from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
-
+import { useRouter } from 'next/navigation'
 
 const useScene = (videoRef: MutableRefObject<null>) => {
+  const router = useRouter()
   const [text, setText] = useState('') // 텍스트 입력 상태
   const [scene, setScene] = useState<Scene | null>(null) // Soul Machines Scene 객체
 
@@ -22,7 +23,6 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
       // Soul Machines Scene 초기화
       const smScene = new Scene(options)
-
       try {
         // 연결 및 비디오 시작
         const sessionId = await smScene.connect()
@@ -35,6 +35,9 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
           if (personaState?.speechState === 'speaking') {
             const personaSpeech = personaState?.currentSpeech
+            if(personaSpeech === '네. 어느 계좌로 이체할까요?'){
+              router.push('/ai/transfer')
+            }
             console.log('[personaSpeech]', personaSpeech)
           }
         })
