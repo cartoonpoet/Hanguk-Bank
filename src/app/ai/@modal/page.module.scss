@@ -1,7 +1,7 @@
 .container {
   position: absolute;
   z-index: 999;
-  bottom: 5%;
+  bottom: 3%;
   width: 100%;
   padding: 0 20px;
 
@@ -33,6 +33,7 @@
         border: 1px solid var(--Border-Default, #D6DBE1);
         background: var(--White-Default, #FFF);
         color: var(--Black-Default, #000);
+        cursor: pointer;
 
         /* Label/Medium Semibold */
         font-size: 18px;

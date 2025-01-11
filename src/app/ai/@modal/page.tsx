@@ -3,15 +3,20 @@
 import styles from './page.module.scss'
 import Mic from '/public/icon/icon-mic.svg'
 import FloatingButton from '@/app/home/components/floating-button'
-import Link from 'next/link'
+import { useAiStore } from '@/app/ai/_hooks/useAiStore'
+import { handleSpeak } from '@/app/ai/_hooks/useScene'
 
-const WORKLIST = ['이체해줘', '계좌조회 해줘', '적금 추천해줘', '고객센터 연결해줘']
+const WORKS = ['이체해줘', '계좌조회 해줘', '적금 추천해줘', '고객센터 연결해줘']
 
 const Page = () => {
+  const { scene } = useAiStore()
+
+  if (!scene) return null
   return <div className={styles.container}>
     <div className={styles.wrapper}>
       <section className={styles.workSection}>
-      {WORKLIST.map(work => <Link key={work} href={''} className={styles.work_btn}>{work}</Link>)}
+        {WORKS.map(work => <div key={work} className={styles.work_btn}
+                                onClick={async () => await handleSpeak(scene, work)}>{work}</div>)}
       </section>
       <FloatingButton>
         <Mic />
@@ -20,4 +25,4 @@ const Page = () => {
   </div>
 }
 
-export default Page
+export default Page;

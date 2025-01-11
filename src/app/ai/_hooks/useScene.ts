@@ -1,21 +1,26 @@
 import { useEffect, useState, MutableRefObject } from 'react'
-import { Scene, SceneOptions } from '@soulmachines/smwebsdk'
+import { Persona, Scene, SceneOptions } from '@soulmachines/smwebsdk'
 import {
   StateResponseBody,
 } from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
 import { useRouter } from 'next/navigation'
+import { useAiStore } from '@/app/ai/_hooks/useAiStore'
+
+const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
+const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
+
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const router = useRouter()
   const [text, setText] = useState('') // 텍스트 입력 상태
-  const [scene, setScene] = useState<Scene | null>(null) // Soul Machines Scene 객체
+  const { scene, setScene } = useAiStore()
 
   useEffect(() => {
     const initScene = async () => {
       const videoElement = videoRef.current
 
       const options: SceneOptions = {
-        apiKey: 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9', // 발급받은 API 키
+        apiKey: process.env.MODE === 'prod' ? prodKey : devKey, // 발급받은 API 키
         videoElement: videoElement || undefined,
         requestedMediaDevices: { microphone: true, camera: false },
         requiredMediaDevices: { microphone: false, camera: false },
@@ -35,7 +40,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
           if (personaState?.speechState === 'speaking') {
             const personaSpeech = personaState?.currentSpeech
-            if(personaSpeech === '네. 어느 계좌로 이체할까요?'){
+            if (personaSpeech === '네. 어느 계좌로 이체할까요?') {
               router.push('/ai/transfer')
             }
             console.log('[personaSpeech]', personaSpeech)
@@ -54,6 +59,16 @@ const useScene = (videoRef: MutableRefObject<null>) => {
   }, [scene])
 
   return { text, setText, scene }
+}
+
+export const handleSpeak = async (scene: Scene, text: string) => {
+  try {
+    const persona = new Persona(scene, scene.currentPersonaId)
+    await persona.conversationSend(text, {}, {})
+  } catch (error) {
+    console.error('Error sending text:', error)
+    throw error
+  }
 }
 
 export default useScene
