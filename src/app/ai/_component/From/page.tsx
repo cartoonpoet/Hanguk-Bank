@@ -1,10 +1,11 @@
 'use client'
 
-import styles from './page.module.scss'
+import styles from './style.module.scss'
 import Mic from '/public/icon/icon-mic.svg'
 import FloatingButton from '@/app/home/components/floating-button'
-import { useAiStore } from '@/app/ai/_hooks/useAiStore'
 import { handleSpeak } from '@/app/ai/_hooks/useScene'
+import {useContext} from "react";
+import {AiContext} from "@/app/ai/_hooks/useAiContext";
 
 const ACCOUNTS = [
   {
@@ -22,7 +23,7 @@ const ACCOUNTS = [
 ]
 
 const Page = () => {
-  const { scene } = useAiStore()
+  const { scene } = useContext(AiContext)
 
   if (!scene) return null
   return <div className={styles.container}>

@@ -1,13 +1,14 @@
 'use client'
 
-import { useAiStore } from '@/app/ai/_hooks/useAiStore'
-import styles from './page.module.scss'
+import styles from './style.module.scss'
 import FloatingButton from '@/app/home/components/floating-button'
 import Mic from '/public/icon/icon-mic.svg'
-import React from 'react'
+import React, {useContext} from 'react'
 import ShinHan from '/public/bank/shinhan.svg'
 import KbStar from '/public/bank/kbstar.svg'
 import KaKaoBank from '/public/bank/kakaobank.svg'
+import { handleSpeak } from '@/app/ai/_hooks/useScene'
+import {AiContext} from "@/app/ai/_hooks/useAiContext";
 
 const ACCOUNTS = [
   {
@@ -30,23 +31,24 @@ const ACCOUNTS = [
 const getBankIcon = (accountType: string) => {
   switch (accountType) {
     case '신한':
-      return <ShinHan/>
+      return <ShinHan />
     case '국민':
-      return <KbStar/>
+      return <KbStar />
     case '카카오뱅크':
-      return <KaKaoBank/>
+      return <KaKaoBank />
   }
 }
 
 const Page = () => {
-  const { scene } = useAiStore()
+  const { scene } = useContext(AiContext)
 
   if (!scene) return null
   return <div className={styles.container}>
     <div className={styles.wrapper}>
       <section className={styles.workSection}>
         {ACCOUNTS.map((accountRow) => (
-          <button key={accountRow.accountNumber} className={styles.account}>
+          <button key={accountRow.accountNumber} className={styles.account}
+                  onClick={async () => await handleSpeak(scene, `${accountRow.name}에게 이체해줘`)}>
             {getBankIcon(accountRow.accountType)}
             <div className={styles.accountInfo}>
               <div className={styles.name}>{accountRow.name}</div>
@@ -60,6 +62,6 @@ const Page = () => {
       </FloatingButton>
     </div>
   </div>
-};
+}
 
-export default Page;
+export default Page
