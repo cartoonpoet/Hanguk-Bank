@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 0 20px 85px 20px;
+  background: var(--Neutral-Tertiary, #F2F4F6);
   .user {
     color: var(--Black-Default, #000);
     font-size: 24px;
@@ -12,6 +13,9 @@
     line-height: 120%;
     padding: 20px 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .listContainer{
     display: flex;
@@ -19,4 +23,18 @@
     flex-direction: row;
     gap: 20px 16px;
   }
+}
+
+
+.voiceButton {
+  background-color:#FFFFFF;
+  color : #007BFF;
+  font-size: 18px;
+  padding-block: 14px;
+  padding-inline: 16px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap:8px;
+  cursor: pointer;
 }

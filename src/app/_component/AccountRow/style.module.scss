@@ -25,7 +25,10 @@
       }
     }
   }
-  
-  .selected {
-    background: rgba(0, 0, 0, 0.05);
-  }
+
+}
+
+.selected {
+  background: var(--Neutral-Tertiary, #F2F4F6);
+}
+
