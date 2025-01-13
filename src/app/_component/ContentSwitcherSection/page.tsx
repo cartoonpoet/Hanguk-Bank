@@ -7,8 +7,19 @@ type ContentSwitcherSectionProps = {
   onClick?: () => void
 }
 
-const ContentSwitcherSection = ({ selected, title, onClick }: ContentSwitcherSectionProps) => {
-  return <div className={cx(styles.wrapper, selected && styles.selected)} onClick={onClick}>{title}</div>
+const ContentSwitcherSection = ({
+  selected,
+  title,
+  onClick,
+}: ContentSwitcherSectionProps) => {
+  return (
+    <div
+      className={cx(styles.wrapper, selected && styles.selected)}
+      onClick={onClick}
+    >
+      {title}
+    </div>
+  )
 }
 
 export default ContentSwitcherSection

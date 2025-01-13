@@ -29,6 +29,7 @@ const getBankIcon = (accountType: string) => {
 }
 
 
+
 const AccountRow = ({accountType, name, accountNumber, selected, onClick}: AccountRowProps) => {
     const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
@@ -44,6 +45,7 @@ const AccountRow = ({accountType, name, accountNumber, selected, onClick}: Accou
         </div>
         {isFavorite ? <StarBG onClickCapture={onClickFavorite}/> : <Star onClickCapture={onClickFavorite}/>}
     </section>
+
 }
 
 export default AccountRow

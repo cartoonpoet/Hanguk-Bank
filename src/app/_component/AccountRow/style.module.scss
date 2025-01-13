@@ -6,16 +6,19 @@
   gap: 10px;
   padding: 20px;
   cursor: pointer;
-  .info{
+
+  .info {
     flex: 1;
-    .name{
+
+    .name {
       color: var(--Black-Default, #000);
       font-size: 18px;
       font-style: normal;
       font-weight: 700;
       line-height: 140%; /* 25.2px */
     }
-    .account{
+
+    .account {
       color: var(--Neutral-Default, #6B7684);
 
       font-size: 16px;
@@ -26,6 +29,8 @@
   }
 }
 
+
 .selected {
   background: var(--Neutral-Tertiary, #F2F4F6);
 }
+
