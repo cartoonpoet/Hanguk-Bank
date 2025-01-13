@@ -1,14 +1,14 @@
 'use client'
 
-import { useAiStore } from '@/app/ai/_hooks/useAiStore'
-import styles from './page.module.scss'
+import styles from './style.module.scss'
 import FloatingButton from '@/app/home/components/floating-button'
 import Mic from '/public/icon/icon-mic.svg'
-import React from 'react'
+import React, {useContext} from 'react'
 import ShinHan from '/public/bank/shinhan.svg'
 import KbStar from '/public/bank/kbstar.svg'
 import KaKaoBank from '/public/bank/kakaobank.svg'
 import { handleSpeak } from '@/app/ai/_hooks/useScene'
+import {AiContext} from "@/app/ai/_hooks/useAiContext";
 
 const ACCOUNTS = [
   {
@@ -40,7 +40,7 @@ const getBankIcon = (accountType: string) => {
 }
 
 const Page = () => {
-  const { scene } = useAiStore()
+  const { scene } = useContext(AiContext)
 
   if (!scene) return null
   return <div className={styles.container}>
