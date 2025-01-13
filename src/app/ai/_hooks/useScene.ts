@@ -29,7 +29,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
             // Soul Machines Scene 초기화
             const smScene = new Scene(options)
             smScene.connectionState.onConnectionStateUpdated.addListener(
-                (connectionStateData: ConnectionStateData) => {
+                (_: ConnectionStateData) => {
                     // display connectionState updates to the user
 
                 },
