@@ -47,8 +47,8 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
           if (personaState?.speechState === 'speaking') {
             const personaSpeech = personaState?.currentSpeech
-            if (personaSpeech === '네. 어느 계좌에서 이체할까요?') router.push('/ai/transfer')
-            else if(personaSpeech === '네. 어느 계좌로 이체할까요?') router.push('/ai/transfer/to')
+            if (personaSpeech === '네. 어떤 계좌에서 이체할까요?') router.push('/ai/transfer')
+            else if(personaSpeech === '네. 누구에게 보낼까요?') router.push('/ai/transfer/to')
 
           }
         })

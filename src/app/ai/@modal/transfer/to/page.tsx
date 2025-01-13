@@ -2,10 +2,8 @@
 
 import { useAiStore } from '@/app/ai/_hooks/useAiStore'
 import styles from './page.module.scss'
-import { handleSpeak } from '@/app/ai/_hooks/useScene'
 import FloatingButton from '@/app/home/components/floating-button'
 import Mic from '/public/icon/icon-mic.svg'
-import AccountRow from '@/app/_component/AccountRow/page'
 import React from 'react'
 import ShinHan from '/public/bank/shinhan.svg'
 import KbStar from '/public/bank/kbstar.svg'
