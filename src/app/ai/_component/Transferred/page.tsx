@@ -4,7 +4,6 @@ import styles from './style.module.scss'
 import FloatingButton from '@/app/home/components/floating-button'
 import Mic from '/public/icon/icon-mic.svg'
 import React, {useContext} from 'react'
-import {handleSpeak} from '@/app/ai/_hooks/useScene'
 import {AiContext} from "@/app/ai/_hooks/useAiContext";
 import {getBankIcon} from '@/utils/Bank'
 
@@ -16,8 +15,7 @@ const Page = () => {
         <div className={styles.wrapper}>
             <section className={styles.workSection}>
                 <div className={styles.header}>김손자에게 100,000원 보냈어요.</div>
-                <button className={styles.account}
-                        onClick={async () => await handleSpeak(scene, '김손자에게 100,000원 보내줘.')}>
+                <button className={styles.account}>
                     {getBankIcon(selectedTo.accountType)}
                     <div className={styles.accountInfo}>
                         <div className={styles.name}>{selectedTo.name}</div>
