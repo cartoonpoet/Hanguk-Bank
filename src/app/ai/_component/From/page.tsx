@@ -30,7 +30,7 @@ const Page = () => {
     <div className={styles.wrapper}>
       <section className={styles.workSection}>
         {ACCOUNTS.map((account, idx) => <ul key={account.number} className={styles.work_btn} onClick={async () => {
-          await handleSpeak(scene, `${idx+1}번 계좌로 이체해줘`)
+          await handleSpeak(scene, account.name)
         }}
         >
           <li className={styles.title}>

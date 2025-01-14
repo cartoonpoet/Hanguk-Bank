@@ -1,11 +1,19 @@
 import { Scene } from '@soulmachines/smwebsdk'
 
-export type ModeProp = 'WorkList' | 'From' | 'To' | 'Confirm' | 'Reconfirm' | 'Transferred';
+export type ModeProp = 'WorkList' | 'From' | 'To' | 'Tell' | 'Confirm' | 'Transferred';
+
+export interface Account {
+  accountType: string
+  name: string
+  accountNumber: string
+}
 
 export interface AiStoreTypes {
   scene: Scene | null,
   setScene: (scene: Scene) => void,
   mode: ModeProp,
   setMode: (mode: ModeProp) => void,
+  selectedTo: Account | null,
+  setSelectedTo: (selectedTo: Account) => void,
 }
 

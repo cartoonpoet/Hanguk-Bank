@@ -6,14 +6,25 @@ import WorkList from "@/app/ai/_component/WorkList/page";
 import From from "@/app/ai/_component/From/page";
 import To from "@/app/ai/_component/To/page";
 import AiContextProvider from "@/app/ai/_hooks/useAiContext";
+import Tell from '@/app/ai/_component/Tell/page'
+import Confirm from '@/app/ai/_component/Confirm/page'
+import Transferred from '@/app/ai/_component/Transferred/page'
+
+const eachModeComponent = {
+    WorkList: <WorkList/>,
+    From:  <From/>,
+    To: <To/>,
+    Tell: <Tell/>,
+    Confirm: <Confirm/>,
+    Transferred: <Transferred/>
+}
 
 const AI = () => {
     const {mode} = useContext(AiContext)
+
     return <div>
         <AiAvatar/>
-        {mode === 'WorkList' && <WorkList/>}
-        {mode === 'From' && <From/>}
-        {mode === 'To' && <To/>}
+        {eachModeComponent[mode]}
     </div>
 };
 
