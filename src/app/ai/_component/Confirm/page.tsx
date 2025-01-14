@@ -21,8 +21,8 @@ const Page = () => {
                         onClick={async () => await handleSpeak(scene, '김손자에게 100,000원 보내줘.')}>
                     {getBankIcon('우리')}
                     <div className={styles.accountInfo}>
-                        <div className={styles.name}>{selectedTo.name!}</div>
-                        <div className={styles.info}>{selectedTo.accountType!} {selectedTo.accountNumber!}</div>
+                        <div className={styles.name}>{selectedTo!.name}</div>
+                        <div className={styles.info}>{selectedTo!.accountType!} {selectedTo!.accountNumber}</div>
                     </div>
                 </button>
             </section>
