@@ -49,14 +49,15 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
                     if (personaState?.speechState === 'speaking') {
                         const personaSpeech = personaState?.currentSpeech
-                        if (personaSpeech === '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') setMode('From')
-                        else if (personaSpeech === '누구에게 보낼까요? 최근 이체한 계좌도 함께 보여드릴께요.') setMode('To')
-                        else if (personaSpeech === '받는 분의 은행과 계좌번호를 말씀해 주세요.') setMode('Tell')
-                        else if (personaSpeech.includes('받는 분과 금액을 한 번 더 확인해주세요.')) {
-                            setMode('Confirm')
-                            handleSpeak(scene, '보냈어요.')
+                        if(personaSpeech) {
+                            if (personaSpeech === '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') setMode('From')
+                            else if (personaSpeech === '누구에게 보낼까요? 최근 이체한 계좌도 함께 보여드릴께요.') setMode('To')
+                            else if (personaSpeech === '받는 분의 은행과 계좌번호를 말씀해 주세요.') setMode('Tell')
+                            else if (personaSpeech.includes('받는 분과 금액을 한 번 더 확인해주세요.')) {
+                                setMode('Confirm')
+                                handleSpeak(scene, '보냈어요.')
+                            } else if (personaSpeech.includes('김손자에게 십만원 보냈어요.')) setMode('Transferred')
                         }
-                        else if (personaSpeech.includes('김손자에게 십만원 보냈어요.')) setMode('Transferred')
                     }
                 })
 
