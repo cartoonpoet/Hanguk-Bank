@@ -6,10 +6,13 @@ import {
 import {useContext} from "react";
 import {AiContext} from "@/app/ai/_hooks/useAiContext";
 
-const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
-const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
+// const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
+// const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
 
-const useKey = process.env.MODE === 'prod' ? prodKey : devKey
+const textKey = 'eyJzb3VsSWQiOiJkZG5hLXNvaS1od2FuZy1vcmdhZTBhLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfZjM3MTEyNjYtYWVhZi00Njc0LTg0YmQtMmU4M2MxMDNiZjg1In0='
+
+// const useKey = process.env.MODE === 'prod' ? prodKey : devKey
+const useKey = textKey
 
 const useScene = (videoRef: MutableRefObject<null>) => {
     const {scene, setScene, setMode} = useContext(AiContext)
