@@ -61,17 +61,17 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                     }
                 })
 
-                smScene.onRecognizeResultsEvent.addListener(
-                    (scene, status, errorMessage, results) => {
-                        const result = results[0];
-
-                        const userSpeech = result.alternatives[0].transcript;
-                        if (result.final === true) {
-                            console.log('[userSpeech] user said:', userSpeech);
-                        }
-
-                    }
-                );
+                // smScene.onRecognizeResultsEvent.addListener(
+                //     (scene, status, errorMessage, results) => {
+                //         const result = results[0];
+                //
+                //         const userSpeech = result.alternatives[0].transcript;
+                //         if (result.final === true) {
+                //             console.log('[userSpeech] user said:', userSpeech);
+                //         }
+                //
+                //     }
+                // );
 
             } catch (error) {
                 console.error('Error initializing scene:', error)
