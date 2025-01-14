@@ -16,10 +16,10 @@ const Page = () => {
             <section className={styles.workSection}>
                 <div className={styles.header}>김손자에게 100,000원 보냈어요.</div>
                 <button className={styles.account}>
-                    {getBankIcon(selectedTo.accountType)}
+                    {getBankIcon(selectedTo!.accountType)}
                     <div className={styles.accountInfo}>
-                        <div className={styles.name}>{selectedTo.name}</div>
-                        <div className={styles.info}>{selectedTo.accountType} {selectedTo.accountNumber}</div>
+                        <div className={styles.name}>{selectedTo!.name}</div>
+                        <div className={styles.info}>{selectedTo!.accountType} {selectedTo!.accountNumber}</div>
                     </div>
                 </button>
             </section>
