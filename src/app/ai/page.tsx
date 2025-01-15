@@ -1,11 +1,11 @@
 'use client'
 import {useContext} from "react";
 import AiAvatar from '@/app/ai/_component/AiAvatar/page'
-import {AiContext} from './_hooks/useAiContext'
+import {AiContext} from '@/_contexts/useAiContext'
 import WorkList from "@/app/ai/_component/WorkList/page";
 import From from "@/app/ai/_component/From/page";
 import To from "@/app/ai/_component/To/page";
-import AiContextProvider from "@/app/ai/_hooks/useAiContext";
+import AiContextProvider from "@/_contexts/useAiContext";
 import Tell from '@/app/ai/_component/Tell/page'
 import Confirm from '@/app/ai/_component/Confirm/page'
 import Transferred from '@/app/ai/_component/Transferred/page'

@@ -3,9 +3,9 @@
 import styles from './style.module.scss'
 import Mic from '/public/icon/icon-mic.svg'
 import FloatingButton from '@/app/home/components/floating-button'
-import { handleSpeak } from '@/app/ai/_hooks/useScene'
+import { handleSpeak } from '@/_hooks/useScene'
 import {useContext} from "react";
-import {AiContext} from "@/app/ai/_hooks/useAiContext";
+import {AiContext} from "@/_contexts/useAiContext";
 
 const WORKS = ['이체해줘', '계좌조회 해줘', '적금 추천해줘', '고객센터 연결해줘']
 

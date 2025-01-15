@@ -1,5 +1,5 @@
 import React, {createContext, useState, ReactNode} from 'react';
-import {Account, AiStoreTypes, ModeProp} from "@/app/ai/_hooks/AiStoreTypes";
+import {Account, AiStoreTypes, ModeProp} from "@/_types/AiStoreTypes";
 import {Scene} from '@soulmachines/smwebsdk'
 
 const initSelectedTo = {
