@@ -2,7 +2,7 @@
 
 import {useRef} from 'react'
 import styles from '../../_style/page.module.scss'
-import useScene from '@/app/ai/_hooks/useScene'
+import useScene from '@/_hooks/useScene'
 
 const Page = () => {
     const videoRef = useRef(null) // 비디오 요소 참조

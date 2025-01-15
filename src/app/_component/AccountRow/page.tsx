@@ -5,7 +5,7 @@ import Star from '/public/icon/star.svg'
 import cx from 'classnames'
 import {useState} from "react";
 import StarBG from '/public/icon/star-bg.svg'
-import { getBankIcon } from '@/utils/Bank'
+import { getBankIcon } from '@/_utils/Bank'
 
 type AccountRowProps = {
     accountType: string

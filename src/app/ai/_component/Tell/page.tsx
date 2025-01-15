@@ -4,7 +4,7 @@ import styles from './style.module.scss'
 import FloatingButton from '@/app/home/components/floating-button'
 import Mic from '/public/icon/icon-mic.svg'
 import React, {useContext} from 'react'
-import {AiContext} from "@/app/ai/_hooks/useAiContext";
+import {AiContext} from "@/_contexts/useAiContext";
 
 const Page = () => {
     const { scene } = useContext(AiContext)
