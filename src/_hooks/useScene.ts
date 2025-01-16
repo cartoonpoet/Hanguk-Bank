@@ -37,6 +37,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
                 },
             )
+
             try {
                 // 연결 및 비디오 시작
                 const sessionId = await smScene.connect()
@@ -49,7 +50,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
                     if (personaState?.speechState === 'speaking') {
                         const personaSpeech = personaState?.currentSpeech
-                        if(personaSpeech) {
+                        if (personaSpeech) {
                             if (personaSpeech === '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') setMode('From')
                             else if (personaSpeech === '누구에게 보낼까요? 최근 이체한 계좌도 함께 보여드릴께요.') setMode('To')
                             else if (personaSpeech === '받는 분의 은행과 계좌번호를 말씀해 주세요.') setMode('Tell')
