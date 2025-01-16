@@ -1,1 +1,1 @@
-export type Mode = 'simple' | 'voice' | 'ai'
+export type Mode = '' | 'simple' | 'voice' | 'ai'
