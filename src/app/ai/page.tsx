@@ -9,6 +9,7 @@ import AiContextProvider from "@/_contexts/useAiContext";
 import Tell from '@/app/ai/_component/Tell/page'
 import Confirm from '@/app/ai/_component/Confirm/page'
 import Transferred from '@/app/ai/_component/Transferred/page'
+import { ToastContainer } from 'react-toastify';
 
 const eachModeComponent = {
     WorkList: <WorkList/>,
@@ -22,8 +23,9 @@ const eachModeComponent = {
 const AI = () => {
     const {mode} = useContext(AiContext)
 
-    return <div className="h-dvh">
+    return <div>
         <AiAvatar/>
+        <ToastContainer/>
         {eachModeComponent[mode]}
     </div>
 };
