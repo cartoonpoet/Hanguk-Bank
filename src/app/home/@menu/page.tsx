@@ -1,4 +1,4 @@
-import MenuTabBar from '@/app/_component/MenuTabBar/page'
+import MenuTabBar from '@/_components/common/MenuTabBar/page'
 
 const Home = () => {
   return <MenuTabBar/>

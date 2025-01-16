@@ -1,4 +1,4 @@
-import TransferContainer from '@/app/_component/BottomSheet/components/transfer-container'
+import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
 
 import { accountRows } from '../transfer/_hooks/model'
 import KaKaoBank from '/public/bank/kakaobank.svg'

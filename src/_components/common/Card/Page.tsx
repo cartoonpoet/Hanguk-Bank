@@ -1,5 +1,5 @@
 import styles from './style.module.scss'
-import Button from '@/app/_component/Button/page'
+import Button from '@/_components/common/Button/page'
 import Image from 'next/image'
 
 const Card = () => {

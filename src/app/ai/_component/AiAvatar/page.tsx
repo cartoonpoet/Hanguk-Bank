@@ -1,7 +1,6 @@
 'use client'
 
 import {useRef} from 'react'
-import styles from '../../_style/page.module.scss'
 import useScene from '@/_hooks/useScene'
 
 const Page = () => {
@@ -9,9 +8,7 @@ const Page = () => {
     const {} = useScene(videoRef)
 
     return (
-        <div className={styles.container}>
-            <video ref={videoRef} id="sm-video" width="100%" height="100%" playsInline/>
-        </div>
+        <video ref={videoRef} id="sm-video" width="100%" height="100%" playsInline className="h-dvh"/>
     )
 }
 

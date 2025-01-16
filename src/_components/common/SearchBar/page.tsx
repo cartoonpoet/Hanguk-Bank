@@ -1,5 +1,5 @@
 import styles from './style.module.scss'
-import DropDown from '@/app/_component/DropDown/page'
+import DropDown from '@/_components/common/DropDown/page'
 import SearchIcon from '/public/icon/search.svg'
 
 const SearchBar = () => {
