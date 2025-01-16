@@ -1,4 +1,4 @@
-import Title from '@/app/_component/BottomSheet/components/title'
+import Title from '@/_components/common/BottomSheet/components/title'
 import React from 'react'
 import AccountList from './account-list'
 

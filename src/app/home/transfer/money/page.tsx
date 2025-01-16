@@ -1,7 +1,6 @@
 import styles from "./_style/page.module.scss";
-import NavBar from "@/app/_component/NavBar/page";
+import NavBar from "@/_components/common/NavBar/page";
 import React from "react";
-import Card from "@/app/_component/Card/Page";
 
 const Money = () => {
     return (

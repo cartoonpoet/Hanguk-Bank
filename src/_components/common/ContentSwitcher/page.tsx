@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './style.module.scss'
-import ContentSwitcherSection from '@/app/_component/ContentSwitcherSection/page'
+import ContentSwitcherSection from '@/_components/common/ContentSwitcherSection/page'
 import { useState } from 'react'
 
 const section = ['계좌', '연락처']

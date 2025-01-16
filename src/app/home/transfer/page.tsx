@@ -1,14 +1,14 @@
 'use client'
 
-import NavBar from '@/app/_component/NavBar/page'
+import NavBar from '@/_components/common/NavBar/page'
 import styles from './_style/page.module.scss'
-import TextField from '@/app/_component/TextField/page'
-import ContentSwitcher from '@/app/_component/ContentSwitcher/page'
-import SearchBar from '@/app/_component/SearchBar/page'
-import AccountRow from '@/app/_component/AccountRow/page'
+import TextField from '@/_components/common/TextField/page'
+import ContentSwitcher from '@/_components/common/ContentSwitcher/page'
+import SearchBar from '@/_components/common/SearchBar/page'
+import AccountRow from '@/_components/common/AccountRow/page'
 import { accountRows } from './_hooks/model'
 import React, { useState } from 'react'
-import Button from '@/app/_component/Button/page'
+import Button from '@/_components/common/Button/page'
 
 const Transfer = () => {
   const [selected, setSelected] = useState<string>('')

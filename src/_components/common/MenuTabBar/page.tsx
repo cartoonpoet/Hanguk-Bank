@@ -1,7 +1,7 @@
 'use client'
 
 import style from './style.module.scss'
-import Menu from '@/app/_component/Menu/page'
+import Menu from '@/_components/common/Menu/page'
 import { usePathname } from 'next/navigation'
 
 const TabBar = () => {

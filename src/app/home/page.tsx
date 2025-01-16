@@ -1,9 +1,9 @@
 'use client'
 
 import styles from './_style/page.module.scss'
-import Card from '@/app/_component/Card/Page'
-import List from '@/app/_component/List/page'
-import BottomSheet from '../_component/BottomSheet/page'
+import Card from '@/_components/common/Card/Page'
+import List from '@/_components/common/List/page'
+import BottomSheet from '@/_components/common/BottomSheet/page'
 import VoiceWorkStepper from './components/voice-work-stepper'
 import VoiceButton from './components/voice-button'
 import {useState} from 'react'

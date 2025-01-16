@@ -1,9 +1,9 @@
-import Title from '@/app/_component/BottomSheet/components/title'
+import Title from '@/_components/common/BottomSheet/components/title'
 import React from 'react'
 
-import VoiceText from '@/app/_component/BottomSheet/components/voiceText'
-import Badge from '@/app/_component/Badge/page'
-import BadgeGroup from '@/app/_component/BadgeGroup/page'
+import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
+import Badge from '@/_components/common/Badge/page'
+import BadgeGroup from '@/_components/common/BadgeGroup/page'
 
 const VoiceWork = () => {
   return (

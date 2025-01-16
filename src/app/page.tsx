@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "@/app/_component/Button/page";
+import Button from "@/_components/common/Button/page";
 import {URL} from '@/_constants/url'
 import useCommonStore from "@/_hooks/useCommonStore";
 
