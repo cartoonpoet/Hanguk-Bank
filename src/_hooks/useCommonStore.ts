@@ -7,7 +7,7 @@ interface Common {
 }
 
 const CommonStore = create<Common>((set) => ({
-    mode: 'simple',
+    mode: '',
     setMode: (mode) => set(() => ({mode})),
 }));
 

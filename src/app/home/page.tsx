@@ -9,11 +9,12 @@ import VoiceButton from './components/voice-button'
 import {useState} from 'react'
 import useCommonStore from "@/_hooks/useCommonStore";
 import AiButton from "@/app/home/components/ai-button";
-import { useRouter } from "next/navigation";
+import { useRouter, redirect } from "next/navigation";
 import {URL} from "@/_constants/url";
 
 const Home = () => {
     const {mode} = useCommonStore();
+    if (!mode) redirect('/')
     const router = useRouter();
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const open = () => setIsOpen(true)
