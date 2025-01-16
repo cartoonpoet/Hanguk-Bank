@@ -1,18 +1,15 @@
 import React from 'react'
 import styles from './_style/layout.module.scss'
 
-
 interface layoutProps {
   children: React.ReactNode
   menu: React.ReactNode
-  workButton: React.ReactNode
 }
 
 
-const layout = ({ children, menu, workButton}: layoutProps) => {
+const layout = ({ children, menu}: layoutProps) => {
   return <div className={styles.container}>
     <main className={styles.body}>
-      {workButton}
       {children}
     </main>
     {menu}
