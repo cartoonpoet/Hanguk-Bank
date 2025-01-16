@@ -6,13 +6,16 @@ const FloatingButton = ({ children }: PropsWithChildren) => {
 }
 
 const SFloatingBtn = styled.button`
-    background: linear-gradient(#007bff, #003ba2);
-    width: 54px;
-    height: 54px;
-    border-radius: 27px;
-    outline: none;
-    border: none;
-    cursor: pointer;
+  background: linear-gradient(#007bff, #003ba2);
+  width: 54px;
+  height: 54px;
+  border-radius: 27px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export default FloatingButton

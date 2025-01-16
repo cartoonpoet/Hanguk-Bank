@@ -22,7 +22,7 @@ const eachModeComponent = {
 const AI = () => {
     const {mode} = useContext(AiContext)
 
-    return <div>
+    return <div className="h-dvh">
         <AiAvatar/>
         {eachModeComponent[mode]}
     </div>
