@@ -1,6 +1,7 @@
 import { Scene } from '@soulmachines/smwebsdk'
 
-export type ModeProp = 'WorkList' | 'From' | 'To' | 'Tell' | 'Confirm' | 'Transferred';
+export type ModeProp = 'WorkList' | 'From' | 'To' | 'Tell' | 'Confirm' | 'Transferred' | 'Balance';
+export type WorkProp = null | 'Transfer' | 'Account' | 'Savings' | 'CallCenter'
 
 export interface Account {
   accountType: string
@@ -15,5 +16,7 @@ export interface AiStoreTypes {
   setMode: (mode: ModeProp) => void,
   selectedTo: Account | null,
   setSelectedTo: (selectedTo: Account) => void,
+  work: WorkProp,
+  setWork: (work: WorkProp) => void,
 }
 

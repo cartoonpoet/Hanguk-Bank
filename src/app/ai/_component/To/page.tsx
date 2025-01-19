@@ -28,7 +28,7 @@ const ACCOUNTS = [
 
 
 const Page = () => {
-    const {scene} = useContext(AiContext)
+    const {scene, work} = useContext(AiContext)
 
     if (!scene) return null
     return <div className={styles.container}>
@@ -38,7 +38,7 @@ const Page = () => {
                     <button key={accountRow.accountNumber} className={styles.account}
                             onClick={async () => {
                                 // setSelectedTo(accountRow)
-                                await handleSpeak(scene, `${accountRow.name}에게 보내줘.`)
+                                await handleSpeak(scene, `${accountRow.name}에게 보내줘.`, work)
                             }}>
                         {getBankIcon(accountRow.accountType)}
                         <div className={styles.accountInfo}>
