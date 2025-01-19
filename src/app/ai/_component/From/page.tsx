@@ -23,14 +23,14 @@ const ACCOUNTS = [
 ]
 
 const Page = () => {
-  const { scene } = useContext(AiContext)
+  const { scene, work } = useContext(AiContext)
 
   if (!scene) return null
   return <div className={styles.container}>
     <div className={styles.wrapper}>
       <section className={styles.workSection}>
         {ACCOUNTS.map((account, idx) => <ul key={account.number} className={styles.work_btn} onClick={async () => {
-          await handleSpeak(scene, account.name)
+          await handleSpeak(scene, account.name, work)
         }}
         >
           <li className={styles.title}>

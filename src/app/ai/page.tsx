@@ -10,6 +10,7 @@ import Tell from '@/app/ai/_component/Tell/page'
 import Confirm from '@/app/ai/_component/Confirm/page'
 import Transferred from '@/app/ai/_component/Transferred/page'
 import { ToastContainer } from 'react-toastify';
+import Balance from './_component/Balance/page'
 
 const eachModeComponent = {
     WorkList: <WorkList/>,
@@ -17,7 +18,8 @@ const eachModeComponent = {
     To: <To/>,
     Tell: <Tell/>,
     Confirm: <Confirm/>,
-    Transferred: <Transferred/>
+    Transferred: <Transferred/>,
+    Balance: <Balance/>
 }
 
 const AI = () => {

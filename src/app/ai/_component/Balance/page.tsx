@@ -25,7 +25,7 @@ const Page = () => {
   return <div className={styles.container}>
     <div className={styles.wrapper}>
       <section className={styles.workSection}>
-        <div className={styles.header}>김손자에게 100,000원 보냈어요.</div>
+        <div className={styles.header}>잔액은 12,345,600원이에요.</div>
         <button className={styles.account}>
           {getBankIcon(selectedTo!.accountType)}
           <div className={styles.accountInfo}>
