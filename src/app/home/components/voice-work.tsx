@@ -11,6 +11,7 @@ const VoiceWork = ({
   speechText,
   handleContentRoute,
   speakText,
+  isListening,
 }: VoiceWorkProps) => {
   useEffect(() => {
     speakText('원하는 업무를 말씀해주세요')

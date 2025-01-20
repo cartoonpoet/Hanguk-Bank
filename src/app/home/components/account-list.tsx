@@ -21,29 +21,13 @@ const AccountList = () => {
   return customAccountRows.map((item, idx) => {
     const Icon = BANK_ICON[item.accountType] ?? null
     return (
-      <TransferContainer
-        key={idx}
-        style={{ paddingBlock: '20px', paddingInline: '20px' }}
-      >
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+      <TransferContainer key={idx} className='p-5'>
+        <div className='flex gap-2'>
           <div>
             <Icon />
           </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              gap: '0.3rem',
-            }}
-          >
-            <strong
-              style={{
-                color: 'black',
-              }}
-            >
-              {item.name}
-            </strong>
+          <div className='flex flex-col items-center gap-1.5'>
+            <strong className='text-black'>{item.name}</strong>
             <span
               style={{ color: '#6B7684' }}
             >{`${item.accountType} ${item.accountNumber}`}</span>

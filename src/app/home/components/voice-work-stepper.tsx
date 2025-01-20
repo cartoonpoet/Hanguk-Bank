@@ -16,6 +16,7 @@ export interface VoiceWorkProps {
   speechText: string
   handleContentRoute: (step: ContentRoute) => void
   speakText: (text: string) => void
+  isListening: boolean
 }
 
 const StepperContent = {
@@ -28,8 +29,7 @@ const StepperContent = {
 type ContentRoute = keyof typeof StepperContent
 
 const VoiceWorkStepper = () => {
-  const [contentRoute, setContentRoute] =
-    useState<ContentRoute>('CHECK_ACCOUNT')
+  const [contentRoute, setContentRoute] = useState<ContentRoute>('TRANSFER')
   const handleContentRoute = (step: ContentRoute) => setContentRoute(step)
 
   const { transcript, isListening, handleToggleListening, speakText } =
@@ -39,12 +39,15 @@ const VoiceWorkStepper = () => {
 
   return (
     <Container>
-      <MainContent
-        speechText={transcript}
-        handleContentRoute={handleContentRoute}
-        speakText={speakText}
-      />
-      <div>
+      <div className='mb-4'>
+        <MainContent
+          isListening={isListening}
+          speechText={transcript}
+          handleContentRoute={handleContentRoute}
+          speakText={speakText}
+        />
+      </div>
+      <div className='flex item-center justify-center'>
         <FloatingButton handleClick={handleToggleListening}>
           <Mic />
         </FloatingButton>
@@ -56,7 +59,7 @@ const VoiceWorkStepper = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1rem;
   padding-block: 0 34px;
 `
 

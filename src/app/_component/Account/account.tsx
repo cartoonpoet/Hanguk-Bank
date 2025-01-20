@@ -6,7 +6,7 @@ import { AccountProps } from './account.type'
 
 import cx from 'classnames'
 const Container = ({ children }: PropsWithChildren) => {
-  return <div className={cx(styles.container)}>{children}</div>
+  return <div className='border rounded-xl p-4 mb-3'>{children}</div>
 }
 
 const OnwerName = ({ ownerName }: { ownerName: string }) => {
@@ -31,9 +31,6 @@ const Account = ({ ownerName, accountType, accountNumber }: AccountProps) => {
   return (
     <Container>
       <div className={cx(styles.flex)} style={{ gap: '0.5rem' }}>
-        {/* <div>
-          <Icon />
-        </div> */}
         <div
           className={cx(styles.flex)}
           style={{

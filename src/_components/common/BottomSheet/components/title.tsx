@@ -7,15 +7,8 @@ interface TitleProps {
 
 const Title = ({ title, description }: TitleProps) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '20px',
-        fontSize: '18px',
-      }}
-    >
-      <strong style={{ color: 'black', marginBottom: '8px' }}>{title}</strong>
+    <div className='flex flex-col p-5 text-lg '>
+      <strong className='text-black mb-2'>{title}</strong>
       {description ? <span>{description}</span> : null}
     </div>
   )

@@ -1,10 +1,9 @@
-import Title from '@/app/_component/BottomSheet/components/title'
-import React, { useEffect } from 'react'
-import TransferContainer from '@/app/_component/BottomSheet/components/transfer-container'
-import { VoiceWorkProps } from './voice-work-stepper'
+import Badge from '@/_components/common/Badge/page'
+import BadgeGroup from '@/_components/common/BadgeGroup/page'
+import Title from '@/_components/common/BottomSheet/components/title'
 import Account from '@/app/_component/Account/account'
-import BadgeGroup from '@/app/_component/BadgeGroup/page'
-import Badge from '@/app/_component/Badge/page'
+import { useEffect } from 'react'
+import { VoiceWorkProps } from './voice-work-stepper'
 
 const supportTxt: string[] = ['대출 알려줘', '전체 계좌 보여줘']
 const CheckAccount = ({

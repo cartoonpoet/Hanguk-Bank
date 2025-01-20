@@ -31,6 +31,7 @@ const TransferWork = ({
   useEffect(() => {
     speakText('어떤 계좌에서 이체할까요?')
   }, [])
+
   useEffect(() => {
     if (!speechText) return
     const transfer = TRANSFER_LIST.find((item) =>
@@ -40,7 +41,7 @@ const TransferWork = ({
   return (
     <>
       <Title title='어떤 계좌에서 이체할까요?' />
-      <div style={{ display: 'flex' }}>
+      <div className='flex'>
         <span style={{ color: '#000000', fontSize: '18px' }}>입출금</span>&nbsp;
         <span style={{ color: '#007BFF', fontSize: '18px' }}>
           {TRANSFER_LIST.length}
