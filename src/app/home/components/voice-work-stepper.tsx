@@ -8,27 +8,44 @@ import TransferWork from './transfer-work'
 import VoiceWork from './voice-work'
 
 import AccountWork from './account-work'
+import useSpeech from '../transfer/_hooks/useSpeech'
+import { useState } from 'react'
+import CheckAccount from './check-account'
 
-type ContentRoute = 'VOICE' | 'TRANSFER' | 'ACCOUNT_LIST'
+export interface VoiceWorkProps {
+  speechText: string
+  handleContentRoute: (step: ContentRoute) => void
+  speakText: (text: string) => void
+}
 
 const StepperContent = {
   VOICE: VoiceWork,
   TRANSFER: TransferWork,
   ACCOUNT_LIST: AccountWork,
+  CHECK_ACCOUNT: CheckAccount,
 }
 
-interface VoiceWorkStepperProps {
-  step: ContentRoute
-}
+type ContentRoute = keyof typeof StepperContent
 
-const VoiceWorkStepper = ({ step = 'VOICE' }: VoiceWorkStepperProps) => {
-  const MainContent = StepperContent[step] ?? null
+const VoiceWorkStepper = () => {
+  const [contentRoute, setContentRoute] =
+    useState<ContentRoute>('CHECK_ACCOUNT')
+  const handleContentRoute = (step: ContentRoute) => setContentRoute(step)
+
+  const { transcript, isListening, handleToggleListening, speakText } =
+    useSpeech()
+
+  const MainContent = StepperContent[contentRoute]
 
   return (
     <Container>
-      <MainContent />
+      <MainContent
+        speechText={transcript}
+        handleContentRoute={handleContentRoute}
+        speakText={speakText}
+      />
       <div>
-        <FloatingButton>
+        <FloatingButton handleClick={handleToggleListening}>
           <Mic />
         </FloatingButton>
       </div>

@@ -10,15 +10,17 @@ type TransferInfo = {
 
 interface TransferListProps {
   data: TransferInfo[]
+  handleClick: () => void
 }
 
-const TransferList = ({ data }: TransferListProps) => {
+const TransferList = ({ data, handleClick }: TransferListProps) => {
   return data.map((item) => (
     <TransferContainer
       key={item.id}
       style={{ paddingBlock: '20px', paddingInline: '20px' }}
     >
       <div
+        onClick={handleClick}
         style={{
           display: 'flex',
           flexDirection: 'column',

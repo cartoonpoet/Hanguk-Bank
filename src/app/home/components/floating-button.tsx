@@ -1,8 +1,15 @@
-import React, { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import styled from 'styled-components'
 
-const FloatingButton = ({ children }: PropsWithChildren) => {
-  return <SFloatingBtn>{children}</SFloatingBtn>
+interface FloatingButtonProps {
+  handleClick: () => void
+}
+
+const FloatingButton = ({
+  handleClick,
+  children,
+}: PropsWithChildren<FloatingButtonProps>) => {
+  return <SFloatingBtn onClick={handleClick}>{children}</SFloatingBtn>
 }
 
 const SFloatingBtn = styled.button`
