@@ -68,6 +68,9 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   } else if (personaSpeech === '어떤 계좌에서 조회할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') {
                     setWork('Account')
                     setMode('From')
+                  } else if(personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.'){
+                    setWork('Savings')
+                    setMode('Method')
                   }
                   break
                 }
@@ -85,6 +88,8 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   break
                 }
                 case 'Savings': {
+                  if(personaSpeech === '고객님께 적합한 자유적립식 적금 상품을 추천해 드릴게요. 첫번째 또는 화면에 보이는 상품 이름을 말씀해 주세요.') setMode('Savings')
+                  else if(personaSpeech === '스마트적금을 가입하시겠어요? 가입 전 상품설명서를 확인해 주세요.') setMode('Description')
                   break
                 }
                 case 'CallCenter': {
