@@ -17,7 +17,7 @@ export interface VoiceWorkProps {
   speechText?: string
   speakText: (text: string) => void
   handleContentRoute: (step: ContentRoute) => void
-  handleToggleSpaeking: () => void
+  handleToggleSpeaking: () => void
 }
 
 const StepperContent = {
@@ -40,9 +40,8 @@ const VoiceWorkStepper = () => {
   const {
     transcript,
     isListening,
-
     handleToggleListening,
-    handleToggleSpaeking,
+    handleToggleSpeaking,
     speakText,
   } = useSpeech()
 
@@ -54,7 +53,7 @@ const VoiceWorkStepper = () => {
           speechText={transcript}
           speakText={speakText}
           handleContentRoute={handleContentRoute}
-          handleToggleSpaeking={handleToggleSpaeking}
+          handleToggleSpeaking={handleToggleSpeaking}
         />
       </div>
       <div className='flex item-center justify-center'>

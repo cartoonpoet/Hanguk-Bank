@@ -37,8 +37,8 @@ const TransferWork = ({
 
   useEffect(() => {
     if (!speechText) return
-
-    if (!isListening) {
+    console.log({ speechText })
+    if (!isListening && speechText) {
       setTimeout(() => {
         handleContentRoute('ACCOUNT_WORK')
       }, DELAY)
