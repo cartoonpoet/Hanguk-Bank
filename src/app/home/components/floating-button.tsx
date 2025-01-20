@@ -12,6 +12,10 @@ const SFloatingBtn = styled.button`
   border-radius: 27px;
   outline: none;
   border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export default FloatingButton

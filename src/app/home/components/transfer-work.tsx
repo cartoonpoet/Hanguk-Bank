@@ -1,8 +1,8 @@
 'use client'
 
-import Title from '@/app/_component/BottomSheet/components/title'
-import TransferList from '@/app/_component/BottomSheet/components/transfer-list'
-import VoiceText from '@/app/_component/BottomSheet/components/voiceText'
+import Title from '@/_components/common/BottomSheet/components/title'
+import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
+import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
 
 const TRANSFER_LIST = [
   {
