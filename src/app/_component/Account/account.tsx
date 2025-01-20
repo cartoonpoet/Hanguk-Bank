@@ -1,16 +1,15 @@
 'use client'
 
-import styles from './style.module.scss'
 import React, { PropsWithChildren } from 'react'
 import { AccountProps } from './account.type'
+import ShareIcon from '/public/icon/icon-share.svg'
 
-import cx from 'classnames'
 const Container = ({ children }: PropsWithChildren) => {
-  return <div className='border rounded-xl p-4 mb-3'>{children}</div>
+  return <div className='border rounded-2xl p-5 mb-3'>{children}</div>
 }
 
 const OnwerName = ({ ownerName }: { ownerName: string }) => {
-  return <strong className={cx(styles.txt)}>{ownerName}</strong>
+  return <strong className='text-black'>{ownerName}</strong>
 }
 
 const AccountNumber = ({
@@ -30,20 +29,16 @@ const AccountNumber = ({
 const Account = ({ ownerName, accountType, accountNumber }: AccountProps) => {
   return (
     <Container>
-      <div className={cx(styles.flex)} style={{ gap: '0.5rem' }}>
-        <div
-          className={cx(styles.flex)}
-          style={{
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            gap: '0.3rem',
-          }}
-        >
+      <div className='flex items-center justify-between gap-2'>
+        <div className='flex flex-col items-start gap-1'>
           <OnwerName ownerName={ownerName} />
           <AccountNumber
             accountType={accountType}
             accountNumber={accountNumber}
           />
+        </div>
+        <div>
+          <ShareIcon />
         </div>
       </div>
     </Container>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { VoiceWorkProps } from './voice-work-stepper'
+import { DELAY, VoiceWorkProps } from './voice-work-stepper'
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
@@ -23,32 +23,39 @@ const TRANSFER_LIST = [
 
 const TransferWork = ({
   speechText,
+  isListening,
   handleContentRoute,
   speakText,
 }: VoiceWorkProps) => {
   const handleClick = () => {}
 
   useEffect(() => {
-    speakText('어떤 계좌에서 이체할까요?')
+    speakText(
+      '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
+    )
   }, [])
 
   useEffect(() => {
     if (!speechText) return
-    const transfer = TRANSFER_LIST.find((item) =>
-      item.bankName.includes(speechText)
-    )
-  }, [speechText])
+
+    if (!isListening) {
+      setTimeout(() => {
+        handleContentRoute('ACCOUNT_WORK')
+      }, DELAY)
+    }
+  }, [speechText, isListening])
   return (
     <>
       <Title title='어떤 계좌에서 이체할까요?' />
       <div className='flex'>
-        <span style={{ color: '#000000', fontSize: '18px' }}>입출금</span>&nbsp;
-        <span style={{ color: '#007BFF', fontSize: '18px' }}>
+        <span className='text-black text-lg'>입출금</span>
+        &nbsp;
+        <span className='text-lg' style={{ color: '#007BFF' }}>
           {TRANSFER_LIST.length}
         </span>
       </div>
       <TransferList data={TRANSFER_LIST} handleClick={handleClick} />
-      <VoiceText text={`"첫번째 계좌"`} />
+      <VoiceText text={speechText ? `"${speechText}"` : ''} />
     </>
   )
 }

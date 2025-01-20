@@ -18,24 +18,28 @@ const BANK_ICON: BackIconType = {
 const AccountList = () => {
   const customAccountRows = accountRows.slice(0, 3)
 
-  return customAccountRows.map((item, idx) => {
-    const Icon = BANK_ICON[item.accountType] ?? null
-    return (
-      <TransferContainer key={idx} className='p-5'>
-        <div className='flex gap-2'>
-          <div>
-            <Icon />
-          </div>
-          <div className='flex flex-col items-center gap-1.5'>
-            <strong className='text-black'>{item.name}</strong>
-            <span
-              style={{ color: '#6B7684' }}
-            >{`${item.accountType} ${item.accountNumber}`}</span>
-          </div>
-        </div>
-      </TransferContainer>
-    )
-  })
+  return (
+    <div className='flex flex-col gap-2'>
+      {customAccountRows.map((item, idx) => {
+        const Icon = BANK_ICON[item.accountType] ?? null
+        return (
+          <TransferContainer key={idx} className='p-5'>
+            <div className='flex items-center gap-2'>
+              <div>
+                <Icon />
+              </div>
+              <div className='flex flex-col flex-wrap items-start gap-1.5'>
+                <strong className='text-black'>{item.name}</strong>
+                <span
+                  style={{ color: '#6B7684' }}
+                >{`${item.accountType} ${item.accountNumber}`}</span>
+              </div>
+            </div>
+          </TransferContainer>
+        )
+      })}
+    </div>
+  )
 }
 
 export default AccountList

@@ -16,10 +16,14 @@ const useSpeech = () => {
     setIsListening((prevState) => !prevState)
   }
 
+  const [isSpeaking, setIsSpeaking] = useState(false)
+  const handleToggleSpaeking = () => setIsSpeaking((prevState) => !prevState)
+
   const speakText = (text: string) => {
     const utterance = new SpeechSynthesisUtterance(text)
     utterance.lang = 'ko-KR' // 한국어 설정
     window.speechSynthesis.speak(utterance)
+    handleToggleSpaeking()
   }
 
   useEffect(() => {
@@ -60,7 +64,14 @@ const useSpeech = () => {
     return () => recognition.abort()
   }, [isListening])
 
-  return { transcript, isListening, handleToggleListening, speakText }
+  return {
+    transcript,
+    isListening,
+    isSpeaking,
+    handleToggleListening,
+    handleToggleSpaeking,
+    speakText,
+  }
 }
 
 export default useSpeech

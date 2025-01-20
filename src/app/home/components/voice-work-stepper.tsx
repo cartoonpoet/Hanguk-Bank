@@ -11,31 +11,43 @@ import AccountWork from './account-work'
 import useSpeech from '../transfer/_hooks/useSpeech'
 import { useState } from 'react'
 import CheckAccount from './check-account'
+import TransferResult from './transfer-result'
 
 export interface VoiceWorkProps {
-  speechText: string
-  handleContentRoute: (step: ContentRoute) => void
-  speakText: (text: string) => void
   isListening: boolean
+  speechText?: string
+  speakText: (text: string) => void
+  handleContentRoute: (step: ContentRoute) => void
+  handleToggleSpaeking: () => void
 }
 
 const StepperContent = {
   VOICE: VoiceWork,
   TRANSFER: TransferWork,
-  ACCOUNT_LIST: AccountWork,
+  ACCOUNT_WORK: AccountWork,
   CHECK_ACCOUNT: CheckAccount,
+  TRANSFER_RESULT: TransferResult,
 }
 
 type ContentRoute = keyof typeof StepperContent
 
+export const DELAY = 1_000
+
 const VoiceWorkStepper = () => {
-  const [contentRoute, setContentRoute] = useState<ContentRoute>('TRANSFER')
+  const [contentRoute, setContentRoute] = useState<ContentRoute>('VOICE')
   const handleContentRoute = (step: ContentRoute) => setContentRoute(step)
-
-  const { transcript, isListening, handleToggleListening, speakText } =
-    useSpeech()
-
   const MainContent = StepperContent[contentRoute]
+
+  const {
+    transcript,
+    isListening,
+
+    handleToggleListening,
+    handleToggleSpaeking,
+    speakText,
+  } = useSpeech()
+
+  const [result, setResult] = useState('')
 
   return (
     <Container>
@@ -43,8 +55,9 @@ const VoiceWorkStepper = () => {
         <MainContent
           isListening={isListening}
           speechText={transcript}
-          handleContentRoute={handleContentRoute}
           speakText={speakText}
+          handleContentRoute={handleContentRoute}
+          handleToggleSpaeking={handleToggleSpaeking}
         />
       </div>
       <div className='flex item-center justify-center'>
