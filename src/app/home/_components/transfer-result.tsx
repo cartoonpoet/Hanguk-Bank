@@ -6,15 +6,15 @@ import ShareIcon from '/public/icon/icon-share.svg'
 import { VoiceWorkProps } from './voice-work-stepper'
 import { useEffect } from 'react'
 
-const supportTxt: string[] = ['추가이체 해줘', '거래내역 알려줘ㅋ']
+const supportTxt: string[] = ['추가이체 해줘', '거래내역 알려줘']
 const TransferResult = ({
   speechText,
   speakText,
   handleContentRoute,
-  handleToggleSpaeking,
+  handleToggleSpeaking,
 }: VoiceWorkProps) => {
   useEffect(() => {
-    handleToggleSpaeking()
+    handleToggleSpeaking()
     speakText('김손자에게 100,000만원 보냈어요.')
   }, [])
 

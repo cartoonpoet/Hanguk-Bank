@@ -12,17 +12,17 @@ const VoiceWork = ({
   speechText,
   speakText,
   handleContentRoute,
-  handleToggleSpaeking,
+  handleToggleSpeaking,
 }: VoiceWorkProps) => {
   useEffect(() => {
-    handleToggleSpaeking()
+    handleToggleSpeaking()
     speakText('원하는 업무를 말씀해주세요')
   }, [])
 
   useEffect(() => {
     if (!speechText) return
 
-    if (!isListening) {
+    if (!isListening && speechText) {
       setTimeout(() => {
         handleContentRoute('TRANSFER')
       }, DELAY)
