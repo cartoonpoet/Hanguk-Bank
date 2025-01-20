@@ -1,5 +1,5 @@
 import Title from '@/_components/common/BottomSheet/components/title'
-import Account from '@/app/_component/Account/account'
+import Account from '@/_components/common/Account/account'
 import { useEffect } from 'react'
 import { DELAY, VoiceWorkProps } from './voice-work-stepper'
 

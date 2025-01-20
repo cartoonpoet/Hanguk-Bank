@@ -44,6 +44,7 @@ const TransferWork = ({
       }, DELAY)
     }
   }, [speechText, isListening])
+
   return (
     <>
       <Title title='어떤 계좌에서 이체할까요?' />

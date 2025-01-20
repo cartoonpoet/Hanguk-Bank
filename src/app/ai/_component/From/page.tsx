@@ -2,10 +2,10 @@
 
 import styles from './style.module.scss'
 import Mic from '/public/icon/icon-mic.svg'
-import FloatingButton from '@/app/home/components/floating-button'
+import FloatingButton from '@/app/home/_components/floating-button'
 import { handleSpeak } from '@/_hooks/useScene'
-import {useContext} from "react";
-import {AiContext} from "@/_contexts/useAiContext";
+import { useContext } from 'react'
+import { AiContext } from '@/_contexts/useAiContext'
 
 const ACCOUNTS = [
   {
@@ -26,26 +26,37 @@ const Page = () => {
   const { scene, work } = useContext(AiContext)
 
   if (!scene) return null
-  return <div className={styles.container}>
-    <div className={styles.wrapper}>
-      <section className={styles.workSection}>
-        {ACCOUNTS.map((account, idx) => <ul key={account.number} className={styles.work_btn} onClick={async () => {
-          await handleSpeak(scene, account.name, work)
-        }}
-        >
-          <li className={styles.title}>
-            <div className={styles.order}>{String(idx + 1).padStart(2, '0')}</div>
-            <div className={styles.name}>{account.name}</div>
-          </li>
-          <li className={styles.sub}>{account.kind} {account.number}</li>
-          <li className={styles.balance}>{account.balance.toLocaleString()}원</li>
-        </ul>)}
-      </section>
-      <FloatingButton>
-        <Mic />
-      </FloatingButton>
+  return (
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <section className={styles.workSection}>
+          {ACCOUNTS.map((account, idx) => (
+            <ul
+              key={account.number}
+              className={styles.work_btn}
+              onClick={async () => {
+                await handleSpeak(scene, account.name, work)
+              }}
+            >
+              <li className={styles.title}>
+                <div className={styles.order}>
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
+                <div className={styles.name}>{account.name}</div>
+              </li>
+              <li className={styles.sub}>
+                {account.kind} {account.number}
+              </li>
+              <li className={styles.balance}>
+                {account.balance.toLocaleString()}원
+              </li>
+            </ul>
+          ))}
+        </section>
+        <FloatingButton />
+      </div>
     </div>
-  </div>
+  )
 }
 
 export default Page

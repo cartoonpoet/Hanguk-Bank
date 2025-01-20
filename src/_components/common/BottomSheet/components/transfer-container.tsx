@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react'
-import { CSSProperties } from 'styled-components'
+import { ReactNode } from 'react'
 
 interface TransferContainerProps {
   children: ReactNode

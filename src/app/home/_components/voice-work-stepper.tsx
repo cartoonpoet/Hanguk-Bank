@@ -1,15 +1,14 @@
 'use client'
 
 import FloatingButton from './floating-button'
-import Mic from '/public/icon/icon-mic.svg'
 
 import styled from 'styled-components'
 import TransferWork from './transfer-work'
 import VoiceWork from './voice-work'
 
-import AccountWork from './account-work'
-import useSpeech from '../transfer/_hooks/useSpeech'
 import { useState } from 'react'
+import useSpeech from '../transfer/_hooks/useSpeech'
+import AccountWork from './account-work'
 import CheckAccount from './check-account'
 import TransferResult from './transfer-result'
 
@@ -47,8 +46,6 @@ const VoiceWorkStepper = () => {
     speakText,
   } = useSpeech()
 
-  const [result, setResult] = useState('')
-
   return (
     <Container>
       <div className='mb-4'>
@@ -61,9 +58,7 @@ const VoiceWorkStepper = () => {
         />
       </div>
       <div className='flex item-center justify-center'>
-        <FloatingButton handleClick={handleToggleListening}>
-          <Mic />
-        </FloatingButton>
+        <FloatingButton handleClick={handleToggleListening} />
       </div>
     </Container>
   )

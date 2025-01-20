@@ -1,14 +1,13 @@
 import Badge from '@/_components/common/Badge/page'
 import BadgeGroup from '@/_components/common/BadgeGroup/page'
 import Title from '@/_components/common/BottomSheet/components/title'
-import Account from '@/app/_component/Account/account'
+import Account from '@/_components/common/Account/account'
 import ShareIcon from '/public/icon/icon-share.svg'
 import { VoiceWorkProps } from './voice-work-stepper'
 import { useEffect } from 'react'
 
 const supportTxt: string[] = ['추가이체 해줘', '거래내역 알려줘ㅋ']
 const TransferResult = ({
-  isListening,
   speechText,
   speakText,
   handleContentRoute,

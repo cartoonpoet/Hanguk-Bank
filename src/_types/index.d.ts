@@ -1,6 +1,10 @@
 interface SpeechRecognitionEvent extends Event {
   results: SpeechRecognitionResultList
 }
+interface SpeechRecognitionErrorEvent extends Error {
+  error: any
+  message: any
+}
 
 interface SpeechRecognitionResultList {
   [index: number]: SpeechRecognitionResult

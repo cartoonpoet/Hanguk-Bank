@@ -1,9 +1,9 @@
-import Title from '@/_components/common/BottomSheet/components/title'
-import { DELAY, VoiceWorkProps } from './voice-work-stepper'
-import BadgeGroup from '@/_components/common/BadgeGroup/page'
 import Badge from '@/_components/common/Badge/page'
+import BadgeGroup from '@/_components/common/BadgeGroup/page'
+import Title from '@/_components/common/BottomSheet/components/title'
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
 import { useEffect } from 'react'
+import { DELAY, VoiceWorkProps } from './voice-work-stepper'
 
 const supportTxt: string[] = ['이체 해줘', '거래내역 알려줘', '대출 알려줘']
 
