@@ -3,12 +3,14 @@ import DropDown from '@/_components/common/DropDown/page'
 import SearchIcon from '/public/icon/search.svg'
 
 const SearchBar = () => {
-  return <div className={styles.wrapper}>
-    <DropDown />
-    <div className={styles.search}>
-      <SearchIcon width={16.6} height={16.6} />
+  return (
+    <div className={styles.wrapper}>
+      <DropDown />
+      <div className={styles.search}>
+        <SearchIcon width={16.6} height={16.6} />
+      </div>
     </div>
-  </div>
+  )
 }
 
 export default SearchBar
