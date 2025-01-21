@@ -5,7 +5,7 @@ import { AiContext } from '@/_contexts/useAiContext'
 import Savings from '@/_components/common/Savings/page'
 import { handleSpeak } from '@/_hooks/useScene'
 import FloatingButton from '@/app/home/_components/floating-button'
-import Mic from '/public/icon/icon-mic.svg'
+
 
 
 const Page = () => {
@@ -18,9 +18,8 @@ const Page = () => {
         <div className={styles.name}>한국 스마트적금</div>
         <button className={styles.btn}>설명서 보기</button>
       </section>
-      <FloatingButton>
-        <Mic />
-      </FloatingButton>
+      <FloatingButton/>
+        
     </div>
   </div>
 }

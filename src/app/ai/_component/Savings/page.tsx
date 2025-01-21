@@ -6,7 +6,7 @@ import { AiContext } from '@/_contexts/useAiContext'
 import styles from './style.module.scss'
 import { handleSpeak } from '@/_hooks/useScene'
 import FloatingButton from '@/app/home/_components/floating-button'
-import Mic from '/public/icon/icon-mic.svg'
+
 
 const savingsData = [
   {
@@ -37,9 +37,8 @@ const Page = () => {
                                                contents={item.contents}
                                                onClick={async () => await handleSpeak(scene, item.name, work)} />)}
       </section>
-      <FloatingButton>
-        <Mic />
-      </FloatingButton>
+      <FloatingButton/>
+        
     </div>
   </div>
 }

@@ -22,9 +22,8 @@ const Page = () => {
              onClick={async () => await handleSpeak(scene, '매월 정해진 금액을 같은 날짜에 적립', currentWork)}><span className={styles.highlight}>매월 정해진 금액</span>을 같은 날짜에 적립
         </div>
       </section>
-      <FloatingButton>
-        <Mic />
-      </FloatingButton>
+      <FloatingButton/>
+        
     </div>
   </div>
 }
