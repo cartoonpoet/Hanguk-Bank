@@ -6,7 +6,7 @@ const Money = () => {
     return (
         <main className={styles.container}>
             <div className={styles.top}>
-                <NavBar leftControl="icon" rightControl="icon" title/>
+                <NavBar leftControl="icon" rightControl="icon" title="이체"/>
 
             </div>
         </main>

@@ -22,5 +22,7 @@ export interface AiStoreTypes {
   setSelectedTo: (selectedTo: Account) => void,
   work: WorkProp,
   setWork: (work: WorkProp) => void,
+  isShowManual: boolean,
+  setIsShowManual: (isShowManual: boolean) => void,
 }
 

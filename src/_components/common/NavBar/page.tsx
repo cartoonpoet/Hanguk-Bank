@@ -8,7 +8,7 @@ import Link from 'next/link'
 type NavBarProps = {
   leftControl: 'icon' | 'none'
   rightControl: 'icon' | 'none' | 'text'
-  title: boolean
+  title: string
 }
 
 const NavBar = ({ leftControl, rightControl, title }: NavBarProps) => {
@@ -30,7 +30,7 @@ const NavBar = ({ leftControl, rightControl, title }: NavBarProps) => {
           />
         </button>
       )}
-      {title && <div>이체</div>}
+      <div>{title}</div>
       {rightControl === 'icon' && (
         <Link className={styles.btn} href={'/home'}>
           <Image

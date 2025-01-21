@@ -15,7 +15,7 @@ const Transfer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <NavBar leftControl='icon' rightControl='icon' title />
+        <NavBar leftControl='icon' rightControl='icon' title="이체" />
         <header className={styles.user}>누구에게 보낼까요?</header>
         <TextField />
         <ContentSwitcher />
