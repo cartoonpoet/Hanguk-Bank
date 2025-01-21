@@ -14,7 +14,7 @@ import { toast } from 'react-toastify'
 // const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
 
 const textKey =
-  'eyJzb3VsSWQiOiJkZG5hLXNvaS1od2FuZy1vcmdhZTBhLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfZjM3MTEyNjYtYWVhZi00Njc0LTg0YmQtMmU4M2MxMDNiZjg1In0='
+  'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2NkMWNhYzA1LTYyMDAtNDNlNC1hMmMxLTIzMzY1ZWMwMjM0MyJ9'
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
 const useKey = textKey

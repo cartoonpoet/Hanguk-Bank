@@ -14,23 +14,25 @@ import Balance from './_component/Balance/page'
 import Method from './_component/Method/page'
 import Savings from './_component/Savings/page'
 import Description from './_component/Description/page'
+import Manual from '@/_components/Manual/page'
 
 const eachModeComponent = {
-    WorkList: <WorkList/>,
-    From:  <From/>,
-    To: <To/>,
-    Tell: <Tell/>,
-    Confirm: <Confirm/>,
-    Transferred: <Transferred/>,
-    Balance: <Balance/>,
-    Method: <Method/>,
-    Savings: <Savings/>,
-    Description: <Description/>
+  WorkList: <WorkList />,
+  From: <From />,
+  To: <To />,
+  Tell: <Tell />,
+  Confirm: <Confirm />,
+  Transferred: <Transferred />,
+  Balance: <Balance />,
+  Method: <Method />,
+  Savings: <Savings />,
+  Description: <Description />,
 }
 
 const AI = () => {
-  const { mode } = useContext(AiContext)
+  const { mode, isShowManual } = useContext(AiContext)
 
+  if (isShowManual) return <Manual />
   return (
     <div>
       <AiAvatar />
