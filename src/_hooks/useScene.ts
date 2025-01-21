@@ -101,7 +101,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
               }
             }
           }
-        )
+        })
 
         // smScene.onRecognizeResultsEvent.addListener(
         //     (scene, status, errorMessage, results) => {
