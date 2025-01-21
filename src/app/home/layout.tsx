@@ -6,15 +6,13 @@ interface layoutProps {
   menu: React.ReactNode
 }
 
-
-const layout = ({ children, menu}: layoutProps) => {
-  return <div className={styles.container}>
-    <main className={styles.body}>
-      {children}
-    </main>
-    {menu}
-  </div>
-
+const layout = ({ children, menu }: layoutProps) => {
+  return (
+    <div className={styles.container}>
+      <main className={styles.body}>{children}</main>
+      {menu}
+    </div>
+  )
 }
 
 export default layout

@@ -1,16 +1,15 @@
-import React, { ReactNode } from 'react'
-import { CSSProperties } from 'styled-components'
+import { ReactNode } from 'react'
 
 interface TransferContainerProps {
   children: ReactNode
-  style: CSSProperties
+  className: string
 }
 
-const TransferContainer = ({ style, children }: TransferContainerProps) => {
+const TransferContainer = ({ className, children }: TransferContainerProps) => {
   return (
     <div
+      className={className}
       style={{
-        ...style,
         border: '1px solid #D6DBE1',
         borderRadius: '16px',
       }}

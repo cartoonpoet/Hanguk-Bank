@@ -1,28 +1,31 @@
-import { useEffect, MutableRefObject } from 'react'
-import { ConnectionStateData, Persona, Scene, SceneOptions } from '@soulmachines/smwebsdk'
-import {
-  StateResponseBody,
-} from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
-import { use, useRef } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
-import { toast } from 'react-toastify'
 import { WorkProp } from '@/_types/AiStoreTypes'
+import {
+  ConnectionStateData,
+  Persona,
+  Scene,
+  SceneOptions,
+} from '@soulmachines/smwebsdk'
+import { StateResponseBody } from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
+import { MutableRefObject, use, useEffect, useRef } from 'react'
+import { toast } from 'react-toastify'
 
 // const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
 // const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
 
-const textKey = 'eyJzb3VsSWQiOiJkZG5hLXNvaS1od2FuZy1vcmdhZTBhLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfZjM3MTEyNjYtYWVhZi00Njc0LTg0YmQtMmU4M2MxMDNiZjg1In0='
+const textKey =
+  'eyJzb3VsSWQiOiJkZG5hLXNvaS1od2FuZy1vcmdhZTBhLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfZjM3MTEyNjYtYWVhZi00Njc0LTg0YmQtMmU4M2MxMDNiZjg1In0='
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
 const useKey = textKey
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const { scene, setScene, setMode, work, setWork } = use(AiContext)
-  const stateRef = useRef<WorkProp>(work);
+  const stateRef = useRef<WorkProp>(work)
 
   useEffect(() => {
-    stateRef.current = work;
-  }, [work]);
+    stateRef.current = work
+  }, [work])
 
   useEffect(() => {
     const initScene = async () => {
@@ -41,8 +44,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
       smScene.connectionState.onConnectionStateUpdated.addListener(
         (_: ConnectionStateData) => {
           // display connectionState updates to the user
-
-        },
+        }
       )
 
       try {
@@ -94,11 +96,12 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                 }
                 case 'CallCenter': {
                   break
+
                 }
               }
             }
           }
-        })
+        )
 
         // smScene.onRecognizeResultsEvent.addListener(
         //     (scene, status, errorMessage, results) => {
@@ -111,7 +114,6 @@ const useScene = (videoRef: MutableRefObject<null>) => {
         //
         //     }
         // );
-
       } catch (error) {
         toast.error('문제가 발생하였습니다.')
         console.error('Error initializing scene:', error)
@@ -127,7 +129,11 @@ const useScene = (videoRef: MutableRefObject<null>) => {
   return { scene }
 }
 
-export const handleSpeak = async (scene: Scene, text: string, work: WorkProp) => {
+export const handleSpeak = async (
+  scene: Scene,
+  text: string,
+  work: WorkProp
+) => {
   try {
     const persona = new Persona(scene, scene.currentPersonaId)
     await persona.conversationSend(text, { work }, {})

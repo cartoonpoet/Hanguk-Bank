@@ -1,8 +1,16 @@
-import React, { PropsWithChildren } from 'react'
 import styled from 'styled-components'
+import Mic from '/public/icon/icon-mic.svg'
 
-const FloatingButton = ({ children }: PropsWithChildren) => {
-  return <SFloatingBtn>{children}</SFloatingBtn>
+interface FloatingButtonProps {
+  handleClick?: () => void
+}
+
+const FloatingButton = ({ handleClick }: FloatingButtonProps) => {
+  return (
+    <SFloatingBtn onClick={handleClick}>
+      <Mic />
+    </SFloatingBtn>
+  )
 }
 
 const SFloatingBtn = styled.button`

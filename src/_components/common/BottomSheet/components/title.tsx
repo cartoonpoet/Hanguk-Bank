@@ -2,12 +2,14 @@ import React from 'react'
 
 interface TitleProps {
   title: string
+  description?: string
 }
 
-const Title = ({ title }: TitleProps) => {
+const Title = ({ title, description }: TitleProps) => {
   return (
-    <div style={{ padding: '20px', fontSize: '18px' }}>
-      <strong style={{ color: 'black' }}>{title}</strong>
+    <div className='flex flex-col p-5 text-lg '>
+      <strong className='text-black mb-2 font-bold'>{title}</strong>
+      {description ? <span className='text-black'>{description}</span> : null}
     </div>
   )
 }

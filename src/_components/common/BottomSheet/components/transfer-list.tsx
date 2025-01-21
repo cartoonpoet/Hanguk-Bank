@@ -10,49 +10,30 @@ type TransferInfo = {
 
 interface TransferListProps {
   data: TransferInfo[]
+  handleClick: () => void
 }
 
-const TransferList = ({ data }: TransferListProps) => {
-  return data.map((item) => (
-    <TransferContainer
-      key={item.id}
-      style={{ paddingBlock: '20px', paddingInline: '20px' }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '8px',
-          marginBottom: '20px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            fontWeight: 'bold',
-            gap: '8px',
-            fontSize: '18px',
-          }}
-        >
-          <span style={{ color: '#007BFF' }}>{item.id}</span>
-          <span style={{ color: '#000000' }}>{item.bankName}</span>
-        </div>
-        <div style={{ display: 'flex', fontSize: '16px' }}>
-          <span style={{ color: '#6B7684' }}>{item.accountNumber}</span>
-        </div>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          fontSize: '20px',
-          fontWeight: 'bold',
-          justifyContent: 'flex-end',
-        }}
-      >
-        <span style={{ color: '#000000' }}>{`${item.accountNumber}원`}</span>
-      </div>
-    </TransferContainer>
-  ))
+const TransferList = ({ data, handleClick }: TransferListProps) => {
+  return (
+    <div className='flex flex-col gap-2'>
+      {data.map((item) => (
+        <TransferContainer key={item.id} className='p-5'>
+          <div onClick={handleClick} className='flex flex-col gap-2 mb-5'>
+            <div className='flex gap-2 font-bold text-lg'>
+              <span style={{ color: '#007BFF' }}>{item.id}</span>
+              <span className='text-black'>{item.bankName}</span>
+            </div>
+            <div className='flex text-base'>
+              <span style={{ color: '#6B7684' }}>{item.accountNumber}</span>
+            </div>
+          </div>
+          <div className='flex gap-2 font-bold text-xl justify-end'>
+            <span className='text-black'>{`${item.accountNumber}원`}</span>
+          </div>
+        </TransferContainer>
+      ))}
+    </div>
+  )
 }
 
 export default TransferList
