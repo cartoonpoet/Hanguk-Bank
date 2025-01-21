@@ -54,68 +54,49 @@ const useScene = (videoRef: MutableRefObject<null>) => {
         await smScene.startVideo()
         setScene(smScene)
 
-        smScene.onStateEvent.addListener(
-          (scene: Scene, event: StateResponseBody) => {
-            const personaState = event.persona?.['1']
+        smScene.onStateEvent.addListener((scene: Scene, event: StateResponseBody) => {
+          const personaState = event.persona?.['1']
 
-            if (personaState?.speechState === 'speaking') {
-              const personaSpeech = personaState?.currentSpeech
-              if (personaSpeech) {
-                const work = stateRef.current
-                switch (work) {
-                  case null: {
-                    if (
-                      personaSpeech ===
-                      '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
-                    ) {
-                      setWork('Transfer')
-                      setMode('From')
-                    } else if (
-                      personaSpeech ===
-                      '어떤 계좌에서 조회할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
-                    ) {
-                      setWork('Account')
-                      setMode('From')
-                    }
-                    break
+          if (personaState?.speechState === 'speaking') {
+            const personaSpeech = personaState?.currentSpeech
+            if (personaSpeech) {
+              const work = stateRef.current
+              switch (work) {
+                case null: {
+                  if
+                  (personaSpeech === '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') {
+                    setWork('Transfer')
+                    setMode('From')
+                  } else if (personaSpeech === '어떤 계좌에서 조회할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') {
+                    setWork('Account')
+                    setMode('From')
+                  } else if(personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.'){
+                    setWork('Savings')
+                    setMode('Method')
                   }
-                  case 'Transfer': {
-                    if (
-                      personaSpeech ===
-                      '누구에게 보낼까요? 최근 이체한 계좌도 함께 보여드릴께요.'
-                    )
-                      setMode('To')
-                    else if (
-                      personaSpeech ===
-                      '받는 분의 은행과 계좌번호를 말씀해 주세요.'
-                    )
-                      setMode('Tell')
-                    else if (
-                      personaSpeech.includes(
-                        '받는 분과 금액을 한 번 더 확인해주세요.'
-                      )
-                    ) {
-                      setMode('Confirm')
-                      handleSpeak(scene, '보냈어요.', work)
-                    } else if (
-                      personaSpeech.includes('김손자에게 십만원 보냈어요.')
-                    )
-                      setMode('Transferred')
-                    break
-                  }
-                  case 'Account': {
-                    if (
-                      personaSpeech === '잔액은 백이십삼십사만오천육백원이에요.'
-                    )
-                      setMode('Balance')
-                    break
-                  }
-                  case 'Savings': {
-                    break
-                  }
-                  case 'CallCenter': {
-                    break
-                  }
+                  break
+                }
+                case 'Transfer': {
+                  if (personaSpeech === '누구에게 보낼까요? 최근 이체한 계좌도 함께 보여드릴께요.') setMode('To')
+                  else if (personaSpeech === '받는 분의 은행과 계좌번호를 말씀해 주세요.') setMode('Tell')
+                  else if (personaSpeech.includes('받는 분과 금액을 한 번 더 확인해주세요.')) {
+                    setMode('Confirm')
+                    handleSpeak(scene, '보냈어요.', work)
+                  } else if (personaSpeech.includes('김손자에게 십만원 보냈어요.')) setMode('Transferred')
+                  break
+                }
+                case 'Account': {
+                  if (personaSpeech === '잔액은 백이십삼십사만오천육백원이에요.') setMode('Balance')
+                  break
+                }
+                case 'Savings': {
+                  if(personaSpeech === '고객님께 적합한 자유적립식 적금 상품을 추천해 드릴게요. 첫번째 또는 화면에 보이는 상품 이름을 말씀해 주세요.') setMode('Savings')
+                  else if(personaSpeech === '스마트적금을 가입하시겠어요? 가입 전 상품설명서를 확인해 주세요.') setMode('Description')
+                  break
+                }
+                case 'CallCenter': {
+                  break
+
                 }
               }
             }

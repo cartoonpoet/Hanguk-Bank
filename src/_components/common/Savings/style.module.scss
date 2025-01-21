@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid var(--Border-Default, #D6DBE1);
+  background: var(--White-Default, #FFF);
+  padding: 20px;
+  gap: 10px;
+  cursor: pointer;
+  align-self: stretch;
+
+  .headline {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    color: var(--Black-Default, #000);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%; /* 28.8px */
+    align-items: center;
+
+    .order {
+      color: var(--Brand-Default, #007BFF);
+    }
+
+    .name {
+      color: var(--Black-Default, #000);
+      flex: 1;
+    }
+
+    .rate {
+      color: var(--Brand-Default, #007BFF);
+      text-align: right;
+      line-height: 100%; /* 18px */
+      font-weight: 600;
+    }
+  }
+
+  .sublime {
+    color: var(--Neutral-Label, #4E5968);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+  }
+}
