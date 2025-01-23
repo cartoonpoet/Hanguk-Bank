@@ -21,7 +21,7 @@ const appKey = 'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1
 const isWebView = /wv|FBAN|FBAV|Instagram|Line|KAKAOTALK|NAVER/i.test(navigator.userAgent);
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
-const useKey = isWebView ? appKey : webKey
+const useKey =  webKey
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const { scene, setScene, setMode, work, setWork } = use(AiContext)
