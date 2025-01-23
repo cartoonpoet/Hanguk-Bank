@@ -18,9 +18,10 @@ import { toast } from 'react-toastify'
 const webKey =
   'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2NkMWNhYzA1LTYyMDAtNDNlNC1hMmMxLTIzMzY1ZWMwMjM0MyJ9'
 const appKey = 'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ZhY2YzMGRhLWQ2MGUtNGE2Mi05NGNlLTdmZDRlOWQxZmU4ZiJ9'
+const isWebView = /wv|FBAN|FBAV|Instagram|Line|KAKAOTALK|NAVER/i.test(navigator.userAgent);
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
-const useKey = /Mobi/i.test(window.navigator.userActivation) ? appKey : webKey
+const useKey = isWebView ? appKey : webKey
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const { scene, setScene, setMode, work, setWork } = use(AiContext)
