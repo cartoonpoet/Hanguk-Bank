@@ -6,18 +6,21 @@ import {
   Scene,
   SceneOptions,
 } from '@soulmachines/smwebsdk'
-import { StateResponseBody } from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
+import {
+  StateResponseBody,
+} from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
 import { MutableRefObject, use, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify'
 
 // const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
 // const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
 
-const textKey =
+const webKey =
   'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2NkMWNhYzA1LTYyMDAtNDNlNC1hMmMxLTIzMzY1ZWMwMjM0MyJ9'
+const appKey = 'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ZhY2YzMGRhLWQ2MGUtNGE2Mi05NGNlLTdmZDRlOWQxZmU4ZiJ9'
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
-const useKey = textKey
+const useKey = /Mobi/i.test(window.navigator.userActivation) ? appKey : webKey
 
 const useScene = (videoRef: MutableRefObject<null>) => {
   const { scene, setScene, setMode, work, setWork } = use(AiContext)
@@ -44,7 +47,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
       smScene.connectionState.onConnectionStateUpdated.addListener(
         (_: ConnectionStateData) => {
           // display connectionState updates to the user
-        }
+        },
       )
 
       try {
@@ -70,7 +73,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   } else if (personaSpeech === '어떤 계좌에서 조회할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.') {
                     setWork('Account')
                     setMode('From')
-                  } else if(personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.'){
+                  } else if (personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.') {
                     setWork('Savings')
                     setMode('Method')
                   }
@@ -90,8 +93,8 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   break
                 }
                 case 'Savings': {
-                  if(personaSpeech === '고객님께 적합한 자유적립식 적금 상품을 추천해 드릴게요. 첫번째 또는 화면에 보이는 상품 이름을 말씀해 주세요.') setMode('Savings')
-                  else if(personaSpeech === '스마트적금을 가입하시겠어요? 가입 전 상품설명서를 확인해 주세요.') setMode('Description')
+                  if (personaSpeech === '고객님께 적합한 자유적립식 적금 상품을 추천해 드릴게요. 첫번째 또는 화면에 보이는 상품 이름을 말씀해 주세요.') setMode('Savings')
+                  else if (personaSpeech === '스마트적금을 가입하시겠어요? 가입 전 상품설명서를 확인해 주세요.') setMode('Description')
                   break
                 }
                 case 'CallCenter': {
@@ -132,7 +135,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 export const handleSpeak = async (
   scene: Scene,
   text: string,
-  work: WorkProp
+  work: WorkProp,
 ) => {
   try {
     const persona = new Persona(scene, scene.currentPersonaId)
