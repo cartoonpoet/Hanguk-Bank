@@ -23,6 +23,28 @@ const isWebView = /wv|FBAN|FBAV|Instagram|Line|KAKAOTALK|NAVER/i.test(navigator.
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
 const useKey =  webKey
 
+function onConnectionError(error: Error) {
+  console.log('Connection failed with error:', error);
+  toast.error(error.name+error.message);
+  switch (error.name) {
+    case 'noUserMedia':
+      console.log('user declined device access:', error.message);
+      // ask the user to unblock devices
+      break;
+    case 'noScene':
+      console.log('the server is busy:', error.message);
+      // ask the user to retry later
+      break;
+    case 'serverConnectionFailed':
+      console.log('server connection failed:', error.message);
+      // ask the user to connect from a different network
+      break;
+    default:
+      console.log('unhandled error:', error.name, error.message);
+
+  }
+}
+
 const useScene = (videoRef: MutableRefObject<null>) => {
   const { scene, setScene, setMode, work, setWork } = use(AiContext)
   const stateRef = useRef<WorkProp>(work)
@@ -53,7 +75,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
       try {
         // 연결 및 비디오 시작
-        const sessionId = await smScene.connect().catch((error) => toast.error(error))
+        const sessionId = await smScene.connect().catch((error) => onConnectionError(error));
         console.log('Session connected:', sessionId)
         await smScene.startVideo()
         setScene(smScene)
