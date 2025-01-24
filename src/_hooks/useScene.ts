@@ -53,7 +53,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
       try {
         // 연결 및 비디오 시작
-        const sessionId = await smScene.connect()
+        const sessionId = await smScene.connect().catch((error) => toast.error(error))
         console.log('Session connected:', sessionId)
         await smScene.startVideo()
         setScene(smScene)
