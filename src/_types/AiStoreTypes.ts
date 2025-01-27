@@ -3,8 +3,9 @@ import { Scene } from '@soulmachines/smwebsdk'
 type TransferType = 'From' | 'To' | 'Tell' | 'Confirm' | 'Transferred'
 type AccountSearchType = 'Balance'
 type SavingsType = 'Method' | 'Savings' | 'Description'
+type CallCenterType = 'ConsultationType'
 
-export type ModeProp = 'WorkList' | TransferType | AccountSearchType | SavingsType;
+export type ModeProp = 'WorkList' | TransferType | AccountSearchType | SavingsType | CallCenterType;
 export type WorkProp = null | 'Transfer' | 'Account' | 'Savings' | 'CallCenter'
 
 export interface Account {

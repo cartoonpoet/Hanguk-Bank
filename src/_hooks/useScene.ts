@@ -99,6 +99,9 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   } else if (personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.') {
                     setWork('Savings')
                     setMode('Method')
+                  } else if (personaSpeech === '상담 방법을 선택해주세요. 첫번째 또는 상담 방법을 말씀해 주세요.') {
+                    setWork('CallCenter')
+                    setMode('ConsultationType')
                   }
                   break
                 }

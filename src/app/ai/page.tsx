@@ -18,7 +18,7 @@ import Manual from '@/_components/Manual/page'
 import styles from './_style/page.module.scss'
 import { URL } from '@/_constants/url'
 import { useRouter } from 'next/navigation'
-
+import ConsultationType from './_component/ConsultationType/page'
 
 const eachModeComponent = {
   WorkList: <WorkList />,
@@ -31,6 +31,7 @@ const eachModeComponent = {
   Method: <Method />,
   Savings: <Savings />,
   Description: <Description />,
+  ConsultationType: <ConsultationType />
 }
 
 const AI = () => {
