@@ -12,6 +12,10 @@ module.exports = {
     extend: {
       colors: {
         callingBg: '#3d3f41',
+        'Brand-Secondary': '#E6F2FF',
+        'Brand-On-Tertiary': '#0062CC',
+        'Neutral-Label': '#4E5968',
+        'Brand-Default': '#007BFF',
       },
       fontFamily:{
         pretendard: ['--font-pretendard','Arial', 'Helvetica', 'sans-serif']

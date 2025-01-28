@@ -9,7 +9,7 @@ import {
   KeypadIcon,
   MicroPhoneNotIcon,
   PhoneCallIcon,
-} from '@/_assets/icons/page'
+} from '@/_assets/icons'
 import { URL } from '@/_constants/url'
 
 const Calling = () => {

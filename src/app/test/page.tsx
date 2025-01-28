@@ -1,6 +1,6 @@
-import Calling from '@/_components/Calling/page'
+import ChatBot from '@/_components/ChatBot/page'
 
 const Page = () => {
-  return <Calling />
+  return <ChatBot />
 }
 export default Page

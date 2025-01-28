@@ -21,6 +21,7 @@ import { useRouter } from 'next/navigation'
 import ConsultationType from './_component/ConsultationType/page'
 import ApplicationType from './_component/ApplicationType/page'
 import Calling from '@/_components/Calling/page'
+import ChatBot from '@/_components/ChatBot/page'
 
 const eachModeComponent = {
   WorkList: <WorkList />,
@@ -57,7 +58,7 @@ const AI = () => {
     }, 5000)
   }
 
-  if (work === 'CallCenter' && consultationType === '전화 상담' && applicationType) return <Calling />
+  if (work === 'CallCenter' && applicationType) return consultationType === '전화 상담' ? <Calling /> : <ChatBot />
 
   return (
     <div className={styles.container}>
