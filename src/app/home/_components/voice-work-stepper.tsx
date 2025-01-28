@@ -11,19 +11,20 @@ import useSpeech from '../transfer/_hooks/useSpeech'
 import AccountWork from './account-work'
 import CheckAccount from './check-account'
 import TransferResult from './transfer-result'
+import AiAvatar from './AiAvatar/ai-avatar'
+import TransferInfo from './transfer-info'
 
 export interface VoiceWorkProps {
   isListening: boolean
   speechText?: string
-  speakText: (text: string) => void
   handleContentRoute: (step: ContentRoute) => void
-  handleToggleSpeaking: () => void
 }
 
 const StepperContent = {
   VOICE: VoiceWork,
   TRANSFER: TransferWork,
   ACCOUNT_WORK: AccountWork,
+  TRANSFER_INFO: TransferInfo,
   CHECK_ACCOUNT: CheckAccount,
   TRANSFER_RESULT: TransferResult,
 }
@@ -37,23 +38,16 @@ const VoiceWorkStepper = () => {
   const handleContentRoute = (step: ContentRoute) => setContentRoute(step)
   const MainContent = StepperContent[contentRoute]
 
-  const {
-    transcript,
-    isListening,
-    handleToggleListening,
-    handleToggleSpeaking,
-    speakText,
-  } = useSpeech()
+  const { transcript, isListening, handleToggleListening } = useSpeech()
 
   return (
     <Container>
       <div className='mb-4'>
+        <AiAvatar />
         <MainContent
           isListening={isListening}
           speechText={transcript}
-          speakText={speakText}
           handleContentRoute={handleContentRoute}
-          handleToggleSpeaking={handleToggleSpeaking}
         />
       </div>
       <div className='flex item-center justify-center'>

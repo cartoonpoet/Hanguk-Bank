@@ -9,14 +9,13 @@ import { useEffect } from 'react'
 const supportTxt: string[] = ['추가이체 해줘', '거래내역 알려줘']
 const TransferResult = ({
   speechText,
-  speakText,
+
   handleContentRoute,
-  handleToggleSpeaking,
 }: VoiceWorkProps) => {
-  useEffect(() => {
-    handleToggleSpeaking()
-    speakText('김손자에게 100,000만원 보냈어요.')
-  }, [])
+  // useEffect(() => {
+  //   handleToggleSpeaking()
+  //   speakText('김손자에게 100,000만원 보냈어요.')
+  // }, [])
 
   return (
     <>

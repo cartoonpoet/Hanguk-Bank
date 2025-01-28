@@ -10,14 +10,13 @@ const supportTxt: string[] = ['이체 해줘', '거래내역 알려줘', '대출
 const VoiceWork = ({
   isListening,
   speechText,
-  speakText,
+
   handleContentRoute,
-  handleToggleSpeaking,
 }: VoiceWorkProps) => {
-  useEffect(() => {
-    handleToggleSpeaking()
-    speakText('원하는 업무를 말씀해주세요')
-  }, [])
+  // useEffect(() => {
+  //   handleToggleSpeaking()
+  //   speakText('원하는 업무를 말씀해주세요')
+  // }, [])
 
   useEffect(() => {
     if (!speechText) return

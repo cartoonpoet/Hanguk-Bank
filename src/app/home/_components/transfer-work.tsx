@@ -25,15 +25,14 @@ const TransferWork = ({
   speechText,
   isListening,
   handleContentRoute,
-  speakText,
 }: VoiceWorkProps) => {
   const handleClick = () => {}
 
-  useEffect(() => {
-    speakText(
-      '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
-    )
-  }, [])
+  // useEffect(() => {
+  //   speakText(
+  //     '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
+  //   )
+  // }, [])
 
   useEffect(() => {
     if (!speechText) return
