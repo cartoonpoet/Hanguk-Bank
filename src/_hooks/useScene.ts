@@ -12,13 +12,9 @@ import {
 import { MutableRefObject, use, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify'
 
-// const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
-// const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
 
 const webKey =
-  'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2NkMWNhYzA1LTYyMDAtNDNlNC1hMmMxLTIzMzY1ZWMwMjM0MyJ9'
-const appKey = 'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ZhY2YzMGRhLWQ2MGUtNGE2Mi05NGNlLTdmZDRlOWQxZmU4ZiJ9'
-const isWebView = /wv|FBAN|FBAV|Instagram|Line|KAKAOTALK|NAVER/i.test(navigator.userAgent);
+  'eyJzb3VsSWQiOiJkZG5hLWp1bmhvLXNvbi1vcmdjZDhmLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNDk0OTg1MmYtZGU1ZS00MWQ2LWI4MjItZTBlOWY3Njc2ZTI3In0='
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
 const useKey =  webKey
@@ -99,6 +95,9 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   } else if (personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.') {
                     setWork('Savings')
                     setMode('Method')
+                  } else if (personaSpeech === '상담 방법을 선택해주세요. 첫번째 또는 상담 방법을 말씀해 주세요.') {
+                    setWork('CallCenter')
+                    setMode('ConsultationType')
                   }
                   break
                 }
@@ -121,6 +120,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   break
                 }
                 case 'CallCenter': {
+                  if (personaSpeech === '상담 유형을 선택해 주세요. 첫번째 또는 상담 유형을 말씀해 주세요.') setMode('ApplicationType')
                   break
 
                 }
