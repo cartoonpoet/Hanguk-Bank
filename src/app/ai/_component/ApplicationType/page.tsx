@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
 import styles from './style.module.scss'
 import FloatingButton from '@/app/home/_components/floating-button'
+import { ApplicationType } from '@/_types/AiStoreTypes'
 
 
 const savingsData = [
@@ -53,7 +54,7 @@ const Page = () => {
                                                                                             rate={item.rate}
                                                                                             contents={item.contents}
                                                                                             onClick={() => {
-                                                                                              setApplicationType(item.name)
+                                                                                              setApplicationType(item.name as ApplicationType)
                                                                                             }} />
         </div>)}
       </section>
