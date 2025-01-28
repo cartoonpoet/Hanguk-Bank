@@ -9,11 +9,15 @@ import { usePdf } from '@mikecousins/react-pdf'
 import ArrowUp from '/public/icon/arrow-up.svg'
 import ArrowDown from '/public/icon/arrow-down.svg'
 
-const Manual = () => {
+interface ManualProps {
+  onClickClose?: ()=> void,
+}
+
+const Manual = ({onClickClose}: ManualProps) => {
   const [page, setPage] = useState(1)
   const canvasRef = useRef(null)
 
-  const { pdfDocument, pdfPage } = usePdf({
+  usePdf({
     file: 'Document.Sample.pdf',
     page,
     canvasRef,
@@ -22,7 +26,7 @@ const Manual = () => {
   return <main className={styles.container}>
     <section className={styles.navSection}>
       <div className={styles.title}>상품설명서</div>
-      <div className={styles.icons}><DownloadIcon /><CloseIcon /></div>
+      <div className={styles.icons}><DownloadIcon /><CloseIcon onClick={onClickClose}/></div>
     </section>
     <section className={styles.viewNav}>
       <div>가입안내</div>

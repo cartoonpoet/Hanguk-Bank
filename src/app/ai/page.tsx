@@ -15,6 +15,10 @@ import Method from './_component/Method/page'
 import Savings from './_component/Savings/page'
 import Description from './_component/Description/page'
 import Manual from '@/_components/Manual/page'
+import styles from './_style/page.module.scss'
+import { URL } from '@/_constants/url'
+import { useRouter } from 'next/navigation'
+
 
 const eachModeComponent = {
   WorkList: <WorkList />,
@@ -30,11 +34,20 @@ const eachModeComponent = {
 }
 
 const AI = () => {
-  const { mode, isShowManual } = useContext(AiContext)
+  const { mode, isShowManual, setIsShowManual, setWork } = useContext(AiContext)
+  const router = useRouter()
 
-  if (isShowManual) return <Manual />
+  const onClickClose = () => {
+    setIsShowManual(false)
+    setTimeout(() => {
+      setWork(null)
+      router.replace(URL.home)
+    }, 5000)
+  }
+
   return (
-    <div>
+    <div className={styles.container}>
+      {isShowManual && <div className={styles.modal}><Manual onClickClose={onClickClose} /></div>}
       <AiAvatar />
       <ToastContainer />
       {eachModeComponent[mode]}
