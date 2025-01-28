@@ -22,7 +22,7 @@ const savingsData = [
 ]
 
 const Page = () => {
-  const { scene, work } = useContext(AiContext)
+  const { scene, work, setConsultationType } = useContext(AiContext)
 
   if (!scene) return null
   return <div className={styles.container}>
@@ -30,10 +30,13 @@ const Page = () => {
       <section className={styles.workSection}>
         {savingsData.map((item, i) => <Savings key={item.name} number={i + 1} name={item.name} rate={item.rate}
                                                contents={item.contents}
-                                               onClick={async () => await handleSpeak(scene, item.name, work)} />)}
+                                               onClick={async () => {
+                                                 await handleSpeak(scene, item.name, work)
+                                                 setConsultationType(item.name)
+                                               }} />)}
       </section>
-      <FloatingButton/>
-        
+      <FloatingButton />
+
     </div>
   </div>
 }

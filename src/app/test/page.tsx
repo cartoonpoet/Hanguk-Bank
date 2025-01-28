@@ -1,6 +1,6 @@
-import Manual from '@/_components/Manual/page'
+import Calling from '@/_components/Calling/page'
 
 const Page = () => {
-  return <Manual/>
+  return <Calling />
 }
 export default Page

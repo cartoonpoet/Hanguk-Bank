@@ -15,7 +15,7 @@ const Savings = ({contents, rate, number, name, onClick}: SavingsProps) => {
       <div className={styles.name}>{name}</div>
       {Boolean(rate) && <div className={styles.rate}>최고 연 {rate?.toFixed(1)}%</div>}
     </section>
-    <section className={styles.sublime}>{contents}</section>
+    {contents.length > 0 && <section className={styles.sublime}>{contents}</section>}
   </main>
 };
 

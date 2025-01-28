@@ -1,0 +1,28 @@
+.container {
+  position: absolute;
+  z-index: 999;
+  bottom: 3%;
+  width: 100%;
+  padding: 0 20px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .workSection {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      .item {
+        flex: 1 0 45%;
+      }
+    }
+  }
+}
