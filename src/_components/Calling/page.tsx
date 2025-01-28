@@ -24,7 +24,7 @@ const Calling = () => {
       <div className="flex justify-center text-gray-400 text-lg font-pretendard font-medium">휴대전화 연결 중...</div>
       <div className="font-pretendard text-white flex justify-center text-3xl font-bold">한국은행</div>
     </section>
-    <section className="flex flex-row flex-wrap p-10 justify-center gap-10">
+    <section className="flex flex-row flex-wrap justify-center gap-10 pb-10">
       <div className="flex flex-col gap-1 items-center basis-1/4">
         <div className="flex justify-center items-center p-6 bg-neutral-600 rounded-full"><SpeakerFilledIcon
           fill="white" width="24" height="24" /></div>
