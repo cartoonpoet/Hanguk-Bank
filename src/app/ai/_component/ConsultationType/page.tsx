@@ -6,6 +6,7 @@ import { AiContext } from '@/_contexts/useAiContext'
 import styles from './style.module.scss'
 import { handleSpeak } from '@/_hooks/useScene'
 import FloatingButton from '@/app/home/_components/floating-button'
+import { ConsultationType } from '@/_types/AiStoreTypes'
 
 
 const savingsData = [
@@ -32,7 +33,7 @@ const Page = () => {
                                                contents={item.contents}
                                                onClick={async () => {
                                                  await handleSpeak(scene, item.name, work)
-                                                 setConsultationType(item.name)
+                                                 setConsultationType(item.name as ConsultationType)
                                                }} />)}
       </section>
       <FloatingButton />
