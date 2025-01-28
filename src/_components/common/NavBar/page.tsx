@@ -4,11 +4,13 @@ import styles from './style.module.scss'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { ReactNode } from 'react'
+import {Home} from '@/_assets/icons'
 
 type NavBarProps = {
   leftControl: 'icon' | 'none'
   rightControl: 'icon' | 'none' | 'text'
-  title: string
+  title: ReactNode
 }
 
 const NavBar = ({ leftControl, rightControl, title }: NavBarProps) => {
@@ -33,12 +35,7 @@ const NavBar = ({ leftControl, rightControl, title }: NavBarProps) => {
       <div>{title}</div>
       {rightControl === 'icon' && (
         <Link className={styles.btn} href={'/home'}>
-          <Image
-            alt='previous'
-            src='/icon/nav-home.svg'
-            width={18}
-            height={20}
-          />
+          <Home width="20" height="20" fill="black" />
         </Link>
       )}
     </section>
