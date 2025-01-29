@@ -11,10 +11,6 @@ import {
 } from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/StateResponseBody'
 import { MutableRefObject, use, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify'
-import {
-  RecognizeResultsResponseBody,
-} from '@soulmachines/smwebsdk/lib-esm/websocket-message/scene/response-body/RecognizeResultsResponseBody'
-
 
 const webKey =
   'eyJzb3VsSWQiOiJkZG5hLWp1bmhvLXNvbi1vcmdjZDhmLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNDk0OTg1MmYtZGU1ZS00MWQ2LWI4MjItZTBlOWY3Njc2ZTI3In0='
@@ -133,7 +129,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
         })
 
         smScene.onRecognizeResultsEvent.addListener(
-          async (scene: Scene, status: string, errorMessage: string | null, results: RecognizeResultsResponseBody[]) => {
+          async (scene: Scene, status: string, errorMessage: string | null, results: any[]) => {
             if (results.length > 0) {
               const result = results[0]
               if (result.alternatives.length > 0) {
