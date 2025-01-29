@@ -41,7 +41,7 @@ function onConnectionError(error: Error) {
 }
 
 const useScene = (videoRef: MutableRefObject<null>) => {
-  const { scene, setScene, setMode, work, setWork } = use(AiContext)
+  const { scene, setScene, setMode, work, setWork, setApplicationType, setConsultationType } = use(AiContext)
   const stateRef = useRef<WorkProp>(work)
 
   useEffect(() => {
@@ -120,6 +120,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                 }
                 case 'CallCenter': {
                   if (personaSpeech === '상담 유형을 선택해 주세요. 첫번째 또는 상담 유형을 말씀해 주세요.') setMode('ApplicationType')
+                  else if (personaSpeech === '') setApplicationType('사고 신고')
                   break
 
                 }
@@ -137,10 +138,19 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                 if (result.final === true) {
                   // await handleSpeak(scene, userSpeech,  stateRef.current)
                   console.log('[userSpeech] user said:', userSpeech)
-                }
-                else{
+                } else {
                   const persona = new Persona(scene, scene.currentPersonaId)
-                  await persona.conversationSetVariables({work: stateRef.current})
+                  if (stateRef.current === 'CallCenter') {
+                    const text = userSpeech.replaceAll(' ', '')
+                    if (text.includes('전화') || text.includes('첫번째'))
+                      setConsultationType('전화 상담')
+                    else if(text.includes('챗봇') || text.includes('두번째'))
+                      setConsultationType('챗봇 상담')
+                    else if(text.includes('사고신고') || text.includes('뱅킹') || text.includes('예금') || text.includes('펀드') || text.includes('대출') || text.includes('퇴직연금') || text.includes('민원접수') ){
+                      setApplicationType('사고 신고')
+                    }
+                  }
+                  await persona.conversationSetVariables({ work: stateRef.current })
                 }
               }
             }
@@ -168,7 +178,7 @@ export const handleSpeak = async (
 ) => {
   try {
     const persona = new Persona(scene, scene.currentPersonaId)
-    await persona.conversationSend(text, { work }, {fromCall: 'handleSpeak'})
+    await persona.conversationSend(text, { work }, { fromCall: 'handleSpeak' })
   } catch (error) {
     console.error('Error sending text:', error)
     throw error
