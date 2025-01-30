@@ -21,6 +21,7 @@
     }
 
     .accountNumber {
+      display: flex;
       color: var(--Neutral-Default, #6B7684);
       font-size: 18px;
       font-style: normal;
