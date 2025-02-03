@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 
 import styled from 'styled-components'
 import AiAvatar from '../AiAvatar/ai-avatar'
-import FloatingButton from '../floating-button'
+import FloatingButton from '../AccountTransfer/floating-button'
 import useSpeech from '../../transfer/_hooks/useSpeech'
 import VoiceWork from './voice-work'
+import AccountInquiryList from './account-inquiry-list'
+import AccountInquiryResult from './account-inquiry-result'
 
 const Content = {
   VOICE: VoiceWork,
+  AccountList: AccountInquiryList,
+  AccountResult: AccountInquiryResult,
 }
 
 type ContentRoute = keyof typeof Content
@@ -20,7 +24,8 @@ export interface AccountInquiryProps {
 
 const AccountInquiryStepper = () => {
   const { transcript, isListening, handleToggleListening } = useSpeech()
-  const [contentRoute, setContentRoute] = useState<ContentRoute>('VOICE')
+  const [contentRoute, setContentRoute] =
+    useState<ContentRoute>('AccountResult')
   const handleContentRoute = (step: ContentRoute) => setContentRoute(step)
   const MainContent = Content[contentRoute]
 

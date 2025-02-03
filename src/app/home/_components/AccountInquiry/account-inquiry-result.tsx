@@ -1,9 +1,7 @@
-import React from 'react'
-import { AccountInquiryProps } from './account-inquiry-stepper'
-import BadgeGroup from '@/_components/common/BadgeGroup/page'
-import Badge from '@/_components/common/Badge/page'
-import Title from '@/_components/common/BottomSheet/components/title'
 import Account from '@/_components/common/Account/account'
+import Title from '@/_components/common/BottomSheet/components/title'
+import WorkBadgeGroup from '../WorkBadgeGroup/work-badge-group'
+import { AccountInquiryProps } from './account-inquiry-stepper'
 
 const supportTxt: string[] = ['대출 알려줘', '전체 계좌 보여줘']
 
@@ -19,11 +17,7 @@ const AccountInquiryResult = ({
         accountType='우리'
         accountNumber='1002-345-678910'
       />
-      <BadgeGroup>
-        {supportTxt.map((item) => (
-          <Badge key={item} text={item} />
-        ))}
-      </BadgeGroup>
+      <WorkBadgeGroup data={supportTxt} />
     </>
   )
 }

@@ -1,12 +1,10 @@
-import Badge from '@/_components/common/Badge/page'
-import BadgeGroup from '@/_components/common/BadgeGroup/page'
 import Title from '@/_components/common/BottomSheet/components/title'
-import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
-import React from 'react'
-import { AccountInquiryProps } from './account-inquiry-stepper'
 import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
+import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
+import WorkBadgeGroup from '../WorkBadgeGroup/work-badge-group'
+import { AccountInquiryProps } from './account-inquiry-stepper'
 
-const supportTxt: string[] = ['거래내역 알려줘', '다른 계좌 보여줘']
+const supportTxt = ['거래내역 알려줘', '다른 계좌 보여줘']
 
 const TRANSFER_LIST = [
   {
@@ -37,13 +35,9 @@ const AccountInquiryList = ({
           {TRANSFER_LIST.length}
         </span>
       </div>
-      <TransferList data={TRANSFER_LIST} />
-      <BadgeGroup>
-        {supportTxt.map((item) => (
-          <Badge key={item} text={item} />
-        ))}
-      </BadgeGroup>
-      <VoiceText text={speechText ? `"${speechText}"` : ''} />
+      <TransferList data={TRANSFER_LIST} className='mt-2 mb-8' />
+      <WorkBadgeGroup data={supportTxt} />
+      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
     </>
   )
 }
