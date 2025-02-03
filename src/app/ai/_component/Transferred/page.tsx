@@ -1,11 +1,11 @@
 'use client'
 
 import styles from './style.module.scss'
-import FloatingButton from '@/app/home/_components/floating-button'
+import FloatingButton from '@/app/home/_components/AccountTransfer/floating-button'
 import React, { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
 import { getBankIcon } from '@/_utils/Bank'
-import {useTimer} from '@/_hooks/useTimer'
+import { useTimer } from '@/_hooks/useTimer'
 
 const Page = () => {
   const { scene, selectedTo } = useContext(AiContext)
