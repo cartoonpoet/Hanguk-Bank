@@ -7,11 +7,11 @@ import TransferWork from './transfer-work'
 import VoiceWork from './voice-work'
 
 import { useState } from 'react'
-import useSpeech from '../transfer/_hooks/useSpeech'
+import useSpeech from '../../transfer/_hooks/useSpeech'
 import AccountWork from './account-work'
 import CheckAccount from './check-account'
 import TransferResult from './transfer-result'
-import AiAvatar from './AiAvatar/ai-avatar'
+import AiAvatar from '../AiAvatar/ai-avatar'
 import TransferInfo from './transfer-info'
 
 export interface VoiceWorkProps {

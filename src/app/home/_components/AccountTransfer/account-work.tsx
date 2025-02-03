@@ -1,7 +1,9 @@
+'use client'
+
 import { useEffect } from 'react'
+import AccountList from './account-list'
 import { DELAY, VoiceWorkProps } from './voice-work-stepper'
 import Title from '@/_components/common/BottomSheet/components/title'
-import AccountList from './account-list'
 
 const AccountWork = ({
   isListening,

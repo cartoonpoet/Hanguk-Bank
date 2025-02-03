@@ -28,12 +28,6 @@ const TransferWork = ({
 }: VoiceWorkProps) => {
   const handleClick = () => {}
 
-  // useEffect(() => {
-  //   speakText(
-  //     '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
-  //   )
-  // }, [])
-
   useEffect(() => {
     if (!speechText) return
     console.log({ speechText })
@@ -55,7 +49,7 @@ const TransferWork = ({
         </span>
       </div>
       <TransferList data={TRANSFER_LIST} handleClick={handleClick} />
-      <VoiceText text={speechText ? `"${speechText}"` : ''} />
+      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
     </>
   )
 }

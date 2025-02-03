@@ -1,6 +1,8 @@
-import Title from '@/_components/common/BottomSheet/components/title'
+'use client'
+
 import React, { useEffect } from 'react'
 import { DELAY, type VoiceWorkProps } from './voice-work-stepper'
+import Title from '@/_components/common/BottomSheet/components/title'
 
 const TransferInfo = ({
   isListening,

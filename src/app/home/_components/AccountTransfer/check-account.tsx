@@ -1,7 +1,9 @@
-import Title from '@/_components/common/BottomSheet/components/title'
-import Account from '@/_components/common/Account/account'
+'use client'
+
 import { useEffect } from 'react'
 import { DELAY, VoiceWorkProps } from './voice-work-stepper'
+import Account from '@/_components/common/Account/account'
+import Title from '@/_components/common/BottomSheet/components/title'
 
 const CheckAccount = ({
   isListening,
