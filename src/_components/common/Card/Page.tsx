@@ -49,7 +49,7 @@ const Card = () => {
           href=''
         />
         <Button
-          name='이체하기'
+          name='돈보내기'
           type='Fill'
           status='Default'
           size='Medium'
