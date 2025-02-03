@@ -66,7 +66,7 @@ const CloseButton = styled.button`
 
 // Content Wrapper
 const ContentWrapper = styled.div`
-  padding: 20px;
+  padding-inline: 20px;
   text-align: center;
 `
 

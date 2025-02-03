@@ -4,13 +4,18 @@ import styles from './_style/page.module.scss'
 import Card from '@/_components/common/Card/Page'
 import List from '@/_components/common/List/page'
 import BottomSheet from '@/_components/common/BottomSheet/page'
-import VoiceWorkStepper from './_components/voice-work-stepper'
-import VoiceButton from './_components/voice-button'
+import VoiceWorkStepper from './_components/AccountTransfer/voice-work-stepper'
+
 import { useState } from 'react'
 import useCommonStore from '@/_hooks/useCommonStore'
-import AiButton from '@/app/home/_components/ai-button'
+
 import { useRouter, redirect } from 'next/navigation'
 import { URL } from '@/_constants/url'
+import AccountInquiryStepper from './_components/AccountInquiry/account-inquiry-stepper'
+import FinancialProductsStepper from './_components/FinancialProducts/financial-product-stepper'
+import CustomerServicetepper from './_components/CustomerService/customer-service-stepper'
+import VoiceButton from './_components/VoiceButton/voice-button'
+import AiButton from './_components/AIButton/ai-button'
 
 const Home = () => {
   const { mode } = useCommonStore()
@@ -36,7 +41,7 @@ const Home = () => {
         </section>
       </div>
       <BottomSheet isOpen={isOpen} onClose={close}>
-        {isOpen && <VoiceWorkStepper />}
+        {isOpen && <CustomerServicetepper />}
       </BottomSheet>
     </>
   )

@@ -5,8 +5,7 @@ import { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
 import styles from './style.module.scss'
 import { handleSpeak } from '@/_hooks/useScene'
-import FloatingButton from '@/app/home/components/floating-button'
-import Mic from '/public/icon/icon-mic.svg'
+import FloatingButton from '@/app/home/_components/AccountTransfer/floating-button'
 
 const savingsData = [
   {
@@ -30,18 +29,25 @@ const Page = () => {
   const { scene, work } = useContext(AiContext)
 
   if (!scene) return null
-  return <div className={styles.container}>
-    <div className={styles.wrapper}>
-      <section className={styles.workSection}>
-        {savingsData.map((item, i) => <Savings key={item.name} number={i + 1} name={item.name} rate={item.rate}
-                                               contents={item.contents}
-                                               onClick={async () => await handleSpeak(scene, item.name, work)} />)}
-      </section>
-      <FloatingButton>
-        <Mic />
-      </FloatingButton>
+  return (
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <section className={styles.workSection}>
+          {savingsData.map((item, i) => (
+            <Savings
+              key={item.name}
+              number={i + 1}
+              name={item.name}
+              rate={item.rate}
+              contents={item.contents}
+              onClick={async () => await handleSpeak(scene, item.name, work)}
+            />
+          ))}
+        </section>
+        <FloatingButton />
+      </div>
     </div>
-  </div>
+  )
 }
 
 export default Page

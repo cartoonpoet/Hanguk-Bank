@@ -1,3 +1,5 @@
+'use client'
+
 import styled from 'styled-components'
 import Mic from '/public/icon/icon-mic.svg'
 

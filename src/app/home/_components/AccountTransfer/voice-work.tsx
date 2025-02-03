@@ -1,8 +1,12 @@
+'use client'
+
+import { useEffect } from 'react'
+
 import Badge from '@/_components/common/Badge/page'
 import BadgeGroup from '@/_components/common/BadgeGroup/page'
 import Title from '@/_components/common/BottomSheet/components/title'
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
-import { useEffect } from 'react'
+
 import { DELAY, VoiceWorkProps } from './voice-work-stepper'
 
 const supportTxt: string[] = ['이체 해줘', '거래내역 알려줘', '대출 알려줘']
@@ -10,15 +14,9 @@ const supportTxt: string[] = ['이체 해줘', '거래내역 알려줘', '대출
 const VoiceWork = ({
   isListening,
   speechText,
-  speakText,
-  handleContentRoute,
-  handleToggleSpeaking,
-}: VoiceWorkProps) => {
-  useEffect(() => {
-    handleToggleSpeaking()
-    speakText('원하는 업무를 말씀해주세요')
-  }, [])
 
+  handleContentRoute,
+}: VoiceWorkProps) => {
   useEffect(() => {
     if (!speechText) return
 
@@ -37,7 +35,7 @@ const VoiceWork = ({
           <Badge key={item} text={item} />
         ))}
       </BadgeGroup>
-      <VoiceText text={speechText ? `"${speechText}"` : ''} />
+      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
     </>
   )
 }

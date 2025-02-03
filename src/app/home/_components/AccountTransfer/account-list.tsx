@@ -1,6 +1,8 @@
+'use client'
+
+import { accountRows } from '../../transfer/_hooks/model'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
 
-import { accountRows } from '../transfer/_hooks/model'
 import KaKaoBank from '/public/bank/kakaobank.svg'
 import KbStar from '/public/bank/kbstar.svg'
 import ShinHan from '/public/bank/shinhan.svg'
@@ -23,7 +25,7 @@ const AccountList = () => {
       {customAccountRows.map((item, idx) => {
         const Icon = BANK_ICON[item.accountType] ?? null
         return (
-          <TransferContainer key={idx} className='p-5'>
+          <TransferContainer key={idx} className='p-5 rounded-2xl'>
             <div className='flex items-center gap-2'>
               <div>
                 <Icon />

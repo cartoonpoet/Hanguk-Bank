@@ -1,5 +1,6 @@
 import React from 'react'
 import TransferContainer from './transfer-container'
+import cx from 'classnames'
 
 type TransferInfo = {
   id: number
@@ -10,14 +11,15 @@ type TransferInfo = {
 
 interface TransferListProps {
   data: TransferInfo[]
-  handleClick: () => void
+  handleClick?: () => void
+  className?: string
 }
 
-const TransferList = ({ data, handleClick }: TransferListProps) => {
+const TransferList = ({ data, handleClick, className }: TransferListProps) => {
   return (
-    <div className='flex flex-col gap-2'>
+    <div className={cx('flex flex-col gap-2', className)}>
       {data.map((item) => (
-        <TransferContainer key={item.id} className='p-5'>
+        <TransferContainer key={item.id} className='p-5 rounded-2xl'>
           <div onClick={handleClick} className='flex flex-col gap-2 mb-5'>
             <div className='flex gap-2 font-bold text-lg'>
               <span style={{ color: '#007BFF' }}>{item.id}</span>
