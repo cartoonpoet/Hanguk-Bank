@@ -12,41 +12,36 @@ import {
 import { MutableRefObject, use, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify'
 
-// const prodKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFua3Byb2QiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV82OWI0YWE5Ni0wZGEyLTQ1ZjctOWM1NC1lZjI5NThiYjNmOTYifQ=='
-// const devKey = 'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2QyZjhmMDA3LWY2YWYtNGM1Zi1iZDRkLWEwZWQ3ZDg5MWQxYSJ9'
-
 const webKey =
-  'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2NkMWNhYzA1LTYyMDAtNDNlNC1hMmMxLTIzMzY1ZWMwMjM0MyJ9'
-const appKey = 'eyJzb3VsSWQiOiJkZG5hLXNzb2ktaHdhbmctb3JnYzY3Ni0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ZhY2YzMGRhLWQ2MGUtNGE2Mi05NGNlLTdmZDRlOWQxZmU4ZiJ9'
-const isWebView = /wv|FBAN|FBAV|Instagram|Line|KAKAOTALK|NAVER/i.test(navigator.userAgent);
+  'eyJzb3VsSWQiOiJkZG5hLWp1bmhvLXNvbi1vcmdjZDhmLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNDk0OTg1MmYtZGU1ZS00MWQ2LWI4MjItZTBlOWY3Njc2ZTI3In0='
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
-const useKey =  webKey
+const useKey = webKey
 
 function onConnectionError(error: Error) {
-  console.log('Connection failed with error:', error);
-  toast.error(error.name+error.message);
+  console.log('Connection failed with error:', error)
+  toast.error(error.name + error.message)
   switch (error.name) {
     case 'noUserMedia':
-      console.log('user declined device access:', error.message);
+      console.log('user declined device access:', error.message)
       // ask the user to unblock devices
-      break;
+      break
     case 'noScene':
-      console.log('the server is busy:', error.message);
+      console.log('the server is busy:', error.message)
       // ask the user to retry later
-      break;
+      break
     case 'serverConnectionFailed':
-      console.log('server connection failed:', error.message);
+      console.log('server connection failed:', error.message)
       // ask the user to connect from a different network
-      break;
+      break
     default:
-      console.log('unhandled error:', error.name, error.message);
+      console.log('unhandled error:', error.name, error.message)
 
   }
 }
 
 const useScene = (videoRef: MutableRefObject<null>) => {
-  const { scene, setScene, setMode, work, setWork } = use(AiContext)
+  const { scene, setScene, setMode, work, setWork, setApplicationType, setConsultationType } = use(AiContext)
   const stateRef = useRef<WorkProp>(work)
 
   useEffect(() => {
@@ -75,7 +70,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
 
       try {
         // 연결 및 비디오 시작
-        const sessionId = await smScene.connect().catch((error) => onConnectionError(error));
+        const sessionId = await smScene.connect().catch((error) => onConnectionError(error))
         console.log('Session connected:', sessionId)
         await smScene.startVideo()
         setScene(smScene)
@@ -99,6 +94,9 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   } else if (personaSpeech === '적금 상품의 원하는 입금방식을 선택해 주세요. 첫번째 또는 화면에 보이는 입금 방식을 말씀해 주세요.') {
                     setWork('Savings')
                     setMode('Method')
+                  } else if (personaSpeech === '상담 방법을 선택해주세요. 첫번째 또는 상담 방법을 말씀해 주세요.') {
+                    setWork('CallCenter')
+                    setMode('ConsultationType')
                   }
                   break
                 }
@@ -121,6 +119,8 @@ const useScene = (videoRef: MutableRefObject<null>) => {
                   break
                 }
                 case 'CallCenter': {
+                  if (personaSpeech === '상담 유형을 선택해 주세요. 첫번째 또는 상담 유형을 말씀해 주세요.') setMode('ApplicationType')
+                  else if (personaSpeech === '') setApplicationType('사고 신고')
                   break
 
                 }
@@ -129,17 +129,33 @@ const useScene = (videoRef: MutableRefObject<null>) => {
           }
         })
 
-        // smScene.onRecognizeResultsEvent.addListener(
-        //     (scene, status, errorMessage, results) => {
-        //         const result = results[0];
-        //
-        //         const userSpeech = result.alternatives[0].transcript;
-        //         if (result.final === true) {
-        //             console.log('[userSpeech] user said:', userSpeech);
-        //         }
-        //
-        //     }
-        // );
+        smScene.onRecognizeResultsEvent.addListener(
+          async (scene: Scene, status: string, errorMessage: string | null, results: any[]) => {
+            if (results.length > 0) {
+              const result = results[0]
+              if (result.alternatives.length > 0) {
+                const userSpeech = result.alternatives[0].transcript
+                if (result.final === true) {
+                  // await handleSpeak(scene, userSpeech,  stateRef.current)
+                  console.log('[userSpeech] user said:', userSpeech)
+                } else {
+                  const persona = new Persona(scene, scene.currentPersonaId)
+                  if (stateRef.current === 'CallCenter') {
+                    const text = userSpeech.replaceAll(' ', '')
+                    if (text.includes('전화') || text.includes('첫번째'))
+                      setConsultationType('전화 상담')
+                    else if(text.includes('챗봇') || text.includes('두번째'))
+                      setConsultationType('챗봇 상담')
+                    else if(text.includes('사고신고') || text.includes('뱅킹') || text.includes('예금') || text.includes('펀드') || text.includes('대출') || text.includes('퇴직연금') || text.includes('민원접수') ){
+                      setApplicationType('사고 신고')
+                    }
+                  }
+                  await persona.conversationSetVariables({ work: stateRef.current })
+                }
+              }
+            }
+          },
+        )
       } catch (error) {
         toast.error('문제가 발생하였습니다.')
         console.error('Error initializing scene:', error)
@@ -162,7 +178,7 @@ export const handleSpeak = async (
 ) => {
   try {
     const persona = new Persona(scene, scene.currentPersonaId)
-    await persona.conversationSend(text, { work }, {})
+    await persona.conversationSend(text, { work }, { fromCall: 'handleSpeak' })
   } catch (error) {
     console.error('Error sending text:', error)
     throw error

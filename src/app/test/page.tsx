@@ -1,6 +1,6 @@
-import Manual from '@/_components/Manual/page'
+import ChatBot from '@/_components/ChatBot/page'
 
 const Page = () => {
-  return <Manual/>
+  return <ChatBot />
 }
 export default Page
