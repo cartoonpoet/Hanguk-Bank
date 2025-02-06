@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import styles from './who.module.scss'
+import styles from './selectAccount.module.scss'
 import NavBar from '@/_components/common/NavBar/page'
 import TextField from '@/_components/common/TextField/page'
 import ContentSwitcher from '@/_components/common/ContentSwitcher/page'
@@ -10,7 +10,11 @@ import { accountRows } from '@/_constants/model'
 import AccountRow from '@/_components/common/AccountRow/page'
 import Button from '@/_components/common/Button/page'
 
-const Who = () => {
+interface SelectAccountProps {
+  onNext: () => void
+}
+
+const SelectAccount = ({onNext}: SelectAccountProps) => {
   const [selected, setSelected] = useState<string>('')
   return (
     <div className={styles.container}>
@@ -40,15 +44,14 @@ const Who = () => {
 
       <div className={styles.fixedBtn}>
         <Button
-          name='다음'
           type='Fill'
           status={!selected ? 'Disabled' : 'Default'}
           size='Large'
-          href='/'
-        />
+          onClick={onNext}
+        >다음</Button>
       </div>
     </div>
   )
 };
 
-export default Who;
+export default SelectAccount;
