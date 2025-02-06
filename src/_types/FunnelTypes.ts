@@ -10,5 +10,6 @@ export interface FunnelProps {
 }
 
 export interface StepMoveProps {
-  onNext: (nextStep?: string) => void;
+  onNext?: (nextStep?: string) => void;
+  onPrev?: (prevStep?: string) => void;
 }

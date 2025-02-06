@@ -21,7 +21,7 @@ const Transfer = () => {
     setStep(step)
   }
 
-  return <Funnel><Step name="계좌 선택"><SelectAccount onNext={() => nextClickHandler(steps[1])}/></Step><Step name="금액 입력"><EnterAmount /></Step></Funnel>
+  return <Funnel><Step name="계좌 선택"><SelectAccount onNext={() => nextClickHandler(steps[1])}/></Step><Step name="금액 입력"><EnterAmount onNext={() => nextClickHandler(steps[2])} onPrev={() => nextClickHandler(steps[0])}/></Step></Funnel>
 }
 
 export default Transfer

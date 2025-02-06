@@ -16,6 +16,8 @@ module.exports = {
         'Brand-On-Tertiary': '#0062CC',
         'Neutral-Label': '#4E5968',
         'Brand-Default': '#007BFF',
+        'Border-Default': '#D6DBE1',
+        'Neutral-Default': '#6B7684'
       },
       fontFamily:{
         pretendard: ['--font-pretendard','Arial', 'Helvetica', 'sans-serif']

@@ -9,17 +9,15 @@ import SearchBar from '@/_components/common/SearchBar/page'
 import { accountRows } from '@/_constants/model'
 import AccountRow from '@/_components/common/AccountRow/page'
 import Button from '@/_components/common/Button/page'
+import { StepMoveProps } from '@/_types/FunnelTypes'
 
-interface SelectAccountProps {
-  onNext: () => void
-}
 
-const SelectAccount = ({onNext}: SelectAccountProps) => {
+const SelectAccount = ({ onNext }: StepMoveProps) => {
   const [selected, setSelected] = useState<string>('')
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <NavBar leftControl='icon' rightControl='icon' title="이체" />
+        <NavBar leftControl="icon" rightControl="icon" title="이체" />
         <header className={styles.user}>누구에게 보낼까요?</header>
         <TextField />
         <ContentSwitcher />
@@ -44,14 +42,14 @@ const SelectAccount = ({onNext}: SelectAccountProps) => {
 
       <div className={styles.fixedBtn}>
         <Button
-          type='Fill'
+          type="Fill"
           status={!selected ? 'Disabled' : 'Default'}
-          size='Large'
+          size="Large"
           onClick={onNext}
         >다음</Button>
       </div>
     </div>
   )
-};
+}
 
-export default SelectAccount;
+export default SelectAccount
