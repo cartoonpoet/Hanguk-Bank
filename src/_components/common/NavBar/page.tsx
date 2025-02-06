@@ -3,7 +3,6 @@
 import styles from './style.module.scss'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { ReactNode } from 'react'
 import { Home } from '@/_assets/icons'
 
@@ -35,9 +34,9 @@ const NavBar = ({ leftControl, rightControl, title, onClickBack }: NavBarProps) 
       )}
       <div>{title}</div>
       {rightControl === 'icon' && (
-        <Link className={styles.btn} href={'/home'}>
+        <button className={styles.btn} onClick={()=>router.replace('/home')}>
           <Home width="20" height="20" fill="black" />
-        </Link>
+        </button>
       )}
     </section>
   )
