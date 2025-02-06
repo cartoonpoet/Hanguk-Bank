@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import styles from './who.module.scss'
+import styles from './selectAccount.module.scss'
 import NavBar from '@/_components/common/NavBar/page'
 import TextField from '@/_components/common/TextField/page'
 import ContentSwitcher from '@/_components/common/ContentSwitcher/page'
@@ -9,13 +9,15 @@ import SearchBar from '@/_components/common/SearchBar/page'
 import { accountRows } from '@/_constants/model'
 import AccountRow from '@/_components/common/AccountRow/page'
 import Button from '@/_components/common/Button/page'
+import { StepMoveProps } from '@/_types/FunnelTypes'
 
-const Who = () => {
+
+const SelectAccount = ({ onNext }: StepMoveProps) => {
   const [selected, setSelected] = useState<string>('')
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <NavBar leftControl='icon' rightControl='icon' title="이체" />
+        <NavBar leftControl="icon" rightControl="icon" title="이체" />
         <header className={styles.user}>누구에게 보낼까요?</header>
         <TextField />
         <ContentSwitcher />
@@ -40,15 +42,14 @@ const Who = () => {
 
       <div className={styles.fixedBtn}>
         <Button
-          name='다음'
-          type='Fill'
+          type="Fill"
           status={!selected ? 'Disabled' : 'Default'}
-          size='Large'
-          href='/'
-        />
+          size="Large"
+          onClick={onNext}
+        >다음</Button>
       </div>
     </div>
   )
-};
+}
 
-export default Who;
+export default SelectAccount

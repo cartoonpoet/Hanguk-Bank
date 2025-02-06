@@ -5,15 +5,16 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import {Home} from '@/_assets/icons'
+import { Home } from '@/_assets/icons'
 
 type NavBarProps = {
   leftControl: 'icon' | 'none'
   rightControl: 'icon' | 'none' | 'text'
   title: ReactNode
+  onClickBack?: () => void
 }
 
-const NavBar = ({ leftControl, rightControl, title }: NavBarProps) => {
+const NavBar = ({ leftControl, rightControl, title, onClickBack }: NavBarProps) => {
   const router = useRouter()
 
   const handleBack = () => {
@@ -23,10 +24,10 @@ const NavBar = ({ leftControl, rightControl, title }: NavBarProps) => {
   return (
     <section className={styles.wrapper}>
       {leftControl === 'icon' && (
-        <button className={styles.btn} onClick={handleBack}>
+        <button className={styles.btn} onClick={onClickBack || handleBack}>
           <Image
-            alt='previous'
-            src='/icon/nav-back.svg'
+            alt="previous"
+            src="/icon/nav-back.svg"
             width={10}
             height={18}
           />
