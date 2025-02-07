@@ -6,11 +6,16 @@ import Inputs from '@/_components/common/Inputs/page'
 import Button from '@/_components/common/Button/page'
 import { PlusIcon } from '@/_assets/icons'
 import BottomSheet from '@/_components/common/BottomSheet/page'
-import ConfirmTransfer from '@/_components/Transfer/ConfirmTransfer/ConfirmTransfer'
+import ConfirmTransfer from '@/_components/Transfer/ConfirmAccount/_components/ConfirmTransfer'
+import EnterPassword from '@/_components/Transfer/ConfirmAccount/_components/EnterPassword'
 
 const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const open = () => setIsOpen(true)
+  const [mode, setMode] = useState<'ConfirmTransfer' | 'EnterPassword'>('ConfirmTransfer')
+  const open = () => {
+    setMode('ConfirmTransfer')
+    setIsOpen(true)
+  }
   const close = () => setIsOpen(false)
 
   return <main className="h-dvh flex flex-col gap-5">
@@ -47,8 +52,9 @@ const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
         onClick={open}
       >다음</Button>
     </div>
-    <BottomSheet isOpen={isOpen}>
-      <ConfirmTransfer onCancel={close} />
+    <BottomSheet isOpen={isOpen} onClose={mode === 'EnterPassword' ? close : undefined}>
+      {mode === 'ConfirmTransfer' ?
+        <ConfirmTransfer onCancel={close} onSubmit={() => setMode('EnterPassword')} /> : <EnterPassword />}
     </BottomSheet>
   </main>
 }

@@ -14,6 +14,7 @@ import MicIcon from './icons/mic.svg'
 import PencilIcon from './icons/pencil.svg'
 import WooriBank from './icons/wooriBank.svg'
 import ArrowDown from './icons/arrow-down.svg'
+import ReloadIcon from './icons/reload.svg'
 
 export {
   ActivityIcon,
@@ -31,5 +32,6 @@ export {
   MicIcon,
   PencilIcon,
   WooriBank,
-  ArrowDown
+  ArrowDown,
+  ReloadIcon
 }
