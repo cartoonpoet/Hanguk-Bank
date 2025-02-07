@@ -11,6 +11,7 @@ import User from './icons/user.svg'
 import Avatar from './icons/avatar.png'
 import PlusIcon from './icons/plus.svg'
 import MicIcon from './icons/mic.svg'
+import PencilIcon from './icons/pencil.svg'
 
 export {
   ActivityIcon,
@@ -25,5 +26,6 @@ export {
   User,
   Avatar,
   PlusIcon,
-  MicIcon
+  MicIcon,
+  PencilIcon
 }

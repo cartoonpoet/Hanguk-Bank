@@ -2,7 +2,12 @@ import React from 'react'
 import Cell from '@/_components/common/Cell/page'
 import Row from '@/_components/common/Row/page'
 
-const KeyboardNumber = () => {
+interface KeyboardNumberProps {
+  children?: React.ReactNode
+  onClick?: () => void
+}
+
+const KeyboardNumber = ({ children, onClick }: KeyboardNumberProps) => {
   return <div className="text-3xl font-normal cursor-pointer">
     <Row>
       <Cell>1</Cell>
@@ -20,9 +25,9 @@ const KeyboardNumber = () => {
       <Cell>9</Cell>
     </Row>
     <Row>
-      <Cell>00</Cell>
-      <Cell>0</Cell>
       <Cell>←</Cell>
+      <Cell>0</Cell>
+      <Cell onClick={onClick}>{children}</Cell>
     </Row>
   </div>
 }
