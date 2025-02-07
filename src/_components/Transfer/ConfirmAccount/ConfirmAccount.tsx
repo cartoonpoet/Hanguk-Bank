@@ -1,12 +1,23 @@
 import { StepMoveProps } from '@/_types/FunnelTypes'
 import NavBar from '@/_components/common/NavBar/page'
-import React from 'react'
+import React, { useState } from 'react'
 import AccountCard from '@/_components/common/AccountCard/page'
 import Inputs from '@/_components/common/Inputs/page'
 import Button from '@/_components/common/Button/page'
 import { PlusIcon } from '@/_assets/icons'
+import BottomSheet from '@/_components/common/BottomSheet/page'
+import ConfirmTransfer from '@/_components/Transfer/ConfirmAccount/_components/ConfirmTransfer'
+import EnterPassword from '@/_components/Transfer/ConfirmAccount/_components/EnterPassword'
 
-const ConfirmAccount = ({ onNext, onPrev }: StepMoveProps) => {
+const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [mode, setMode] = useState<'ConfirmTransfer' | 'EnterPassword'>('ConfirmTransfer')
+  const open = () => {
+    setMode('ConfirmTransfer')
+    setIsOpen(true)
+  }
+  const close = () => setIsOpen(false)
+
   return <main className="h-dvh flex flex-col gap-5">
     <div className="flex flex-col px-5">
       <NavBar leftControl="icon" rightControl="icon" title="이체" onClickBack={onPrev} />
@@ -38,9 +49,13 @@ const ConfirmAccount = ({ onNext, onPrev }: StepMoveProps) => {
         type="Fill"
         status="Default"
         size="Large"
-        onClick={onNext}
+        onClick={open}
       >다음</Button>
     </div>
+    <BottomSheet isOpen={isOpen} onClose={mode === 'EnterPassword' ? close : undefined}>
+      {mode === 'ConfirmTransfer' ?
+        <ConfirmTransfer onCancel={close} onSubmit={() => setMode('EnterPassword')} /> : <EnterPassword />}
+    </BottomSheet>
   </main>
 }
 

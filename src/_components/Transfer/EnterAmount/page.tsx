@@ -17,11 +17,11 @@ const EnterAmount = ({ onNext, onPrev }: StepMoveProps) => {
       <div className="flex flex-col px-5 gap-5 flex-1">
         <NavBar leftControl="icon" rightControl="icon" title="이체" onClickBack={onPrev} />
         <AccountCard accountNumber="우리 1002-345-678910" name="김손자" isEditing={false} />
-        <Inputs description="출금가능금액 12,345,600원" total="0원"/>
+        <Inputs description="출금가능금액 12,345,600원" total="0원" />
       </div>
       <section className="p-5 rounded-t-2xl shadow-[0_-8px_16px_0_rgba(0,0,0,0.10)] flex flex-col gap-5">
         <div className="flex flex-row gap-2 justify-center">
-          {tagNames.map((tag) => (<Tag key={tag}>{tag}</Tag>))}
+          {tagNames.map((tag) => (<Tag type="Focus" key={tag}>{tag}</Tag>))}
         </div>
         <KeyboardNumber onClick={onNext}>
           <span className="text-Brand-Default text-lg font-medium">완료</span>

@@ -4,6 +4,7 @@ import SelectAccount from './SelectAccount/SelectAccount'
 import EnterAmount from '@/_components/Transfer/EnterAmount/page'
 import { useFunnel } from '@/_hooks/useFunnel'
 import ConfirmAccount from '@/_components/Transfer/ConfirmAccount/ConfirmAccount'
+import React from 'react'
 
 // 전체 스텝을 담은 배열
 const steps = [
