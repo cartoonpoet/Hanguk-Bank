@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 import AccountCard from '@/_components/common/AccountCard/page'
 import Inputs from '@/_components/common/Inputs/page'
 import Button from '@/_components/common/Button/page'
-import { PlusIcon, WooriBank, ArrowDown } from '@/_assets/icons'
+import { PlusIcon } from '@/_assets/icons'
 import BottomSheet from '@/_components/common/BottomSheet/page'
-import Tag from '@/_components/common/Tag/page'
+import ConfirmTransfer from '@/_components/Transfer/ConfirmTransfer/ConfirmTransfer'
 
 const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -48,22 +48,7 @@ const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
       >다음</Button>
     </div>
     <BottomSheet isOpen={isOpen}>
-      <main className="flex flex-col px-5 py-10 justify-center items-center gap-[18px]">
-        <section className="flex flex-col gap-2 justify-center items-center">
-          <WooriBank />
-          <div className="text-2xl"><b>김손자</b>님께<br /><b>100,000원</b>을 이체합니다.</div>
-        </section>
-        <div>우리 1002-345-678910</div>
-        <Tag type="Default">받는 분과 금액을 한 번 더 확인해주세요</Tag>
-        <section className="self-stretch">
-          <div className="flex justify-end flex-row items-center gap-1">이체 상세정보<ArrowDown width="11.6" height="6.6"
-                                                                                          fill="#6B7684" /></div>
-        </section>
-        <section className="flex flex-row gap-2 self-stretch">
-          <Button type="Soft" status="Default" size="Large" onClick={close}>취소</Button>
-          <Button type="Fill" status="Default" size="Large">이체</Button>
-        </section>
-      </main>
+      <ConfirmTransfer onCancel={close} />
     </BottomSheet>
   </main>
 }
