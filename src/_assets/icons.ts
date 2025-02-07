@@ -12,6 +12,8 @@ import Avatar from './icons/avatar.png'
 import PlusIcon from './icons/plus.svg'
 import MicIcon from './icons/mic.svg'
 import PencilIcon from './icons/pencil.svg'
+import WooriBank from './icons/wooriBank.svg'
+import ArrowDown from './icons/arrow-down.svg'
 
 export {
   ActivityIcon,
@@ -27,5 +29,7 @@ export {
   Avatar,
   PlusIcon,
   MicIcon,
-  PencilIcon
+  PencilIcon,
+  WooriBank,
+  ArrowDown
 }
