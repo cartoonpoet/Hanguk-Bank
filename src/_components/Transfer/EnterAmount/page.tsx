@@ -1,3 +1,5 @@
+'use client'
+
 import NavBar from '@/_components/common/NavBar/page'
 import React from 'react'
 import { StepMoveProps } from '@/_types/FunnelTypes'
@@ -25,7 +27,9 @@ const EnterAmount = ({ onNext, onPrev }: StepMoveProps) => {
         <div className="flex flex-row gap-2 justify-center">
           {tagNames.map((tag) => (<Tag key={tag}>{tag}</Tag>))}
         </div>
-        <KeyboardNumber />
+        <KeyboardNumber onClick={onNext}>
+          <span className="text-Brand-Default text-lg font-medium">완료</span>
+        </KeyboardNumber>
       </section>
     </main>
   )
