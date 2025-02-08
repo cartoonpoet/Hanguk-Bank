@@ -1,6 +1,6 @@
 import { StepMoveProps } from '@/_types/FunnelTypes'
 import NavBar from '@/_components/common/NavBar/page'
-import React, { useState } from 'react'
+import React, { use } from 'react'
 import AccountCard from '@/_components/common/AccountCard/page'
 import Inputs from '@/_components/common/Inputs/page'
 import Button from '@/_components/common/Button/page'
@@ -8,10 +8,10 @@ import { PlusIcon } from '@/_assets/icons'
 import CustomBottonSheet from '@/_components/common/CustomBottonSheet/page'
 import ConfirmTransfer from '@/_components/Transfer/ConfirmAccount/_components/ConfirmTransfer'
 import EnterPassword from '@/_components/Transfer/ConfirmAccount/_components/EnterPassword'
+import { TransferContext } from '@/_contexts/useTransferContext'
 
 const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [mode, setMode] = useState<'ConfirmTransfer' | 'EnterPassword'>('ConfirmTransfer')
+  const { isOpen, setIsOpen, setMode, mode } = use(TransferContext)
   const open = () => {
     setMode('ConfirmTransfer')
     setIsOpen(true)
