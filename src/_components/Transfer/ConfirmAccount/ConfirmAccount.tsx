@@ -9,9 +9,10 @@ import CustomBottonSheet from '@/_components/common/CustomBottonSheet/page'
 import ConfirmTransfer from '@/_components/Transfer/ConfirmAccount/_components/ConfirmTransfer'
 import EnterPassword from '@/_components/Transfer/ConfirmAccount/_components/EnterPassword'
 import { TransferContext } from '@/_contexts/useTransferContext'
+import { numberToKorean } from '@/_utils/Bank'
 
 const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
-  const { isOpen, setIsOpen, setMode, mode } = use(TransferContext)
+  const { isOpen, setIsOpen, setMode, mode, amount } = use(TransferContext)
   const open = () => {
     setMode('ConfirmTransfer')
     setIsOpen(true)
@@ -30,7 +31,7 @@ const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
       <AccountCard accountNumber="우리 1002-345-678910" name="김손자" isEditing />
     </div>
     <section className="flex-1 flex">
-      <Inputs description="10만 원" total="100,000원" />
+      <Inputs description={`${numberToKorean(amount)} 원`} total={`${amount.toLocaleString()}원`} />
     </section>
     <section className="px-5 flex flex-col gap-2">
       <div className="text-Neutral-Label text-[16px] font-medium">받는 분 통장 표시</div>

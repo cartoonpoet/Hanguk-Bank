@@ -5,25 +5,26 @@ import Row from '@/_components/common/Row/page'
 interface KeyboardNumberProps {
   children?: React.ReactNode
   onClick?: () => void
+  onClickNumber?: (number: number) => void
 }
 
-const KeyboardNumber = ({ children, onClick }: KeyboardNumberProps) => {
+const KEYPAD = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+]
+
+const KeyboardNumber = ({ children, onClick, onClickNumber }: KeyboardNumberProps) => {
   return <div className="text-3xl font-normal cursor-pointer">
-    <Row>
-      <Cell>1</Cell>
-      <Cell>2</Cell>
-      <Cell>3</Cell>
-    </Row>
-    <Row>
-      <Cell>4</Cell>
-      <Cell>5</Cell>
-      <Cell>6</Cell>
-    </Row>
-    <Row>
-      <Cell>7</Cell>
-      <Cell>8</Cell>
-      <Cell>9</Cell>
-    </Row>
+    {KEYPAD.map((item, i) => {
+      return (
+        <Row key={i}>
+          <Cell onClick={() => (onClickNumber?.(item[0]))}>{item[0]}</Cell>
+          <Cell onClick={() => (onClickNumber?.(item[1]))}>{item[1]}</Cell>
+          <Cell onClick={() => (onClickNumber?.(item[2]))}>{item[2]}</Cell>
+        </Row>
+      )
+    })}
     <Row>
       <Cell>←</Cell>
       <Cell>0</Cell>

@@ -11,7 +11,7 @@ import TransferContextProvider from '@/_contexts/useTransferContext'
 const steps = [
   '계좌 선택',
   '금액 입력',
-  '통장 확인',
+  '이체 확인',
   '이체 완료',
 ]
 
@@ -30,7 +30,7 @@ const Transfer = () => {
       <EnterAmount onNext={() => nextClickHandler(steps[2])}
                    onPrev={() => nextClickHandler(steps[0])} />
     </Step>
-    <Step name="통장 확인">
+    <Step name="이체 확인">
       <ConfirmAccount onNext={() => nextClickHandler(steps[3])}
                       onPrev={() => nextClickHandler(steps[1])}/>
     </Step>
