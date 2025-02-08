@@ -1,7 +1,8 @@
 import { ArrowDown, WooriBank } from '@/_assets/icons'
 import Tag from '@/_components/common/Tag/page'
 import Button from '@/_components/common/Button/page'
-import React from 'react'
+import React, { use } from 'react'
+import { TransferContext } from '@/_contexts/useTransferContext'
 
 interface ConfirmTransferProps {
   onCancel?: () => void
@@ -9,10 +10,11 @@ interface ConfirmTransferProps {
 }
 
 const ConfirmTransfer = ({ onCancel, onSubmit }: ConfirmTransferProps) => {
+  const { amount } = use(TransferContext)
   return <main className="flex flex-col px-5 py-10 justify-center items-center gap-[18px]">
     <section className="flex flex-col gap-2 justify-center items-center">
       <WooriBank />
-      <div className="text-2xl"><b>김손자</b>님께<br /><b>100,000원</b>을 이체합니다.</div>
+      <div className="text-2xl"><b>김손자</b>님께<br /><b>{amount.toLocaleString()}원</b>을 이체합니다.</div>
     </section>
     <div className="flex flex-col gap-2.5">
       우리 1002-345-678910<Tag type="Default">받는 분과 금액을 한 번 더 확인해주세요</Tag>

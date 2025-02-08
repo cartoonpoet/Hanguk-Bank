@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { use } from 'react'
 import styles from './selectAccount.module.scss'
 import NavBar from '@/_components/common/NavBar/page'
 import TextField from '@/_components/common/TextField/page'
@@ -10,10 +10,11 @@ import { accountRows } from '@/_constants/model'
 import AccountRow from '@/_components/common/AccountRow/page'
 import Button from '@/_components/common/Button/page'
 import { StepMoveProps } from '@/_types/FunnelTypes'
+import { TransferContext } from '@/_contexts/useTransferContext'
 
 
 const SelectAccount = ({ onNext }: StepMoveProps) => {
-  const [selected, setSelected] = useState<string>('')
+  const { selected, setSelected } = use(TransferContext)
   return (
     <div className={styles.container}>
       <div className={styles.top}>
