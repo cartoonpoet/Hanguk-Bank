@@ -5,7 +5,7 @@ import AccountCard from '@/_components/common/AccountCard/page'
 import Inputs from '@/_components/common/Inputs/page'
 import Button from '@/_components/common/Button/page'
 import { PlusIcon } from '@/_assets/icons'
-import BottomSheet from '@/_components/common/BottomSheet/page'
+import CustomBottonSheet from '@/_components/common/CustomBottonSheet/page'
 import ConfirmTransfer from '@/_components/Transfer/ConfirmAccount/_components/ConfirmTransfer'
 import EnterPassword from '@/_components/Transfer/ConfirmAccount/_components/EnterPassword'
 
@@ -52,10 +52,11 @@ const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
         onClick={open}
       >다음</Button>
     </div>
-    <BottomSheet isOpen={isOpen} onClose={mode === 'EnterPassword' ? close : undefined}>
+    <CustomBottonSheet isOpen={isOpen} onClose={mode === 'EnterPassword' ? close : undefined}
+                       headerBackgroundColor={mode === 'EnterPassword' ? 'var(--Brand-Default, #007BFF)' : undefined}>
       {mode === 'ConfirmTransfer' ?
         <ConfirmTransfer onCancel={close} onSubmit={() => setMode('EnterPassword')} /> : <EnterPassword />}
-    </BottomSheet>
+    </CustomBottonSheet>
   </main>
 }
 
