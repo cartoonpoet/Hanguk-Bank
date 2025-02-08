@@ -13,7 +13,7 @@ const CustomBottomSheet = ({ children, isOpen, onClose, headerBackgroundColor }:
   return (
     <Overlay isOpen={isOpen}>
       <BottomSheetContainer isOpen={isOpen}>
-        <Header headerBackgroundColor={headerBackgroundColor}>
+        <Header headerbackgroundcolor={headerBackgroundColor}>
           {onClose && <CloseButton onClick={onClose} >
             <Close />
           </CloseButton>}
@@ -24,11 +24,11 @@ const CustomBottomSheet = ({ children, isOpen, onClose, headerBackgroundColor }:
   )
 }
 
-const Header = styled.div<{ headerBackgroundColor?: string }>`
+const Header = styled.div<{ headerbackgroundcolor?: string }>`
     display: flex;
     padding: 20px 20px 10px 20px;
     justify-content: flex-end;
-    background: ${({ headerBackgroundColor }) => (headerBackgroundColor ? headerBackgroundColor : 'none')};
+    background: ${({ headerbackgroundcolor }) => (headerbackgroundcolor ? headerbackgroundcolor : 'none')};
     align-items: center;
     align-self: stretch;
 `

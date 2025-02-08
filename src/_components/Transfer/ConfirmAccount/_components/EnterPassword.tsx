@@ -16,7 +16,7 @@ const EnterPassword = () => {
 
   const onClick = (number: number) => {
     setPassword((prev: string) => {
-      if (prev.length <= 4)
+      if (prev.length < 4)
         return prev.concat(number.toString())
       return prev
     })
