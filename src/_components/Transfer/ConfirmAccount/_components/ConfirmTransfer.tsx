@@ -17,7 +17,7 @@ const ConfirmTransfer = ({ onCancel, onSubmit }: ConfirmTransferProps) => {
       <div className="text-2xl"><b>김손자</b>님께<br /><b>{amount.toLocaleString()}원</b>을 이체합니다.</div>
     </section>
     <div className="flex flex-col gap-2.5">
-      우리 1002-345-678910<Tag type="Default">받는 분과 금액을 한 번 더 확인해주세요</Tag>
+      우리 1002-345-678910<Tag type="Secondary">받는 분과 금액을 한 번 더 확인해주세요</Tag>
     </div>
     <section className="self-stretch">
       <div className="flex justify-end flex-row items-center gap-1">이체 상세정보<ArrowDown width="11.6" height="6.6"

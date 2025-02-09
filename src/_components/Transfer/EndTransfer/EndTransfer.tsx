@@ -26,7 +26,7 @@ const EndTransfer = ({ onPrev }: StepMoveProps) => {
           이체가 완료되었습니다.
         </div>
         <section className="flex flex-row gap-2">
-          <Tag type="Default">
+          <Tag type="Secondary">
             <div className="flex flex-row gap-1 text-base justify-center items-center text-black font-semibold">우리
               1002-345-678910 <StarIcon width="16" height="15" fill="#6B7684" /></div>
           </Tag>
