@@ -15,7 +15,9 @@ import PencilIcon from './icons/pencil.svg'
 import WooriBank from './icons/wooriBank.svg'
 import ArrowDown from './icons/arrow-down.svg'
 import ReloadIcon from './icons/reload.svg'
-
+import CheckIcon from './icons/check.png'
+import ShareIcon from './icons/share.svg'
+import StarIcon from './icons/star.svg'
 export {
   ActivityIcon,
   InfoIcon,
@@ -33,5 +35,8 @@ export {
   PencilIcon,
   WooriBank,
   ArrowDown,
-  ReloadIcon
+  ReloadIcon,
+  CheckIcon,
+  ShareIcon,
+  StarIcon
 }

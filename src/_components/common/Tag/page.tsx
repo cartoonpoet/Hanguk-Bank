@@ -25,7 +25,6 @@ const StyledTag = styled.div<StyledTagProps>`
     justify-content: center;
     align-items: center;
     gap: 4px;
-    border-radius: 8px;
     ${(props:StyledTagProps) => tagTypeOfState[props.type]}
     text-align: center;
     font-style: normal;
