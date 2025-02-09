@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../_style/page.module.scss'
+import styles from '../../_style/page.module.scss'
 import Mic from '/public/icon/icon-reverse-mic.svg'
 
 interface VoiceButtonProps {

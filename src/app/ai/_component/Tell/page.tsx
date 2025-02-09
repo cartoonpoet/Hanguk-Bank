@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './style.module.scss'
-import FloatingButton from '@/app/home/_components/floating-button'
+import FloatingButton from '@/app/home/_components/VoiceWorker/AccountTransfer/floating-button'
 import Mic from '/public/icon/icon-mic.svg'
 import React, { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'

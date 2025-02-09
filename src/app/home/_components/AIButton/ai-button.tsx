@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../_style/page.module.scss'
+import styles from '../../_style/page.module.scss'
 import AI from '/public/icon/icon-ai.svg'
 
 interface AiButtonProps {

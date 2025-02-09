@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { DELAY, VoiceWorkProps } from './voice-work-stepper'
+import { DELAY, VoiceWorkProps } from './account-transfer-stepper'
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
@@ -25,15 +25,8 @@ const TransferWork = ({
   speechText,
   isListening,
   handleContentRoute,
-  speakText,
 }: VoiceWorkProps) => {
   const handleClick = () => {}
-
-  useEffect(() => {
-    speakText(
-      '어떤 계좌에서 이체할까요? 첫번째 또는 저축예금통장으로 말씀해 주세요.'
-    )
-  }, [])
 
   useEffect(() => {
     if (!speechText) return
@@ -56,7 +49,7 @@ const TransferWork = ({
         </span>
       </div>
       <TransferList data={TRANSFER_LIST} handleClick={handleClick} />
-      <VoiceText text={speechText ? `"${speechText}"` : ''} />
+      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
     </>
   )
 }

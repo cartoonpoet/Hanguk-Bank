@@ -1,3 +1,5 @@
+'use client'
+
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
 
 import { accountRows } from '@/_constants/model'
@@ -23,7 +25,7 @@ const AccountList = () => {
       {customAccountRows.map((item, idx) => {
         const Icon = BANK_ICON[item.accountType] ?? null
         return (
-          <TransferContainer key={idx} className='p-5'>
+          <TransferContainer key={idx} className='p-5 rounded-2xl'>
             <div className='flex items-center gap-2'>
               <div>
                 <Icon />

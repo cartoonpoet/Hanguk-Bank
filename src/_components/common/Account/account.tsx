@@ -5,7 +5,7 @@ import { AccountProps } from './account.type'
 import ShareIcon from '/public/icon/icon-share.svg'
 
 const Container = ({ children }: PropsWithChildren) => {
-  return <div className='border rounded-2xl p-5 mb-3'>{children}</div>
+  return <div className='border rounded-2xl p-5 mb-8'>{children}</div>
 }
 
 const OnwerName = ({ ownerName }: { ownerName: string }) => {
