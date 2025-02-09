@@ -1,8 +1,12 @@
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
-import React from 'react'
+import { CustomerServiceProps } from './customer-service-stepper'
 
-const CounselList = () => {
+const CounselList = ({
+  isListening,
+  speechText,
+  handleContentRoute,
+}: CustomerServiceProps) => {
   const data = [
     {
       id: 1,

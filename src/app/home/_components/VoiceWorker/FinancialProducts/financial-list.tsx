@@ -1,9 +1,7 @@
 import Title from '@/_components/common/BottomSheet/components/title'
-import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
-import React from 'react'
-import { FinancialProductsProps } from './financial-product-stepper'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
-import WorkBadgeGroup from '../WorkBadgeGroup/work-badge-group'
+import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
+import { FinancialProductsProps } from './financial-product-stepper'
 
 const FinancialList = ({ isListening, speechText }: FinancialProductsProps) => {
   const data = [

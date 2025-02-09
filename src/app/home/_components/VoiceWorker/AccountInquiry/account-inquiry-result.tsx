@@ -1,7 +1,8 @@
 import Account from '@/_components/common/Account/account'
 import Title from '@/_components/common/BottomSheet/components/title'
-import WorkBadgeGroup from '../WorkBadgeGroup/work-badge-group'
+
 import { AccountInquiryProps } from './account-inquiry-stepper'
+import WorkBadgeGroup from '../../WorkBadgeGroup/work-badge-group'
 
 const supportTxt: string[] = ['대출 알려줘', '전체 계좌 보여줘']
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { accountRows } from '../../transfer/_hooks/model'
+import { accountRows } from '../../../transfer/_hooks/model'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
 
 import KaKaoBank from '/public/bank/kakaobank.svg'

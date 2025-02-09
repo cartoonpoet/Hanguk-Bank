@@ -1,7 +1,7 @@
 import styles from './style.module.scss'
 import { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
-import FloatingButton from '@/app/home/_components/AccountTransfer/floating-button'
+import FloatingButton from '@/app/home/_components/VoiceWorker/AccountTransfer/floating-button'
 
 const Page = () => {
   const { scene, setIsShowManual } = useContext(AiContext)

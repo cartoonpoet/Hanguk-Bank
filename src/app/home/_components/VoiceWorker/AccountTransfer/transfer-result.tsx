@@ -3,8 +3,8 @@
 import Account from '@/_components/common/Account/account'
 import Title from '@/_components/common/BottomSheet/components/title'
 
-import { VoiceWorkProps } from './voice-work-stepper'
-import WorkBadgeGroup from '../WorkBadgeGroup/work-badge-group'
+import { VoiceWorkProps } from './account-transfer-stepper'
+import WorkBadgeGroup from '../../WorkBadgeGroup/work-badge-group'
 
 import ShareIcon from '/public/icon/icon-share.svg'
 

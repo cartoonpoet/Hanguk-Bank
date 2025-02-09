@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './style.module.scss'
-import FloatingButton from '@/app/home/_components/AccountTransfer/floating-button'
+import FloatingButton from '@/app/home/_components/VoiceWorker/AccountTransfer/floating-button'
 import React, { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
 import { getBankIcon } from '@/_utils/Bank'

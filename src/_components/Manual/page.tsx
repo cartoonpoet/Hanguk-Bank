@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './style.module.scss'
-import FloatingButton from '@/app/home/_components/AccountTransfer/floating-button'
+import FloatingButton from '@/app/home/_components/VoiceWorker/AccountTransfer/floating-button'
 import DownloadIcon from '/public/icon/download.svg'
 import CloseIcon from '/public/icon/nav-close.svg'
 import { useState, useRef } from 'react'

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { DELAY, VoiceWorkProps } from './voice-work-stepper'
+import { DELAY, VoiceWorkProps } from './account-transfer-stepper'
 import Account from '@/_components/common/Account/account'
 import Title from '@/_components/common/BottomSheet/components/title'
 

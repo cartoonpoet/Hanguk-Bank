@@ -1,10 +1,11 @@
-'use client'
-
-import { useEffect } from 'react'
-import { DELAY, VoiceWorkProps } from './voice-work-stepper'
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
+
+import { AccountInquiryProps } from './account-inquiry-stepper'
+import WorkBadgeGroup from '../../WorkBadgeGroup/work-badge-group'
+
+const supportTxt = ['거래내역 알려줘', '다른 계좌 보여줘']
 
 const TRANSFER_LIST = [
   {
@@ -21,26 +22,13 @@ const TRANSFER_LIST = [
   },
 ]
 
-const TransferWork = ({
-  speechText,
+const AccountInquiryList = ({
   isListening,
-  handleContentRoute,
-}: VoiceWorkProps) => {
-  const handleClick = () => {}
-
-  useEffect(() => {
-    if (!speechText) return
-    console.log({ speechText })
-    if (!isListening && speechText) {
-      setTimeout(() => {
-        handleContentRoute('ACCOUNT_WORK')
-      }, DELAY)
-    }
-  }, [speechText, isListening])
-
+  speechText,
+}: AccountInquiryProps) => {
   return (
     <>
-      <Title title='어떤 계좌에서 이체할까요?' />
+      <Title title='어떤 계좌에서 조회 할까요?' />
       <div className='flex'>
         <span className='text-black text-lg'>입출금</span>
         &nbsp;
@@ -48,10 +36,11 @@ const TransferWork = ({
           {TRANSFER_LIST.length}
         </span>
       </div>
-      <TransferList data={TRANSFER_LIST} handleClick={handleClick} />
+      <TransferList data={TRANSFER_LIST} className='mt-2 mb-8' />
+      <WorkBadgeGroup data={supportTxt} />
       {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
     </>
   )
 }
 
-export default TransferWork
+export default AccountInquiryList

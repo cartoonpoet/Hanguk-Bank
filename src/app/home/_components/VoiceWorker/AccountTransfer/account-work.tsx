@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import AccountList from './account-list'
-import { DELAY, VoiceWorkProps } from './voice-work-stepper'
+import { DELAY, VoiceWorkProps } from './account-transfer-stepper'
 import Title from '@/_components/common/BottomSheet/components/title'
 
 const AccountWork = ({

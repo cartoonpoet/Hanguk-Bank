@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { AiContext } from '@/_contexts/useAiContext'
 import styles from './style.module.scss'
 import { handleSpeak } from '@/_hooks/useScene'
-import FloatingButton from '@/app/home/_components/AccountTransfer/floating-button'
+import FloatingButton from '@/app/home/_components/VoiceWorker/AccountTransfer/floating-button'
 
 const savingsData = [
   {
