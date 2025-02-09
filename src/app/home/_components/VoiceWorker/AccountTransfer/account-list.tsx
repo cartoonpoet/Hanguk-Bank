@@ -1,8 +1,8 @@
 'use client'
 
-import { accountRows } from '../../../transfer/_hooks/model'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
 
+import { accountRows } from '@/_constants/model'
 import KaKaoBank from '/public/bank/kakaobank.svg'
 import KbStar from '/public/bank/kbstar.svg'
 import ShinHan from '/public/bank/shinhan.svg'

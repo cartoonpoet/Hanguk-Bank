@@ -1,6 +1,6 @@
 'use client'
 
-import Button from '@/_components/common/Button/page'
+import LinkButton from '@/_components/common/LinkButton/page'
 import { URL } from '@/_constants/url'
 import useCommonStore from '@/_hooks/useCommonStore'
 
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className='flex flex-col justify-center items-center h-dvh gap-10 bg-white'>
       <div onClick={() => setMode('simple')}>
-        <Button
+        <LinkButton
           name='간편모드'
           type='Fill'
           status='Default'
@@ -18,7 +18,7 @@ export default function App() {
         />
       </div>
       <div onClick={() => setMode('voice')}>
-        <Button
+        <LinkButton
           name='음성모드'
           type='Soft'
           status='Default'
@@ -27,7 +27,7 @@ export default function App() {
         />
       </div>
       <div onClick={() => setMode('ai')}>
-        <Button
+        <LinkButton
           name='AI모드'
           type='Outline'
           status='Default'

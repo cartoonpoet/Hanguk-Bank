@@ -11,6 +11,10 @@ import User from './icons/user.svg'
 import Avatar from './icons/avatar.png'
 import PlusIcon from './icons/plus.svg'
 import MicIcon from './icons/mic.svg'
+import PencilIcon from './icons/pencil.svg'
+import WooriBank from './icons/wooriBank.svg'
+import ArrowDown from './icons/arrow-down.svg'
+import ReloadIcon from './icons/reload.svg'
 
 export {
   ActivityIcon,
@@ -25,5 +29,9 @@ export {
   User,
   Avatar,
   PlusIcon,
-  MicIcon
+  MicIcon,
+  PencilIcon,
+  WooriBank,
+  ArrowDown,
+  ReloadIcon
 }
