@@ -13,9 +13,11 @@ const BottomSheet = ({ isOpen, onClose, children }: BottomSheetProps) => {
   return (
     <Overlay isOpen={isOpen}>
       <BottomSheetContainer isOpen={isOpen}>
-        <CloseButton onClick={onClose}>
-          <Close />
-        </CloseButton>
+        {onClose && (
+          <CloseButton onClick={onClose}>
+            <Close />
+          </CloseButton>
+        )}
         <ContentWrapper>{children}</ContentWrapper>
       </BottomSheetContainer>
     </Overlay>
@@ -66,7 +68,7 @@ const CloseButton = styled.button`
 
 // Content Wrapper
 const ContentWrapper = styled.div`
-  padding-inline: 20px;
+  padding: 20px;
   text-align: center;
 `
 

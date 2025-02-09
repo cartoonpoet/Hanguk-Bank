@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .top {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .user {
+      color: var(--Black-Default, #000);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      width: 100%;
+      margin-top: 16px;
+    }
+  }
+  .subText{
+    color: var(--Neutral-Default, #6B7684);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    display: flex;
+    flex-direction: column;
+    .recently{
+      padding: 10px 20px;
+    }
+  }
+  .fixedBtn{
+    position: fixed;
+    bottom: 21px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 480px;
+    background-color: white;
+    padding: 0 20px;
+  }
+}

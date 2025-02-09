@@ -1,5 +1,5 @@
 import styles from './style.module.scss'
-import Button from '@/_components/common/Button/page'
+import Button from '@/_components/common/LinkButton/page'
 import Image from 'next/image'
 
 const Card = () => {
@@ -49,7 +49,7 @@ const Card = () => {
           href=''
         />
         <Button
-          name='이체하기'
+          name='돈보내기'
           type='Fill'
           status='Default'
           size='Medium'

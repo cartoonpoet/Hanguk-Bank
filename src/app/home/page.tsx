@@ -1,21 +1,19 @@
 'use client'
 
-import styles from './_style/page.module.scss'
+import BottomSheet from '@/_components/common/BottomSheet/page'
 import Card from '@/_components/common/Card/Page'
 import List from '@/_components/common/List/page'
-import BottomSheet from '@/_components/common/BottomSheet/page'
-import VoiceWorkStepper from './_components/AccountTransfer/voice-work-stepper'
+import AccountTransferStepper from './_components/VoiceWorker/AccountTransfer/account-transfer-stepper'
+import styles from './_style/page.module.scss'
 
-import { useState } from 'react'
 import useCommonStore from '@/_hooks/useCommonStore'
+import { useState } from 'react'
 
-import { useRouter, redirect } from 'next/navigation'
 import { URL } from '@/_constants/url'
-import AccountInquiryStepper from './_components/AccountInquiry/account-inquiry-stepper'
-import FinancialProductsStepper from './_components/FinancialProducts/financial-product-stepper'
-import CustomerServicetepper from './_components/CustomerService/customer-service-stepper'
-import VoiceButton from './_components/VoiceButton/voice-button'
+import { redirect, useRouter } from 'next/navigation'
 import AiButton from './_components/AIButton/ai-button'
+import VoiceButton from './_components/VoiceButton/voice-button'
+import VoiceWorker from './_components/VoiceWorker/voice-worker'
 
 const Home = () => {
   const { mode } = useCommonStore()
@@ -41,7 +39,7 @@ const Home = () => {
         </section>
       </div>
       <BottomSheet isOpen={isOpen} onClose={close}>
-        {isOpen && <CustomerServicetepper />}
+        {isOpen && <VoiceWorker />}
       </BottomSheet>
     </>
   )
