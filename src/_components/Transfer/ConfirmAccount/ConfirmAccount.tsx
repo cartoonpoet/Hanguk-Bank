@@ -1,6 +1,6 @@
 import { StepMoveProps } from '@/_types/FunnelTypes'
 import NavBar from '@/_components/common/NavBar/page'
-import React, { use } from 'react'
+import React, { use, useEffect } from 'react'
 import AccountCard from '@/_components/common/AccountCard/page'
 import Inputs from '@/_components/common/Inputs/page'
 import Button from '@/_components/common/Button/page'
@@ -11,13 +11,20 @@ import EnterPassword from '@/_components/Transfer/ConfirmAccount/_components/Ent
 import { TransferContext } from '@/_contexts/useTransferContext'
 import { numberToKorean } from '@/_utils/Bank'
 
-const ConfirmAccount = ({ onPrev }: StepMoveProps) => {
-  const { isOpen, setIsOpen, setMode, mode, amount } = use(TransferContext)
+const ConfirmAccount = ({ onPrev, onNext }: StepMoveProps) => {
+  const { isOpen, setIsOpen, setMode, mode, amount, setPassword, password } = use(TransferContext)
   const open = () => {
+    setPassword(_ => {
+      return ''
+    })
     setMode('ConfirmTransfer')
     setIsOpen(true)
   }
   const close = () => setIsOpen(false)
+
+  useEffect(() => {
+    if(onNext && password.length === 4) onNext()
+  }, [onNext, password])
 
   return <main className="h-dvh flex flex-col gap-5">
     <div className="flex flex-col px-5">
