@@ -32,5 +32,7 @@ export interface AiStoreTypes {
   setConsultationType: (consultationType: ConsultationType) => void,
   applicationType: ApplicationType | null,
   setApplicationType: (applicationType: ApplicationType) => void,
+  connectionState: string,
+  setConnectionState: (connectionState: string) => void,
 }
 

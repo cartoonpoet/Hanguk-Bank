@@ -34,7 +34,7 @@ const Content = {
 type ContentRoute = keyof typeof Content
 
 const VoiceWorker = () => {
-  const { scene, selectedTo } = useContext(AiContext)
+  const { scene, selectedTo, connectionState } = useContext(AiContext)
   const { transcript, isListening, handleToggleListening } = useSpeech()
   const {
     transcript: speakTxt,
@@ -67,16 +67,19 @@ const VoiceWorker = () => {
       handleSubConetntToggleListening()
     }
   }
-  if (!scene) return null
+  // if (!scene) return <div>{connectionState}</div>
 
   return (
-    <Container>
-      <MainContent transcript={speakTxt} isListening={isSubListening} />
-      {transcript && <VoiceText text={transcript ? `"${transcript}"` : ''} />}
-      <div className='flex item-center justify-center'>
-        <FloatingButton handleClick={handleClick} />
-      </div>
-    </Container>
+    <>
+      <div>{connectionState}</div>
+      <Container>
+        <MainContent transcript={speakTxt} isListening={isSubListening} />
+        {transcript && <VoiceText text={transcript ? `"${transcript}"` : ''} />}
+        <div className='flex item-center justify-center'>
+          <FloatingButton handleClick={handleClick} />
+        </div>
+      </Container>
+    </>
   )
 }
 
