@@ -29,7 +29,7 @@ const EnterAmount = ({ onNext, onPrev }: StepMoveProps) => {
       </div>
       <section className="p-5 rounded-t-2xl shadow-[0_-8px_16px_0_rgba(0,0,0,0.10)] flex flex-col gap-5">
         <div className="flex flex-row gap-2 justify-center">
-          {tagNames.map((tag) => (<Tag type="Focus" key={tag}>{tag}</Tag>))}
+          {tagNames.map((tag) => (<Tag type="Default" key={tag}>{tag}</Tag>))}
         </div>
         <KeyboardNumber onClick={onNext} onClickNumber={onClick}>
           <span className="text-Brand-Default text-lg font-medium">완료</span>
