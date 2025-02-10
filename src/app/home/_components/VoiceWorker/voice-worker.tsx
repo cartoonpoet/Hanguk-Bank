@@ -20,8 +20,8 @@ const supportTxt: string[] = ['이체 해줘', '거래내역 알려줘', '대출
 
 const Content = {
   Voice: () => (
-    <div className="mb-3">
-      <Title title="원하는 업무를 말씀해 주세요." />
+    <div className='mb-3'>
+      <Title title='원하는 업무를 말씀해 주세요.' />
       <WorkBadgeGroup data={supportTxt} />
     </div>
   ),
@@ -67,24 +67,27 @@ const VoiceWorker = () => {
       handleSubConetntToggleListening()
     }
   }
-  if (!scene) return <div>{connectionState}</div>
+  // if (!scene) return <div>{connectionState}</div>
 
   return (
-    <Container>
-      <MainContent transcript={speakTxt} isListening={isSubListening} />
-      {transcript && <VoiceText text={transcript ? `"${transcript}"` : ''} />}
-      <div className="flex item-center justify-center">
-        <FloatingButton handleClick={handleClick} />
-      </div>
-    </Container>
+    <>
+      <div>{connectionState}</div>
+      <Container>
+        <MainContent transcript={speakTxt} isListening={isSubListening} />
+        {transcript && <VoiceText text={transcript ? `"${transcript}"` : ''} />}
+        <div className='flex item-center justify-center'>
+          <FloatingButton handleClick={handleClick} />
+        </div>
+      </Container>
+    </>
   )
 }
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-block: 0 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 0 34px;
 `
 
 export default VoiceWorker
