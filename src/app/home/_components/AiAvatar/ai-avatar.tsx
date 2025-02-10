@@ -8,7 +8,7 @@ const AiAvatar = () => {
   const {} = useScene(videoRef)
 
   return (
-    <video ref={videoRef} id='sm-video' width='1%' height='1%' playsInline />
+    <video ref={videoRef} id='sm-video' width='10' height='10' playsInline />
   )
 }
 
