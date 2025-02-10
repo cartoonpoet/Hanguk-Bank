@@ -70,6 +70,7 @@ const CloseButton = styled.button`
 const ContentWrapper = styled.div`
   padding: 20px;
   text-align: center;
+    position: relative;
 `
 
 export default BottomSheet
