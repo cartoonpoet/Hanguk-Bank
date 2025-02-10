@@ -5,7 +5,7 @@ import Card from '@/_components/common/Card/Page'
 import List from '@/_components/common/List/page'
 import AccountTransferStepper from './_components/VoiceWorker/AccountTransfer/account-transfer-stepper'
 import styles from './_style/page.module.scss'
-
+import AiContextProvider from '@/_contexts/useAiContext'
 import useCommonStore from '@/_hooks/useCommonStore'
 import { useState } from 'react'
 
@@ -14,6 +14,7 @@ import { redirect, useRouter } from 'next/navigation'
 import AiButton from './_components/AIButton/ai-button'
 import VoiceButton from './_components/VoiceButton/voice-button'
 import VoiceWorker from './_components/VoiceWorker/voice-worker'
+import AiAvatar from './_components/AiAvatar/ai-avatar'
 
 const Home = () => {
   const { mode } = useCommonStore()
@@ -39,7 +40,12 @@ const Home = () => {
         </section>
       </div>
       <BottomSheet isOpen={isOpen} onClose={close}>
-        {isOpen && <VoiceWorker />}
+        {isOpen && (
+          <AiContextProvider>
+            <AiAvatar />
+            <VoiceWorker />
+          </AiContextProvider>
+        )}
       </BottomSheet>
     </>
   )
