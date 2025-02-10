@@ -16,6 +16,7 @@ const init = {
   isShowManual: false,
   consultationType: null,
   applicationType: null,
+  connectionState: 'Not Connected',
 }
 
 export const AiContext = createContext<AiStoreTypes>(init as AiStoreTypes)
@@ -28,6 +29,8 @@ const AiContextProvider = ({ children }: { children: ReactNode }) => {
   const [isShowManual, setIsShowManual] = useState<boolean>(false)
   const [consultationType, setConsultationType] = useState<ConsultationType | null>(null)
   const [applicationType, setApplicationType] = useState<ApplicationType | null>(null)
+  const [connectionState, setConnectionState] = useState<string>('Not Connected')
+
 
   return (
     <AiContext.Provider value={{
@@ -45,6 +48,8 @@ const AiContextProvider = ({ children }: { children: ReactNode }) => {
       setConsultationType,
       applicationType,
       setApplicationType,
+      connectionState,
+      setConnectionState,
     }}>
       {children}
     </AiContext.Provider>
