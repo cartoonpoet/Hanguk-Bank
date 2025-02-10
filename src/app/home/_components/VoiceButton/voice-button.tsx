@@ -5,6 +5,7 @@ import Mic from '/public/icon/icon-reverse-mic.svg'
 interface VoiceButtonProps {
   onClick: () => void
 }
+
 const VoiceButton = ({ onClick }: VoiceButtonProps) => {
   return (
     <div className={styles.voiceButton} onClick={onClick}>

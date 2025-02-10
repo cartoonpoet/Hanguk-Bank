@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
 import useScene from '@/_hooks/useScene'
+import { useRef } from 'react'
 
 const AiAvatar = () => {
   const videoRef = useRef(null) // 비디오 요소 참조
