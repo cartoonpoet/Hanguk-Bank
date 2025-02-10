@@ -37,7 +37,7 @@ function onConnectionError(error: Error) {
   }
 }
 
-const useScene = (videoRef: MutableRefObject<null>) => {
+const useScene = (videoRef: MutableRefObject<HTMLVideoElement | null>) => {
   const {
     scene,
     setScene,
