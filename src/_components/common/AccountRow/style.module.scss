@@ -25,6 +25,9 @@
       font-style: normal;
       font-weight: 500;
       line-height: 140%; /* 22.4px */
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
     }
   }
 }

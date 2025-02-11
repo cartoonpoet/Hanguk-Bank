@@ -34,10 +34,13 @@ const NavBar = ({ leftControl, rightControl, title, onClickBack }: NavBarProps) 
       )}
       <div>{title}</div>
       {rightControl === 'icon' && (
-        <button className={styles.btn} onClick={()=>router.replace('/home')}>
+        <button className={styles.btn} onClick={() => router.replace('/home')}>
           <Home width="20" height="20" fill="black" />
         </button>
       )}
+      {rightControl === 'text' && (<button className="font-medium text-base">
+        관리
+      </button>)}
     </section>
   )
 }

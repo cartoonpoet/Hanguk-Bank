@@ -1,5 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, ReactNode } from 'react'
 import { FunnelProps, StepProps } from '@/_types/FunnelTypes'
+
+export interface useFunnelProps {
+  Funnel: (props: FunnelProps) => ReactNode
+  Step: (props: StepProps) => ReactNode
+  setStep: (props: string) => void
+  currentStep: string
+}
 
 export const useFunnel = (defaultStep: string) => {
   // 현재 Step

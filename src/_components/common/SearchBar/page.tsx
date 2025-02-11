@@ -1,13 +1,17 @@
 import styles from './style.module.scss'
 import DropDown from '@/_components/common/DropDown/page'
-import SearchIcon from '/public/icon/search.svg'
+import { ReactNode } from 'react'
 
-const SearchBar = () => {
+interface SearchBarProps {
+  iconChildren?: ReactNode
+}
+
+const SearchBar = ({ iconChildren }: SearchBarProps) => {
   return (
     <div className={styles.wrapper}>
       <DropDown />
       <div className={styles.search}>
-        <SearchIcon width={16.6} height={16.6} />
+        {iconChildren}
       </div>
     </div>
   )

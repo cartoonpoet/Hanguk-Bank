@@ -18,7 +18,8 @@ module.exports = {
         'Brand-Default': '#007BFF',
         'Border-Default': '#D6DBE1',
         'Neutral-Default': '#6B7684',
-        'Neutral-Tertiary': '#F2F4F6'
+        'Neutral-Tertiary': '#F2F4F6',
+        'Danger-Default': '#DC3545',
       },
       fontFamily:{
         pretendard: ['--font-pretendard','Arial', 'Helvetica', 'sans-serif']
