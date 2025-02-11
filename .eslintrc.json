@@ -8,7 +8,7 @@
   },
   "settings": {
     "eslint.options": {
-      "max-warnings": 10
+//      "max-warnings": 10
     }
   }
 }
