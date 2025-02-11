@@ -1,12 +1,14 @@
 'use client'
 
 import NavBar from '@/_components/common/NavBar/page'
-import React from 'react'
+import React, { use } from 'react'
 import { StepMoveProps } from '@/_types/FunnelTypes'
 import Tag from '@/_components/common/Tag/page'
 import SearchBar from '@/_components/common/SearchBar/page'
 import { MenuEllipseIcon, ReloadIcon, ArrowDown as ArrowRight } from '@/_assets/icons'
-import AccountCard from '@/_components/Inquiry/SelectAccount/_components/AccountCard'
+import AccountCard from '@/_components/Inquiry/SelectAllAccount/_components/AccountCard'
+import { InquiryContext } from '@/_contexts/useInquiryContext'
+import { InquirySteps } from '@/_constants/mode'
 
 const TAGS = [
   {
@@ -36,7 +38,9 @@ const accountList = [{
 ]
 
 
-const SelectAccount = ({}: StepMoveProps) => {
+const Page = ({}: StepMoveProps) => {
+  const { setStep } = use(InquiryContext)
+
   return <main className="h-dvh flex flex-col">
     <div className="flex flex-col px-5">
       <NavBar leftControl="icon" rightControl="icon" title="전체 계좌 조회" />
@@ -69,9 +73,10 @@ const SelectAccount = ({}: StepMoveProps) => {
       </div>
       {accountList.map((account) => (
         <AccountCard accountNumber={account.accountNumber} accountName={account.accountName}
-                     balance={account.balance} key={account.accountNumber} />))}
+                     balance={account.balance} key={account.accountNumber}
+                     onClick={() => setStep(InquirySteps[1])} />))}
     </section>
   </main>
 }
 
-export default SelectAccount
+export default Page

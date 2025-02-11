@@ -5,10 +5,11 @@ interface AccountCardProps {
   accountNumber: string
   accountName: string
   balance: number
+  onClick: () => void
 }
 
-const AccountCard = ({ accountName, accountNumber, balance }: AccountCardProps) => {
-  return <main className="flex flex-col rounded-2xl border border-Border-Default overflow-hidden">
+const AccountCard = ({ accountName, accountNumber, balance, onClick }: AccountCardProps) => {
+  return <main className="flex flex-col rounded-2xl border border-Border-Default overflow-hidden" onClick={onClick}>
     <AccountRow
       accountType="한국"
       accountNumber={accountNumber}

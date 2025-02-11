@@ -21,6 +21,10 @@ import StarIcon from './icons/star.svg'
 import MenuEllipseIcon from './icons/menu-ellipse.svg'
 import MoneyIcon from './icons/money.svg'
 import CopyIcon from './icons/copy.svg'
+import MagnifierIcon from './icons/magnifier.svg'
+import HouseUser from './icons/house-user.svg'
+import HyundaiIcon from './icons/hyundai.svg'
+import BillIcon from './icons/bill.svg'
 
 export {
   ActivityIcon,
@@ -45,5 +49,9 @@ export {
   StarIcon,
   MenuEllipseIcon,
   MoneyIcon,
-  CopyIcon
+  CopyIcon,
+  MagnifierIcon,
+  HyundaiIcon,
+  HouseUser,
+  BillIcon
 }
