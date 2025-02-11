@@ -3,4 +3,5 @@ export const URL = {
     ai: '/ai',
     inquiry: '/home/inquiry',
     transfer: '/home/transfer',
+    customerService: '/home/customerService'
 }
