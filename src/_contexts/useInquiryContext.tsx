@@ -12,7 +12,7 @@ const init = {
   currentStep: InquirySteps[0],
 }
 
-export const InquiryContext = createContext<InquiryTypes>(init as InquiryTypes)
+export const InquiryContext = createContext<useFunnelProps>(init as useFunnelProps)
 
 
 const InquiryContextProvider = ({ children }: { children: ReactNode }) => {
