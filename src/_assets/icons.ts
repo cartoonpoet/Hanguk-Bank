@@ -29,9 +29,12 @@ import KakaoTalk from './icons/kakaotalk.svg'
 import MessageIcon from './icons/message.svg'
 import ChatIcon from './icons/chat.svg'
 import DocumentsIcon from './icons/documents.svg'
-
+import CallSolidIcon from './icons/call-solid.svg'
+import ChatSolidIcon from './icons/chat-solid.svg'
 
 export {
+  CallSolidIcon,
+  ChatSolidIcon,
   ActivityIcon,
   InfoIcon,
   SpeakerFilledIcon,
