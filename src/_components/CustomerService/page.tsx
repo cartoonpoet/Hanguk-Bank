@@ -1,42 +1,24 @@
 'use client'
-
-import NavBar from '@/_components/common/NavBar/page'
-import { InquirySteps } from '@/_constants/mode'
-import React from 'react'
-import { useRouter } from 'next/navigation'
-import { URL } from '@/_constants/url'
-import Header from '@/_components/CustomerService/_components/Header'
-import ButtonGroup from '@/_components/CustomerService/_components/ButtonGroup'
-import Menu from '@/_components/CustomerService/_components/Menu'
-
-const Menus = [
-  '지점 상담예약',
-  '전문가상담 예약',
-  '지점찾기/번호표 발행',
-  '',
-  '나의 상담내역',
-  '자주묻는 질문(FAQ)',
-  '',
-  '편의점 제휴 ATM 찾기',
-  '영업시간 특화지점 안내/찾기',
-]
+import { CustomerServiceSteps } from '@/_constants/mode'
+import React, { use } from 'react'
+import CustomerServiceContextProvider, { CustomerServiceContext } from '@/_contexts/useCustomerService'
+import HelpCenter from '@/_components/CustomerService/HelpCenter/page'
+import Image from 'next/image'
+import CallingImage from '@/_assets/images/calling.png'
+import ChatBot from '@/_components/ChatBot/page'
 
 const CustomerService = () => {
-  const router = useRouter()
-  return <main className="h-dvh flex flex-col">
-    <div className="flex flex-col px-5">
-      <NavBar leftControl="icon" rightControl="icon" title="고객센터" onClickBack={() => router.replace(URL.home)} />
-    </div>
-    <div className="h-4" />
-    <Header />
-    <ButtonGroup />
-    <div className="h-4 bg-Neutral-Tertiary" />
-    {Menus.map((item, idx) => {
-      if (!item) return <div className="h-4 bg-Neutral-Tertiary" key={item+idx} />
-      return <Menu title={item} key={item} />
-    })}
-  </main>
+  const { Funnel, Step } = use(CustomerServiceContext)
+  return <Funnel>
+    <Step name={CustomerServiceSteps[0]}><HelpCenter /></Step>
+    <Step name={CustomerServiceSteps[1]}><Image src={CallingImage} alt="이미지" /></Step>
+    <Step name={CustomerServiceSteps[2]}><ChatBot/></Step>
+  </Funnel>
 
 }
 
-export default CustomerService
+const Page = () => {
+  return <CustomerServiceContextProvider><CustomerService /></CustomerServiceContextProvider>
+}
+
+export default Page
