@@ -4,10 +4,6 @@ import React, { createContext, ReactNode } from 'react'
 import { useFunnel, useFunnelProps } from '@/_hooks/useFunnel'
 import { InquirySteps } from '@/_constants/mode'
 
-interface InquiryTypes extends useFunnelProps {
-
-}
-
 const init = {
   currentStep: InquirySteps[0],
 }
