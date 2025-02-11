@@ -6,7 +6,7 @@ interface layoutProps {
 
 const layout = ({ children }: layoutProps) => {
   return (
-    <div className="bg-white">
+    <div className="h-dvh bg-white">
       {children}
     </div>
   )
