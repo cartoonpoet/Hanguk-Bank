@@ -1,7 +1,12 @@
 import SelectAccount from '@/_components/Inquiry/SelectAccount/SelectAccount'
+import InquiryContextProvider from '@/_contexts/useInquiryContext'
 
 const Inquiry = () => {
   return <SelectAccount />
 }
 
-export default Inquiry
+const Page = () => {
+  return <InquiryContextProvider><Inquiry/></InquiryContextProvider>
+}
+
+export default Page

@@ -3,6 +3,7 @@ import KbStar from '/public/bank/kbstar.svg'
 import KaKaoBank from '/public/bank/kakaobank.svg'
 import WoriBank from '/public/bank/wori.svg'
 import React from 'react'
+import { MoneyIcon } from '@/_assets/icons'
 
 export const getBankIcon = (accountType: string) => {
   switch (accountType) {
@@ -14,6 +15,8 @@ export const getBankIcon = (accountType: string) => {
       return <KaKaoBank />
     case '우리':
       return <WoriBank />
+    case '한국':
+      return <div className="flex w-10 h-10 bg-Brand-Default justify-center items-center rounded-full"><MoneyIcon /></div>
   }
 }
 

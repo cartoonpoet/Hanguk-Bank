@@ -11,6 +11,7 @@ import AccountRow from '@/_components/common/AccountRow/page'
 import Button from '@/_components/common/Button/page'
 import { StepMoveProps } from '@/_types/FunnelTypes'
 import { TransferContext } from '@/_contexts/useTransferContext'
+import SearchIcon from '/public/icon/search.svg'
 
 
 const SelectAccount = ({ onNext }: StepMoveProps) => {
@@ -22,7 +23,7 @@ const SelectAccount = ({ onNext }: StepMoveProps) => {
         <header className={styles.user}>누구에게 보낼까요?</header>
         <TextField />
         <ContentSwitcher />
-        <SearchBar />
+        <SearchBar iconChildren={<SearchIcon width={16.6} height={16.6} />} />
       </div>
       <div className={styles.subText}>
         <div className={styles.recently}>최근 보낸 계좌</div>
@@ -37,6 +38,8 @@ const SelectAccount = ({ onNext }: StepMoveProps) => {
               if (accountRow.accountNumber === selected) setSelected('')
               else setSelected(accountRow.accountNumber)
             }}
+            isUseFavorite
+            isUseCopy={false}
           />
         ))}
       </div>

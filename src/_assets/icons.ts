@@ -18,6 +18,10 @@ import ReloadIcon from './icons/reload.svg'
 import CheckIcon from './icons/check.png'
 import ShareIcon from './icons/share.svg'
 import StarIcon from './icons/star.svg'
+import MenuEllipseIcon from './icons/menu-ellipse.svg'
+import MoneyIcon from './icons/money.svg'
+import CopyIcon from './icons/copy.svg'
+
 export {
   ActivityIcon,
   InfoIcon,
@@ -38,5 +42,8 @@ export {
   ReloadIcon,
   CheckIcon,
   ShareIcon,
-  StarIcon
+  StarIcon,
+  MenuEllipseIcon,
+  MoneyIcon,
+  CopyIcon
 }
