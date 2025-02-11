@@ -41,6 +41,7 @@ const NavBar = ({ leftControl, rightControl, title, onClickBack }: NavBarProps) 
       {rightControl === 'text' && (<button className="font-medium text-base">
         관리
       </button>)}
+      {rightControl === 'none' && <div/>}
     </section>
   )
 }

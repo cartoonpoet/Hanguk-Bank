@@ -7,10 +7,11 @@ interface RowProps {
   balance: number
   money: number
   addition: boolean
+  onClick?: () => void
 }
 
-const Row = ({ money, addition, time, name, balance, type }: RowProps) => {
-  return <main className="flex flex-row p-5 gap-2.5 justify-center items-center">
+const Row = ({ money, addition, time, name, balance, type, onClick }: RowProps) => {
+  return <main className="flex flex-row p-5 gap-2.5 justify-center items-center" onClick={onClick}>
     {getBankIcon(type)}
     <section className="flex flex-col flex-1 gap-0.5">
       <div className="flex flex-row justify-between font-bold text-lg">

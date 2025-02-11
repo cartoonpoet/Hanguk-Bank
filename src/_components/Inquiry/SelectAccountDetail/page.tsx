@@ -21,7 +21,7 @@ const SelectAccountDetail = () => {
     <div className="h-4 bg-Neutral-Tertiary"/>
     <section className="px-5"><SearchBar iconChildren={<MagnifierIcon/>}/></section>
     <div className="px-5 font-medium text-base">11월 20일</div>
-    {transferHistory.map((item, index) => (<Row key={index} {...item}/>))}
+    {transferHistory.map((item, index) => (<Row key={index} {...item} onClick={() => setStep(InquirySteps[2])}/>))}
   </main>
 }
 

@@ -25,6 +25,11 @@ import MagnifierIcon from './icons/magnifier.svg'
 import HouseUser from './icons/house-user.svg'
 import HyundaiIcon from './icons/hyundai.svg'
 import BillIcon from './icons/bill.svg'
+import KakaoTalk from './icons/kakaotalk.svg'
+import MessageIcon from './icons/message.svg'
+import ChatIcon from './icons/chat.svg'
+import DocumentsIcon from './icons/documents.svg'
+
 
 export {
   ActivityIcon,
@@ -53,5 +58,9 @@ export {
   MagnifierIcon,
   HyundaiIcon,
   HouseUser,
-  BillIcon
+  BillIcon,
+  KakaoTalk,
+  MessageIcon,
+  ChatIcon,
+  DocumentsIcon,
 }
