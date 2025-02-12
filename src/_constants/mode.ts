@@ -11,3 +11,10 @@ export const CustomerServiceSteps = [
   '전화 상담',
   '챗봇 상담'
 ]
+
+export const ProductSteps = [
+  '금융상품',
+  '상품 상세',
+  '적금 가입',
+  '상품설명서'
+]

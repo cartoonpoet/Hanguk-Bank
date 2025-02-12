@@ -21,6 +21,9 @@ module.exports = {
         'Neutral-Default': '#6B7684',
         'Neutral-Tertiary': '#F2F4F6',
         'Danger-Default': '#DC3545',
+        'Neutral-On': '#FAFAFB',
+        'Neutral-Dark-Darkest': '#1F2024',
+        'Caution-Secondary': '#FFF4E6'
       },
       fontFamily:{
         pretendard: ['--font-pretendard','Arial', 'Helvetica', 'sans-serif']
