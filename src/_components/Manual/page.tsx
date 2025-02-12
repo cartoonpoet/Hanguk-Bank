@@ -11,14 +11,15 @@ import ArrowDown from '/public/icon/arrow-down.svg'
 
 interface ManualProps {
   onClickClose?: () => void
+  isShowMic: boolean
 }
 
-const Manual = ({ onClickClose }: ManualProps) => {
+const Manual = ({ onClickClose, isShowMic }: ManualProps) => {
   const [page, setPage] = useState(1)
   const canvasRef = useRef(null)
 
   usePdf({
-    file: 'Document.Sample.pdf',
+    file: '/Document.Sample.pdf',
     page,
     canvasRef,
   })
@@ -49,7 +50,7 @@ const Manual = ({ onClickClose }: ManualProps) => {
             </button>
           </div>
         </nav>
-        <FloatingButton />
+        {isShowMic && <FloatingButton />}
       </div>
     </main>
   )

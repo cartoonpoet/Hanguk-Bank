@@ -11,8 +11,13 @@ import {
   ButtonContainer, Button, IconButton,
 } from './style.css'
 import { GiftIcon, MoneyUpIcon, ShareIcon } from '@/_assets/icons'
+import { use } from 'react'
+import { ProductContext } from '@/_contexts/useProduct'
+import { ProductSteps } from '@/_constants/mode'
 
 const RegistrationSection = () => {
+  const { setStep } = use(ProductContext)
+
   return <Container>
     <SubTitle>한 달만 유지해도 확정이자율을 드리는</SubTitle>
     <Title>한국 스마트 적금</Title>
@@ -33,7 +38,7 @@ const RegistrationSection = () => {
       </ListItem>
     </List>
     <ButtonContainer>
-      <Button>가입하기</Button>
+      <Button onClick={() => setStep(ProductSteps[2])}>가입하기</Button>
       <IconButton><ShareIcon width={24} height={24} fill="#28A745" /></IconButton>
     </ButtonContainer>
   </Container>

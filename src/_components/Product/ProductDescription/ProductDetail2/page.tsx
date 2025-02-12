@@ -25,6 +25,7 @@ const ProductDetail = () => {
         <SavingsIcon />
       </SavingsIconWrapper>
     </SubWrapper>
+
   </Container>
 }
 
