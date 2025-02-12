@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
+    background: white;
 `
 
 export const TitleWrapper = styled.div`
