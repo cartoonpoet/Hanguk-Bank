@@ -11,7 +11,7 @@ const ProductDetail1 = () => {
       <div>한국은행을 새롭게 시작하는
         <br />고객님께 드리는
       </div>
-      <div className="font-bold text-lg">‘환영해요 우대이율'</div>
+      <div className="font-bold text-lg">‘환영해요 우대이율&apos;</div>
     </DescriptionWrapper>
     <ImageWrapper>
       <Fairy />

@@ -19,7 +19,7 @@ const ProductDescription = () => {
     <RegistrationSection />
     <ProductDetail1 />
     <ProductDetail2 />
-    <TabSection/>
+    <TabSection />
   </main>
 }
 

@@ -11,7 +11,7 @@ const ProductDetail = () => {
     <SubWrapper>
       <section>
         한국 스마트 적금으로 오랫만에 거래를 하시는 <br />
-        고객님을 위한 ‘함께해요 우대이율'
+        고객님을 위한 ‘함께해요 우대이율&apos;
       </section>
       <DescriptionWrapper>
         <div>&#183;</div>
