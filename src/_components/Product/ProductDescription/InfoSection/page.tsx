@@ -35,7 +35,7 @@ const InfoSection = () => {
     <ItemBanner>
       <Banner />
       <div className="flex-1">
-        이 예금은 예금자보호법에 따라 원금과 소정의 이자를 합하여 1인당 “5천만원까지"(본 은행의 여타 보호상품과 합산) 보호됩니다.
+        이 예금은 예금자보호법에 따라 원금과 소정의 이자를 합하여 1인당 “5천만원까지&quot;(본 은행의 여타 보호상품과 합산) 보호됩니다.
       </div>
     </ItemBanner>
   </Container>
