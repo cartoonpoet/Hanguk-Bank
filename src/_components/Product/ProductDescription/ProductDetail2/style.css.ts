@@ -41,3 +41,4 @@ export const SavingsIconWrapper = styled.div`
     display: flex;
     justify-content: center;
 `
+

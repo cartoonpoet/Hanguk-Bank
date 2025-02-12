@@ -38,8 +38,10 @@ import GiftIcon from './icons/gift.svg'
 import Fairy from './icons/fairy.svg'
 import Fanfare from './icons/fanfare.svg'
 import SavingsIcon from './icons/savings.svg'
+import Banner from './icons/banner.svg'
 
 export {
+  Banner,
   SavingsIcon,
   Fairy,
   Fanfare,

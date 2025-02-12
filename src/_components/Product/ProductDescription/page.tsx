@@ -8,6 +8,14 @@ import RegistrationSection from '@/_components/Product/ProductDescription/Regist
 import ProductDetail1 from '@/_components/Product/ProductDescription/ProductDetail1/page'
 import ProductDetail2 from '@/_components/Product/ProductDescription/ProductDetail2/page'
 import TabSection from '@/_components/Product/ProductDescription/TabSection/page'
+import Button from '@/_components/common/Button/page'
+import styled from 'styled-components'
+import InfoSection from '@/_components/Product/ProductDescription/InfoSection/page'
+
+export const SignUpButtonSection = styled.div`
+    display: flex;
+    padding: 20px;
+`
 
 const ProductDescription = () => {
   const { setStep } = use(ProductContext)
@@ -20,6 +28,12 @@ const ProductDescription = () => {
     <ProductDetail1 />
     <ProductDetail2 />
     <TabSection />
+
+    <InfoSection/>
+
+    <SignUpButtonSection>
+      <Button type="Fill" status="Default" size="Large">가입하기</Button>
+    </SignUpButtonSection>
   </main>
 }
 
