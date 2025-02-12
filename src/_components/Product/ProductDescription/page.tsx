@@ -23,7 +23,7 @@ const ProductDescription = () => {
 
   return <main className="h-dvh flex flex-col">
     <div className="flex flex-col px-5">
-      <NavBar leftControl="icon" rightControl="icon" title="금융상품" onClickBack={() => setStep(ProductSteps[0])} />
+      <NavBar leftControl="icon" rightControl="icon" title="상품 상세" onClickBack={() => setStep(ProductSteps[0])} />
     </div>
     <RegistrationSection />
     <ProductDetail1 />
