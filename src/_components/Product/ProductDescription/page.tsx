@@ -11,6 +11,7 @@ import TabSection from '@/_components/Product/ProductDescription/TabSection/page
 import Button from '@/_components/common/Button/page'
 import styled from 'styled-components'
 import InfoSection from '@/_components/Product/ProductDescription/InfoSection/page'
+import OtherSection from '@/_components/Product/ProductDescription/OtherSection/page'
 
 export const SignUpButtonSection = styled.div`
     display: flex;
@@ -28,9 +29,8 @@ const ProductDescription = () => {
     <ProductDetail1 />
     <ProductDetail2 />
     <TabSection />
-
     <InfoSection/>
-
+    <OtherSection/>
     <SignUpButtonSection>
       <Button type="Fill" status="Default" size="Large">가입하기</Button>
     </SignUpButtonSection>
