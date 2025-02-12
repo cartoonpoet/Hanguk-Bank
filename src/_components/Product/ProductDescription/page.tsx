@@ -7,6 +7,7 @@ import { ProductSteps } from '@/_constants/mode'
 import RegistrationSection from '@/_components/Product/ProductDescription/RegistrationSection/page'
 import ProductDetail1 from '@/_components/Product/ProductDescription/ProductDetail1/page'
 import ProductDetail2 from '@/_components/Product/ProductDescription/ProductDetail2/page'
+import TabSection from '@/_components/Product/ProductDescription/TabSection/page'
 
 const ProductDescription = () => {
   const { setStep } = use(ProductContext)
@@ -18,6 +19,7 @@ const ProductDescription = () => {
     <RegistrationSection />
     <ProductDetail1 />
     <ProductDetail2 />
+    <TabSection/>
   </main>
 }
 
