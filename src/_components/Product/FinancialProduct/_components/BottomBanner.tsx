@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {HomeIcon} from '@/_assets/icons'
+import {HotelIcon} from '@/_assets/icons'
 
 const Container = styled.div`
     padding: 40px 20px;
@@ -43,7 +43,7 @@ const BottomBanner = () => {
         <Title>다른 은행 상품도 궁금하신가요?</Title>
         <SubTitle>금융상품 비교하기</SubTitle>
       </div>
-      <HomeIcon/>
+      <HotelIcon/>
     </Card>
   </Container>
 }
