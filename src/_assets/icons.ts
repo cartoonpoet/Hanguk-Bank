@@ -31,8 +31,12 @@ import ChatIcon from './icons/chat.svg'
 import DocumentsIcon from './icons/documents.svg'
 import CallSolidIcon from './icons/call-solid.svg'
 import ChatSolidIcon from './icons/chat-solid.svg'
+import CardIcon from './icons/card.svg'
+import HomeIcon from './icons/home.svg'
 
 export {
+  HomeIcon,
+  CardIcon,
   CallSolidIcon,
   ChatSolidIcon,
   ActivityIcon,

@@ -8,7 +8,7 @@ import {URL} from '@/_constants/url'
 const TabBar = () => {
   const pathname = usePathname()
   // transfer 경로에서 메뉴바 숨기기
-  const hideMenuBar = [URL.inquiry, URL.transfer, URL.customerService].includes(pathname)
+  const hideMenuBar = [URL.inquiry, URL.transfer, URL.customerService, URL.product].includes(pathname)
   if (hideMenuBar) return null
 
   return (

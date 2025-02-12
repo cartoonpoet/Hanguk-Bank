@@ -17,7 +17,7 @@ const menuList = [
   {
     src: '/menu/memo.svg',
     name: '상품 가입',
-    url: '',
+    url: URL.product,
   },
   {
     src: '/menu/atm.svg',
