@@ -15,7 +15,7 @@ const SavingsSignUp = () => {
 
   const onClickClose = () => setIsShowManual(false)
 
-  if (isShowManual) return <Manual onClickClose={onClickClose} isShowMic={false} />
+  if (isShowManual) return <Manual onClickClose={onClickClose} isShowMic={false} isShowButton/>
   return <main className="h-dvh flex flex-col">
     <div className="flex flex-col px-5">
       <NavBar leftControl="icon" rightControl="icon" title="적금 가입" onClickBack={() => setStep(ProductSteps[1])} />

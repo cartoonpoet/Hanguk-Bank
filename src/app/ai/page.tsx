@@ -62,7 +62,8 @@ const AI = () => {
 
   return (
     <div className={styles.container}>
-      {isShowManual && <div className={styles.modal}><Manual onClickClose={onClickClose} isShowMic /></div>}
+      {isShowManual &&
+        <div className={styles.modal}><Manual onClickClose={onClickClose} isShowMic isShowButton={false} /></div>}
       <AiAvatar />
       <ToastContainer />
       {eachModeComponent[mode]}
