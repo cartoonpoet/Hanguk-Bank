@@ -1,0 +1,26 @@
+'use client'
+
+import NavBar from '@/_components/common/NavBar/page'
+import React, { use } from 'react'
+import { ProductContext } from '@/_contexts/useProduct'
+import { ProductSteps } from '@/_constants/mode'
+import RegistrationSection from '@/_components/Product/ProductDescription/RegistrationSection/page'
+import ProductDetail1 from '@/_components/Product/ProductDescription/ProductDetail1/page'
+import ProductDetail2 from '@/_components/Product/ProductDescription/ProductDetail2/page'
+import TabSection from '@/_components/Product/ProductDescription/TabSection/page'
+
+const ProductDescription = () => {
+  const { setStep } = use(ProductContext)
+
+  return <main className="h-dvh flex flex-col">
+    <div className="flex flex-col px-5">
+      <NavBar leftControl="icon" rightControl="icon" title="금융상품" onClickBack={() => setStep(ProductSteps[0])} />
+    </div>
+    <RegistrationSection />
+    <ProductDetail1 />
+    <ProductDetail2 />
+    <TabSection />
+  </main>
+}
+
+export default ProductDescription

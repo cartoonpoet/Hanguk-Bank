@@ -33,8 +33,18 @@ import CallSolidIcon from './icons/call-solid.svg'
 import ChatSolidIcon from './icons/chat-solid.svg'
 import CardIcon from './icons/card.svg'
 import HotelIcon from './icons/hotel.svg'
+import MoneyUpIcon from './icons/money-up.svg'
+import GiftIcon from './icons/gift.svg'
+import Fairy from './icons/fairy.svg'
+import Fanfare from './icons/fanfare.svg'
+import SavingsIcon from './icons/savings.svg'
 
 export {
+  SavingsIcon,
+  Fairy,
+  Fanfare,
+  MoneyUpIcon,
+  GiftIcon,
   HotelIcon,
   CardIcon,
   CallSolidIcon,

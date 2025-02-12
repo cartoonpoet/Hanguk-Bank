@@ -1,5 +1,10 @@
+'use client'
+
 import styled from 'styled-components'
 import { ArrowDown } from '@/_assets/icons'
+import { use } from 'react'
+import { ProductContext } from '@/_contexts/useProduct'
+import { ProductSteps } from '@/_constants/mode'
 
 interface StyledBannerProps {
   $backgroundColor: string
@@ -66,14 +71,16 @@ const banners = [
 ]
 
 const Banners = () => {
+  const { setStep } = use(ProductContext)
   return <main className="flex flex-col gap-2.5 px-5 py-10 bg-white">
-    {banners.map(({ backgroundColor, subTitle, title }) => (<StyledBanner key={title} $backgroundColor={backgroundColor}>
-      <Wrapper>
-        <SubTitle>{subTitle}</SubTitle>
-        <Title>{title}</Title>
-      </Wrapper>
-      <ArrowRight />
-    </StyledBanner>))}
+    {banners.map(({ backgroundColor, subTitle, title }) => (
+      <StyledBanner key={title} $backgroundColor={backgroundColor} onClick={() => setStep(ProductSteps[1])}>
+        <Wrapper>
+          <SubTitle>{subTitle}</SubTitle>
+          <Title>{title}</Title>
+        </Wrapper>
+        <ArrowRight />
+      </StyledBanner>))}
   </main>
 }
 
