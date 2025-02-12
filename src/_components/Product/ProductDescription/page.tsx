@@ -32,7 +32,7 @@ const ProductDescription = () => {
     <InfoSection/>
     <OtherSection/>
     <SignUpButtonSection>
-      <Button type="Fill" status="Default" size="Large">가입하기</Button>
+      <Button type="Fill" status="Default" size="Large" onClick={() => {setStep(ProductSteps[2])}}>가입하기</Button>
     </SignUpButtonSection>
   </main>
 }
