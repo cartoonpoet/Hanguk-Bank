@@ -46,7 +46,7 @@ const useScene = (videoRef: MutableRefObject<HTMLVideoElement | null>) => {
     setWork,
     setApplicationType,
     setConsultationType,
-    setConnectionState
+    setConnectionState,
   } = use(AiContext)
   const stateRef = useRef<WorkProp>(work)
 

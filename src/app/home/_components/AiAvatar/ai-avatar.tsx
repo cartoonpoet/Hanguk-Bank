@@ -4,13 +4,10 @@ import useScene from '@/_hooks/useScene'
 import { useRef } from 'react'
 
 const AiAvatar = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null) // 비디오 요소 참조
-  const {} = useScene(videoRef)
+  const audioRef = useRef<HTMLVideoElement | null>(null) // 비디오 요소 참조
+  const {} = useScene(audioRef)
 
-  return (
-    // <video ref={videoRef} id="sm-video" width="50%" height="50%" playsInline />
-    <audio ref={videoRef} id="sm-video" playsInline />
-  )
+  return <audio ref={audioRef} id='sm-video' playsInline />
 }
 
 export default AiAvatar
