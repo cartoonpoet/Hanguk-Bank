@@ -11,7 +11,7 @@ import { MutableRefObject, use, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify'
 
 const webKey =
-  'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnLS1zb3liYW5rIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNzgxOTNhMGYtOWVhMC00NjI5LTliZWMtYjBhNjcxNjc0MmFkIn0='
+  'eyJzb3VsSWQiOiJkZG5hLXNveWktaHdhbmctb3JnMTU0My0tc295YmFuayIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzY1NzJhNDNiLWZiZDAtNGMyYi1hYzhhLTlkZWRhZWFkMDE1MyJ9'
 
 // const useKey = process.env.MODE === 'prod' ? prodKey : devKey
 const useKey = webKey
@@ -37,7 +37,7 @@ function onConnectionError(error: Error) {
   }
 }
 
-const useScene = (videoRef: MutableRefObject<null>) => {
+const useScene = (videoRef: MutableRefObject<HTMLVideoElement | null>) => {
   const {
     scene,
     setScene,
@@ -46,7 +46,7 @@ const useScene = (videoRef: MutableRefObject<null>) => {
     setWork,
     setApplicationType,
     setConsultationType,
-    setConnectionState
+    setConnectionState,
   } = use(AiContext)
   const stateRef = useRef<WorkProp>(work)
 

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // 다크모드 해제
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -18,7 +19,11 @@ module.exports = {
         'Brand-Default': '#007BFF',
         'Border-Default': '#D6DBE1',
         'Neutral-Default': '#6B7684',
-        'Neutral-Tertiary': '#F2F4F6'
+        'Neutral-Tertiary': '#F2F4F6',
+        'Danger-Default': '#DC3545',
+        'Neutral-On': '#FAFAFB',
+        'Neutral-Dark-Darkest': '#1F2024',
+        'Caution-Secondary': '#FFF4E6'
       },
       fontFamily:{
         pretendard: ['--font-pretendard','Arial', 'Helvetica', 'sans-serif']

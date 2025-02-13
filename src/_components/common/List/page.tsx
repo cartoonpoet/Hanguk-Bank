@@ -12,12 +12,12 @@ const menuList = [
   {
     src: '/menu/receipt.svg',
     name: '공과금 내기',
-    url: '',
+    url: URL.customerService,
   },
   {
     src: '/menu/memo.svg',
     name: '상품 가입',
-    url: '',
+    url: URL.product,
   },
   {
     src: '/menu/atm.svg',

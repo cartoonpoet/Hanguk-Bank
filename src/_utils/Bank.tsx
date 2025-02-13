@@ -3,6 +3,7 @@ import KbStar from '/public/bank/kbstar.svg'
 import KaKaoBank from '/public/bank/kakaobank.svg'
 import WoriBank from '/public/bank/wori.svg'
 import React from 'react'
+import { BillIcon, HouseUser, HyundaiIcon, MoneyIcon } from '@/_assets/icons'
 
 export const getBankIcon = (accountType: string) => {
   switch (accountType) {
@@ -14,6 +15,14 @@ export const getBankIcon = (accountType: string) => {
       return <KaKaoBank />
     case '우리':
       return <WoriBank />
+    case '한국':
+      return <div className="flex w-10 h-10 bg-Brand-Default justify-center items-center rounded-full"><MoneyIcon /></div>
+    case '관리비':
+      return <div className="flex w-10 h-10 bg-[#FF8C00] justify-center items-center rounded-full"><HouseUser/></div>
+    case '환급금':
+      return <div className="flex w-10 h-10 bg-Neutral-Default justify-center items-center rounded-full"><BillIcon/></div>
+    case '현대':
+      return <HyundaiIcon/>
   }
 }
 

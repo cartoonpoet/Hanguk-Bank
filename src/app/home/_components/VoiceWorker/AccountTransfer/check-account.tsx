@@ -1,24 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
-import { DELAY, VoiceWorkProps } from './account-transfer-stepper'
 import Account from '@/_components/common/Account/account'
 import Title from '@/_components/common/BottomSheet/components/title'
+import { useContext, useEffect } from 'react'
+import { DELAY } from './account-transfer-stepper'
+import { AiContext } from '@/_contexts/useAiContext'
+import { handleSpeak } from '@/_hooks/useScene'
 
-const CheckAccount = ({
-  isListening,
-  speechText,
-  handleContentRoute,
-}: VoiceWorkProps) => {
-  useEffect(() => {
-    if (!speechText) return
-    if (!isListening) {
-      setTimeout(() => {
-        handleContentRoute('TRANSFER_RESULT')
-      }, DELAY)
-    }
-  }, [speechText, isListening])
-
+const CheckAccount = () => {
   return (
     <>
       <Title

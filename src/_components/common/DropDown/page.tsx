@@ -1,17 +1,12 @@
 import styles from './style.module.scss'
-import Image from 'next/image'
+import {ArrowDown} from '@/_assets/icons'
 
 const DropDown = () => {
   return (
     <main className={styles.wrapper}>
       <div>전체</div>
       <div className={styles.image}>
-        <Image
-          src='/icon/arrow-down.svg'
-          alt='DropDown'
-          width={11.6}
-          height={6.6}
-        />
+        <ArrowDown width="11.6" height="6.6" fill="#687864"/>
       </div>
     </main>
   )

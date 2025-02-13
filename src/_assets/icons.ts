@@ -18,7 +18,39 @@ import ReloadIcon from './icons/reload.svg'
 import CheckIcon from './icons/check.png'
 import ShareIcon from './icons/share.svg'
 import StarIcon from './icons/star.svg'
+import MenuEllipseIcon from './icons/menu-ellipse.svg'
+import MoneyIcon from './icons/money.svg'
+import CopyIcon from './icons/copy.svg'
+import MagnifierIcon from './icons/magnifier.svg'
+import HouseUser from './icons/house-user.svg'
+import HyundaiIcon from './icons/hyundai.svg'
+import BillIcon from './icons/bill.svg'
+import KakaoTalk from './icons/kakaotalk.svg'
+import MessageIcon from './icons/message.svg'
+import ChatIcon from './icons/chat.svg'
+import DocumentsIcon from './icons/documents.svg'
+import CallSolidIcon from './icons/call-solid.svg'
+import ChatSolidIcon from './icons/chat-solid.svg'
+import CardIcon from './icons/card.svg'
+import HotelIcon from './icons/hotel.svg'
+import MoneyUpIcon from './icons/money-up.svg'
+import GiftIcon from './icons/gift.svg'
+import Fairy from './icons/fairy.svg'
+import Fanfare from './icons/fanfare.svg'
+import SavingsIcon from './icons/savings.svg'
+import Banner from './icons/banner.svg'
+
 export {
+  Banner,
+  SavingsIcon,
+  Fairy,
+  Fanfare,
+  MoneyUpIcon,
+  GiftIcon,
+  HotelIcon,
+  CardIcon,
+  CallSolidIcon,
+  ChatSolidIcon,
   ActivityIcon,
   InfoIcon,
   SpeakerFilledIcon,
@@ -38,5 +70,16 @@ export {
   ReloadIcon,
   CheckIcon,
   ShareIcon,
-  StarIcon
+  StarIcon,
+  MenuEllipseIcon,
+  MoneyIcon,
+  CopyIcon,
+  MagnifierIcon,
+  HyundaiIcon,
+  HouseUser,
+  BillIcon,
+  KakaoTalk,
+  MessageIcon,
+  ChatIcon,
+  DocumentsIcon,
 }

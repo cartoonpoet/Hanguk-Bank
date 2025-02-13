@@ -8,17 +8,20 @@ import { useState, useRef } from 'react'
 import { usePdf } from '@mikecousins/react-pdf'
 import ArrowUp from '/public/icon/arrow-up.svg'
 import ArrowDown from '/public/icon/arrow-down.svg'
+import Button from '@/_components/common/Button/page'
 
 interface ManualProps {
   onClickClose?: () => void
+  isShowMic: boolean
+  isShowButton: boolean
 }
 
-const Manual = ({ onClickClose }: ManualProps) => {
+const Manual = ({ onClickClose, isShowMic, isShowButton }: ManualProps) => {
   const [page, setPage] = useState(1)
   const canvasRef = useRef(null)
 
   usePdf({
-    file: 'Document.Sample.pdf',
+    file: '/Document.Sample.pdf',
     page,
     canvasRef,
   })
@@ -49,8 +52,11 @@ const Manual = ({ onClickClose }: ManualProps) => {
             </button>
           </div>
         </nav>
-        <FloatingButton />
+        {isShowMic && <FloatingButton />}
       </div>
+      {isShowButton && <div className="flex flex-row self-stretch p-5">
+        <Button type="Fill" status="Disabled" size="Large">확인</Button>
+      </div>}
     </main>
   )
 }

@@ -6,6 +6,7 @@ import cx from 'classnames'
 import { useState } from 'react'
 import StarBG from '/public/icon/star-bg.svg'
 import { getBankIcon } from '@/_utils/Bank'
+import { CopyIcon } from '@/_assets/icons'
 
 type AccountRowProps = {
   accountType: string
@@ -13,15 +14,19 @@ type AccountRowProps = {
   accountNumber: string
   selected?: boolean
   onClick?: () => void
+  isUseFavorite: boolean
+  isUseCopy: boolean
 }
 
 const AccountRow = ({
-  accountType,
-  name,
-  accountNumber,
-  selected,
-  onClick,
-}: AccountRowProps) => {
+                      accountType,
+                      name,
+                      accountNumber,
+                      selected,
+                      onClick,
+                      isUseFavorite,
+                      isUseCopy,
+                    }: AccountRowProps) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
   const onClickFavorite = (): void => {
@@ -37,14 +42,16 @@ const AccountRow = ({
       <div className={styles.info}>
         <div className={styles.name}>{name}</div>
         <div className={styles.account}>
-          {accountType} {accountNumber}
+          {accountType} {accountNumber} {isUseCopy && <CopyIcon />}
         </div>
       </div>
-      {isFavorite ? (
-        <StarBG onClickCapture={onClickFavorite} />
-      ) : (
-        <Star onClickCapture={onClickFavorite} />
-      )}
+      {isUseFavorite && <div>
+        {isFavorite ? (
+          <StarBG onClickCapture={onClickFavorite} />
+        ) : (
+          <Star onClickCapture={onClickFavorite} />
+        )}
+      </div>}
     </section>
   )
 }

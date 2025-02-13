@@ -58,11 +58,16 @@ const AI = () => {
     }, 5000)
   }
 
-  if (work === 'CallCenter' && applicationType) return consultationType === '전화 상담' ? <Calling /> : <ChatBot />
+  if (work === 'CallCenter' && applicationType)
+    return consultationType === '전화 상담' ? <Calling /> : <ChatBot />
 
   return (
     <div className={styles.container}>
-      {isShowManual && <div className={styles.modal}><Manual onClickClose={onClickClose} /></div>}
+      {isShowManual && (
+        <div className={styles.modal}>
+          <Manual onClickClose={onClickClose} isShowMic isShowButton={false} />
+        </div>
+      )}
       <AiAvatar />
       <ToastContainer />
       {eachModeComponent[mode]}

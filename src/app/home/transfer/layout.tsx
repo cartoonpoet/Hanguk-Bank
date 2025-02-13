@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './_style/layout.module.scss'
-// import Button from '@/app/_component/Button/page'
 
 type layoutProps = {
   children: React.ReactNode

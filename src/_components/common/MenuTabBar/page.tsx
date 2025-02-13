@@ -5,10 +5,10 @@ import Menu from '@/_components/common/Menu/page'
 import { usePathname } from 'next/navigation'
 import {URL} from '@/_constants/url'
 
-const TabBar = () => {
+const  TabBar = () => {
   const pathname = usePathname()
   // transfer 경로에서 메뉴바 숨기기
-  const hideMenuBar = [URL.inquiry, URL.transfer].includes(pathname)
+  const hideMenuBar = [URL.inquiry, URL.transfer, URL.customerService, URL.product].includes(pathname)
   if (hideMenuBar) return null
 
   return (

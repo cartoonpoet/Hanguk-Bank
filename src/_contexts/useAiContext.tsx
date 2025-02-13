@@ -1,5 +1,12 @@
 import React, { createContext, useState, ReactNode } from 'react'
-import { Account, AiStoreTypes, ModeProp, WorkProp, ConsultationType, ApplicationType } from '@/_types/AiStoreTypes'
+import {
+  Account,
+  AiStoreTypes,
+  ModeProp,
+  WorkProp,
+  ConsultationType,
+  ApplicationType,
+} from '@/_types/AiStoreTypes'
 import { Scene } from '@soulmachines/smwebsdk'
 
 const initSelectedTo = {
@@ -27,34 +34,37 @@ const AiContextProvider = ({ children }: { children: ReactNode }) => {
   const [selectedTo, setSelectedTo] = useState<Account>(initSelectedTo)
   const [work, setWork] = useState<WorkProp>(null)
   const [isShowManual, setIsShowManual] = useState<boolean>(false)
-  const [consultationType, setConsultationType] = useState<ConsultationType | null>(null)
-  const [applicationType, setApplicationType] = useState<ApplicationType | null>(null)
-  const [connectionState, setConnectionState] = useState<string>('Not Connected')
-
+  const [consultationType, setConsultationType] =
+    useState<ConsultationType | null>(null)
+  const [applicationType, setApplicationType] =
+    useState<ApplicationType | null>(null)
+  const [connectionState, setConnectionState] =
+    useState<string>('Not Connected')
 
   return (
-    <AiContext.Provider value={{
-      scene,
-      setScene,
-      mode,
-      setMode,
-      selectedTo,
-      setSelectedTo,
-      work,
-      setWork,
-      isShowManual,
-      setIsShowManual,
-      consultationType,
-      setConsultationType,
-      applicationType,
-      setApplicationType,
-      connectionState,
-      setConnectionState,
-    }}>
+    <AiContext.Provider
+      value={{
+        scene,
+        setScene,
+        mode,
+        setMode,
+        selectedTo,
+        setSelectedTo,
+        work,
+        setWork,
+        isShowManual,
+        setIsShowManual,
+        consultationType,
+        setConsultationType,
+        applicationType,
+        setApplicationType,
+        connectionState,
+        setConnectionState,
+      }}
+    >
       {children}
     </AiContext.Provider>
   )
 }
-
 
 export default AiContextProvider
