@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
-import { DELAY, VoiceWorkProps } from './account-transfer-stepper'
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
-import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
+import { AiContext } from '@/_contexts/useAiContext'
+import { handleSpeak } from '@/_hooks/useScene'
+import { useContext, useEffect } from 'react'
+import { DELAY } from './account-transfer-stepper'
 
 const TRANSFER_LIST = [
   {
@@ -21,22 +22,16 @@ const TRANSFER_LIST = [
   },
 ]
 
-const TransferWork = ({
-  speechText,
-  isListening,
-  handleContentRoute,
-}: VoiceWorkProps) => {
-  const handleClick = () => {}
+const TransferWork = () => {
+  const { scene, selectedTo, work } = useContext(AiContext)
 
-  useEffect(() => {
-    if (!speechText) return
-    console.log({ speechText })
-    if (!isListening && speechText) {
-      setTimeout(() => {
-        handleContentRoute('ACCOUNT_WORK')
-      }, DELAY)
-    }
-  }, [speechText, isListening])
+  // useEffect(() => {
+  //   if (!scene) return
+
+  //   setTimeout(() => {
+  //     handleSpeak(scene, '첫번째', work)
+  //   }, DELAY)
+  // }, [])
 
   return (
     <>
@@ -48,8 +43,8 @@ const TransferWork = ({
           {TRANSFER_LIST.length}
         </span>
       </div>
-      <TransferList data={TRANSFER_LIST} handleClick={handleClick} />
-      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
+      <TransferList data={TRANSFER_LIST} />
+      {/* {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />} */}
     </>
   )
 }

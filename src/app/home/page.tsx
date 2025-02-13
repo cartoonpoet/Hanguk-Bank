@@ -15,6 +15,7 @@ import AiButton from './_components/AIButton/ai-button'
 import VoiceButton from './_components/VoiceButton/voice-button'
 import VoiceWorker from './_components/VoiceWorker/voice-worker'
 import AiAvatar from './_components/AiAvatar/ai-avatar'
+import Manual from './_components/VoiceWorker/FinancialProducts/Manual/page'
 
 const Home = () => {
   const { mode } = useCommonStore()
@@ -43,7 +44,7 @@ const Home = () => {
         {isOpen && (
           <AiContextProvider>
             <AiAvatar />
-            <VoiceWorker />
+            <VoiceWorker close={close} />
           </AiContextProvider>
         )}
       </BottomSheet>

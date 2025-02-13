@@ -1,8 +1,6 @@
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferList from '@/_components/common/BottomSheet/components/transfer-list'
-import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
 
-import { AccountInquiryProps } from './account-inquiry-stepper'
 import WorkBadgeGroup from '../../WorkBadgeGroup/work-badge-group'
 
 const supportTxt = ['거래내역 알려줘', '다른 계좌 보여줘']
@@ -22,10 +20,7 @@ const TRANSFER_LIST = [
   },
 ]
 
-const AccountInquiryList = ({
-  isListening,
-  speechText,
-}: AccountInquiryProps) => {
+const AccountInquiryList = () => {
   return (
     <>
       <Title title='어떤 계좌에서 조회 할까요?' />
@@ -38,7 +33,7 @@ const AccountInquiryList = ({
       </div>
       <TransferList data={TRANSFER_LIST} className='mt-2 mb-8' />
       <WorkBadgeGroup data={supportTxt} />
-      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
+      {/* {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />} */}
     </>
   )
 }

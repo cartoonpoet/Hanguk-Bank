@@ -3,17 +3,13 @@ import React from 'react'
 
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
-import { FinancialProductsProps } from './financial-product-stepper'
 
 const methodList = [
   { highlight: '원하는 금액을 자유롭게', text: '적립' },
   { highlight: '매월 정해진 금액', text: '을 같은 날짜에 적립' },
 ]
 
-const FinancialMethod = ({
-  isListening,
-  speechText,
-}: FinancialProductsProps) => {
+const FinancialMethod = () => {
   return (
     <>
       <Title title='적금 상품의 원하는 입금방식을 선택해 주세요.' />
@@ -26,7 +22,7 @@ const FinancialMethod = ({
           </TransferContainer>
         )
       })}
-      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
+      {/* {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />} */}
     </>
   )
 }
