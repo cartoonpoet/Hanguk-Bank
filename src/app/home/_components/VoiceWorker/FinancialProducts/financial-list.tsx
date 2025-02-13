@@ -1,9 +1,8 @@
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
 import VoiceText from '@/_components/common/BottomSheet/components/voiceText'
-import { FinancialProductsProps } from './financial-product-stepper'
 
-const FinancialList = ({ isListening, speechText }: FinancialProductsProps) => {
+const FinancialList = () => {
   const data = [
     {
       id: 1,
@@ -48,7 +47,7 @@ const FinancialList = ({ isListening, speechText }: FinancialProductsProps) => {
           </TransferContainer>
         )
       })}
-      {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />}
+      {/* {speechText && <VoiceText text={speechText ? `"${speechText}"` : ''} />} */}
     </>
   )
 }
