@@ -41,8 +41,8 @@ const menuList = [
   },
   {
     src: '/menu/call.svg',
-    name: '사고신고',
-    url: '',
+    name: '고객센터',
+    url: URL.customerService,
   },
   {
     src: '/menu/guide.svg',
