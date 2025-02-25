@@ -1,34 +1,51 @@
 import Title from '@/_components/common/BottomSheet/components/title'
 import TransferContainer from '@/_components/common/BottomSheet/components/transfer-container'
-import React from 'react'
+import { AiContext } from '@/_contexts/useAiContext'
+import React, { useContext, useEffect } from 'react'
 
-const ConsultationType = () => {
-  const data = [
-    {
-      id: 1,
-      title: '사고 신고',
-    },
-    {
-      id: 2,
-      title: '뱅킹/예금',
-    },
-    {
-      id: 3,
-      title: '펀드',
-    },
-    {
-      id: 4,
-      title: '대출',
-    },
-    {
-      id: 5,
-      title: '퇴직연금',
-    },
-    {
-      id: 6,
-      title: '민원 접수',
-    },
-  ]
+const data = [
+  {
+    id: 1,
+    title: '사고 신고',
+  },
+  {
+    id: 2,
+    title: '뱅킹/예금',
+  },
+  {
+    id: 3,
+    title: '펀드',
+  },
+  {
+    id: 4,
+    title: '대출',
+  },
+  {
+    id: 5,
+    title: '퇴직연금',
+  },
+  {
+    id: 6,
+    title: '민원 접수',
+  },
+]
+
+const ConsultationType = ({
+  close,
+  handleImgType,
+}: {
+  close: () => void
+  handleImgType: (type: string) => void
+}) => {
+  const { applicationType } = useContext(AiContext)
+
+  useEffect(() => {
+    if (applicationType) {
+      close()
+      handleImgType('Calling')
+    }
+  }, [applicationType])
+
   return (
     <>
       <Title title='상담 유형을 선택해 주세요' />
