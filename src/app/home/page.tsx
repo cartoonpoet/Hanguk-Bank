@@ -16,6 +16,7 @@ import VoiceButton from './_components/VoiceButton/voice-button'
 import VoiceWorker from './_components/VoiceWorker/voice-worker'
 import AiAvatar from './_components/AiAvatar/ai-avatar'
 import Manual from './_components/VoiceWorker/FinancialProducts/Manual/page'
+import FaceAuth from './_components/VoiceWorker/AccountTransfer/face-auth'
 
 const Home = () => {
   const { mode } = useCommonStore()
@@ -23,9 +24,13 @@ const Home = () => {
   if (!mode) redirect('/')
 
   const router = useRouter()
+
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const open = () => setIsOpen(true)
   const close = () => setIsOpen(false)
+
+  const [imgType, setImgType] = useState('')
+  const handleImgType = (type: string) => setImgType(type)
 
   return (
     <>
@@ -40,14 +45,21 @@ const Home = () => {
           <List />
         </section>
       </div>
-      <BottomSheet isOpen={isOpen} onClose={close}>
-        {isOpen && (
-          <AiContextProvider>
-            <AiAvatar />
-            <VoiceWorker close={close} />
-          </AiContextProvider>
-        )}
-      </BottomSheet>
+      <AiContextProvider>
+        <BottomSheet
+          isOpen={isOpen}
+          onClose={close}
+          imgType={imgType}
+          handleImgType={handleImgType}
+        >
+          {isOpen && (
+            <>
+              <AiAvatar />
+              <VoiceWorker handleImgType={handleImgType} close={close} />
+            </>
+          )}
+        </BottomSheet>
+      </AiContextProvider>
     </>
   )
 }

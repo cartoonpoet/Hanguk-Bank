@@ -2,12 +2,12 @@
 
 import Account from '@/_components/common/Account/account'
 import Title from '@/_components/common/BottomSheet/components/title'
-import { useContext, useEffect } from 'react'
-import { DELAY } from './account-transfer-stepper'
-import { AiContext } from '@/_contexts/useAiContext'
-import { handleSpeak } from '@/_hooks/useScene'
 
-const CheckAccount = () => {
+const CheckAccount = ({
+  handleImgType,
+}: {
+  handleImgType: (type: string) => void
+}) => {
   return (
     <>
       <Title

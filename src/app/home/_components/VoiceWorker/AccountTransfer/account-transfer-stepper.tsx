@@ -9,14 +9,20 @@ import TransferResult from './transfer-result'
 
 export const DELAY = 2_000
 
-const AccountTransferStepper = ({ mode }: { mode: string }) => {
+const AccountTransferStepper = ({
+  mode,
+  handleImgType,
+}: {
+  mode: string
+  handleImgType: (type: string) => void
+}) => {
   return (
     <>
       <div className='mb-4'>
         {mode === 'From' && <TransferWork />}
         {mode === 'To' && <AccountWork />}
         {mode === 'Tell' && <TransferInfo />}
-        {mode === 'Confirm' && <CheckAccount />}
+        {mode === 'Confirm' && <CheckAccount handleImgType={handleImgType} />}
         {mode === 'Transferred' && <TransferResult />}
       </div>
     </>
