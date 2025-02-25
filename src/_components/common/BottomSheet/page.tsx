@@ -1,26 +1,51 @@
 'use client'
 
+import FaceAuth from '@/app/home/_components/VoiceWorker/AccountTransfer/face-auth'
 import Close from '/public/icon/nav-close.svg'
 import styled from 'styled-components'
+import Calling from '@/_components/Calling/page'
+import ChatBot from '@/_components/ChatBot/page'
+import { useContext } from 'react'
+import { AiContext } from '@/_contexts/useAiContext'
 
 interface BottomSheetProps {
   isOpen: boolean
   onClose?: () => void
   children?: React.ReactNode
+  imgType: string
+  handleImgType: (type: string) => void
 }
 
-const BottomSheet = ({ isOpen, onClose, children }: BottomSheetProps) => {
+const BottomSheet = ({
+  isOpen,
+  onClose,
+  children,
+  imgType,
+  handleImgType,
+}: BottomSheetProps) => {
   return (
-    <Overlay isOpen={isOpen}>
-      <BottomSheetContainer isOpen={isOpen}>
-        {onClose && (
-          <CloseButton onClick={onClose}>
-            <Close />
-          </CloseButton>
-        )}
-        <ContentWrapper>{children}</ContentWrapper>
-      </BottomSheetContainer>
-    </Overlay>
+    <>
+      {imgType === 'FaceAuth' && <FaceAuth />}
+      {imgType === 'Calling' && (
+        <Calling
+          style={{ position: 'absolute', zIndex: 999 }}
+          handleImgType={handleImgType}
+        />
+      )}
+      {imgType === 'ChatBot' && (
+        <ChatBot style={{ position: 'absolute', zIndex: 999, width: '100%' }} />
+      )}
+      <Overlay isOpen={isOpen}>
+        <BottomSheetContainer isOpen={isOpen}>
+          {onClose && (
+            <CloseButton onClick={onClose}>
+              <Close />
+            </CloseButton>
+          )}
+          <ContentWrapper>{children}</ContentWrapper>
+        </BottomSheetContainer>
+      </Overlay>
+    </>
   )
 }
 
@@ -70,7 +95,7 @@ const CloseButton = styled.button`
 const ContentWrapper = styled.div`
   padding: 20px;
   text-align: center;
-    position: relative;
+  position: relative;
 `
 
 export default BottomSheet

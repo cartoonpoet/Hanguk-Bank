@@ -15,10 +15,17 @@ import FinancialProductsStepper from './FinancialProducts/financial-product-step
 
 const supportTxt: string[] = ['이체 해줘', '거래내역 알려줘', '대출 알려줘']
 
-const VoiceWorker = ({ close }: { close: () => void }) => {
+const VoiceWorker = ({
+  close,
+  handleImgType,
+}: {
+  close: () => void
+  handleImgType: (type: string) => void
+}) => {
   const { mode, work, selectedTo, connectionState } = useContext(AiContext)
   const [isShowMic, setIsShowMic] = useState(true)
   const handleIsShowMic = (status: boolean) => setIsShowMic(status)
+
   return (
     <>
       {/* <div>{connectionState}</div> */}
@@ -29,7 +36,9 @@ const VoiceWorker = ({ close }: { close: () => void }) => {
             <WorkBadgeGroup data={supportTxt} />
           </div>
         )}
-        {work === 'Transfer' && <AccountTransferStepper mode={mode} />}
+        {work === 'Transfer' && (
+          <AccountTransferStepper mode={mode} handleImgType={handleImgType} />
+        )}
         {work === 'Account' && <AccountInquiryStepper mode={mode} />}
         {work === 'Savings' && (
           <FinancialProductsStepper
@@ -38,7 +47,13 @@ const VoiceWorker = ({ close }: { close: () => void }) => {
             handleIsShowMic={handleIsShowMic}
           />
         )}
-        {work === 'CallCenter' && <CustomerServicetepper mode={mode} />}
+        {work === 'CallCenter' && (
+          <CustomerServicetepper
+            mode={mode}
+            close={close}
+            handleImgType={handleImgType}
+          />
+        )}
 
         {/* {transcript && <VoiceText text={transcript ? `"${transcript}"` : ''} />} */}
         {isShowMic && (
