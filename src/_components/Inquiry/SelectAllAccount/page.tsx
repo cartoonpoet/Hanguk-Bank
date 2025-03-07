@@ -31,7 +31,7 @@ const accountList = [{
   balance: 12345600,
 },
   {
-    accountName: '입출금통장',
+    accountName: '한국 스마트 적금',
     accountNumber: '987654-32-109876',
     balance: 8800000,
   },
@@ -63,7 +63,7 @@ const Page = ({}: StepMoveProps) => {
     </section>
     <section className="flex p-5 flex-col gap-2.5">
       <div className="flex flex-row justify-between text-lg">
-        <div className="font-medium">입출금 <span className="text-Brand-Default">2</span></div>
+        <div className="font-medium">예금 · 적금 <span className="text-Brand-Default">2</span></div>
         <div className="flex justify-center items-center gap-1 font-semibold">21,145,600원
           <ArrowRight width="14"
                       height="15"
