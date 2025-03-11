@@ -26,8 +26,8 @@ const KeyboardNumber = ({ children, onClick, onClickNumber }: KeyboardNumberProp
       )
     })}
     <Row>
-      <Cell>←</Cell>
-      <Cell>0</Cell>
+      <Cell onClick={() => onClickNumber?.(-1)}>←</Cell>
+      <Cell onClick={() => onClickNumber?.(0)}>0</Cell>
       <Cell onClick={onClick}>{children}</Cell>
     </Row>
   </div>
