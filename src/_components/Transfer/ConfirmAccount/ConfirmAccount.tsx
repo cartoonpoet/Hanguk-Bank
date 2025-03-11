@@ -23,7 +23,7 @@ const ConfirmAccount = ({ onPrev, onNext }: StepMoveProps) => {
   const close = () => setIsOpen(false)
 
   useEffect(() => {
-    if(onNext && password.length === 4) onNext()
+    if (onNext && password.length === 4) onNext()
   }, [onNext, password])
 
   return <main className="h-dvh flex flex-col gap-5">
@@ -48,7 +48,7 @@ const ConfirmAccount = ({ onPrev, onNext }: StepMoveProps) => {
       <div className="text-Neutral-Label text-[16px] font-medium">내 통장 표시</div>
       <input type="text" placeholder="내 통장" className="p-4 rounded-xl border" />
     </section>
-    <section className="flex flex-row justify-end items-center gap-1">
+    <section className="flex flex-row justify-end items-center gap-1 px-5">
       <PlusIcon width="16" height="16" fill="#000000" />
       <div className="text-[16px] font-medium">추가이체</div>
     </section>
