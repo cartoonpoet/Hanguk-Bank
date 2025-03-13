@@ -21,7 +21,7 @@ const tagTypeOfState = {
       background: var(--Brand-Default, #007BFF);
       font-size: 16px;
       color: var(--White-Default, #FFF);
-  `
+  `,
 }
 
 const StyledTag = styled.div<StyledTagProps>`
@@ -31,7 +31,7 @@ const StyledTag = styled.div<StyledTagProps>`
     align-items: center;
     gap: 4px;
     border-radius: 100px;
-    ${(props:StyledTagProps) => tagTypeOfState[props.type]}
+    ${(props: StyledTagProps) => tagTypeOfState[props.type]}
     text-align: center;
     font-style: normal;
     font-weight: 600;
@@ -40,10 +40,11 @@ const StyledTag = styled.div<StyledTagProps>`
 
 interface TagProps extends StyledTagProps {
   children: React.ReactNode
+  onClick?: () => void
 }
 
-const Tag = ({ children, type }: TagProps) => {
-  return <StyledTag type={type}>{children}</StyledTag>
+const Tag = ({ children, type, onClick }: TagProps) => {
+  return <StyledTag type={type} onClick={onClick}>{children}</StyledTag>
 }
 
 export default Tag

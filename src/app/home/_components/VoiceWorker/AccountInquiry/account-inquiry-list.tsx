@@ -14,7 +14,7 @@ const TRANSFER_LIST = [
   },
   {
     id: 2,
-    bankName: '입출금 통장',
+    bankName: '한국 스마트 적금',
     accountNumber: '한국 987654-32-109876',
     expense: '12,345,600',
   },
@@ -25,7 +25,7 @@ const AccountInquiryList = () => {
     <>
       <Title title='어떤 계좌에서 조회 할까요?' />
       <div className='flex'>
-        <span className='text-black text-lg'>입출금</span>
+        <span className='text-black text-lg'>예금 · 적금</span>
         &nbsp;
         <span className='text-lg' style={{ color: '#007BFF' }}>
           {TRANSFER_LIST.length}

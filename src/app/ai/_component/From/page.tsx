@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './style.module.scss'
-import Mic from '/public/icon/icon-mic.svg'
 import FloatingButton from '@/app/home/_components/VoiceWorker/AccountTransfer/floating-button'
 import { handleSpeak } from '@/_hooks/useScene'
 import { useContext } from 'react'
@@ -15,7 +14,7 @@ const ACCOUNTS = [
     balance: 12345600,
   },
   {
-    name: '입출금통장',
+    name: '한국 스마트 적금',
     kind: '한국',
     number: '987654-32-109876',
     balance: 8800000,
