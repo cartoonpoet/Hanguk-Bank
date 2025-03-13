@@ -18,7 +18,7 @@ const TRANSFER_LIST = [
     id: 2,
     bankName: '입출금 통장',
     accountNumber: '한국 987654-32-109876',
-    expense: '12,345,600',
+    expense: '8,800,000',
   },
 ]
 
