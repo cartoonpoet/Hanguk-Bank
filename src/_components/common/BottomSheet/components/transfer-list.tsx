@@ -30,7 +30,7 @@ const TransferList = ({ data, handleClick, className }: TransferListProps) => {
             </div>
           </div>
           <div className='flex gap-2 font-bold text-xl justify-end'>
-            <span className='text-black'>{`${item.accountNumber}원`}</span>
+            <span className='text-black'>{`${item.expense}원`}</span>
           </div>
         </TransferContainer>
       ))}
